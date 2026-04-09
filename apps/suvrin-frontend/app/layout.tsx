@@ -1,21 +1,21 @@
 import type { Metadata } from "next";
-import { Poppins, Roboto } from 'next/font/google';
+import { Poppins, Roboto } from "next/font/google";
 import "./globals.css";
-import { Navbar } from "./components/navbar";
-import { Footer } from "./components/Footer";
+import { Navbar } from "@/components/navbar";
+import { Footer } from "@/components/Footer";
 
 const poppins = Poppins({
-  weight: ['300', '400', '500', '600', '700'],
-  subsets: ['latin'],
-  variable: '--font-poppins',
-  display: 'swap',
+  weight: ["300", "400", "500", "600", "700"],
+  subsets: ["latin"],
+  variable: "--font-poppins",
+  display: "swap",
 });
 
 const roboto = Roboto({
-  weight: ['300', '400', '500', '700'],
-  subsets: ['latin'],
-  variable: '--font-roboto',
-  display: 'swap',
+  weight: ["300", "400", "500", "700"],
+  subsets: ["latin"],
+  variable: "--font-roboto",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -31,7 +31,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.variable} ${roboto.variable} font-sans`} suppressHydrationWarning>
+      <body
+        className={`${poppins.variable} ${roboto.variable} font-sans`}
+        suppressHydrationWarning
+      >
         <Navbar />
         <main>{children}</main>
         <Footer />
