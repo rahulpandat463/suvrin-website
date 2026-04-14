@@ -11,26 +11,27 @@ import ToolsSection from "@/components/home/ToolsSection";
 import FAQSection from "@/components/services/FAQSection";
 
 export const metadata: Metadata = {
-  title: "AI Services & Solutions | Suvrin Technologies",
-  description: "Explore our end-to-end AI transformation services for startups and enterprises.",
+  title: "AI Services for Startups | Suvrin Technologies",
+  description:
+    "Transform your startup ideas into AI-powered products. From strategy to launch, we support your entire AI innovation lifecycle.",
 };
 
-export default function Services() {
+export default function StartupServices() {
   return (
     <>
       <ServicesHero
-        id="services-hero"
+        id="startups"
         title={
           <>
-            Scale your vision
+            Idea to product
             <br />
-            with AI
+            as a service
           </>
         }
-        description="We design, build, and launch AI products that create real business value. From strategy to deployment, we are your partner in innovation."
+        description="We support you through your entire AI innovation lifecycle, from strategy to launch."
       />
 
-      <PartnersSection variant="standard" />
+      <PartnersSection variant="tech" />
 
       <TestimonialsSection />
       <ProprietaryFramework />
