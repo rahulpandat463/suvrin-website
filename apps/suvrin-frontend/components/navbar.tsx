@@ -42,12 +42,24 @@ const navItems: NavItem[] = [
     label: "Case Studies",
     href: "/case-studies",
     dropdown: [
-      { label: "Strategy & Advisory", href: "/service-scope/strategy-advisory" },
-      { label: "AI Products & Platforms", href: "/service-scope/ai-products-platforms" },
-      { label: "Commercialization & Growth", href: "/service-scope/commercialization-growth" },
+      {
+        label: "Strategy & Advisory",
+        href: "/service-scope/strategy-advisory",
+      },
+      {
+        label: "AI Products & Platforms",
+        href: "/service-scope/ai-products-platforms",
+      },
+      {
+        label: "Commercialization & Growth",
+        href: "/service-scope/commercialization-growth",
+      },
       { label: "Agents", href: "/service-scope/agents" },
       { label: "Knowledge Systems", href: "/service-scope/knowledge-systems" },
-      { label: "Automation & Integration", href: "/service-scope/automation-integration" },
+      {
+        label: "Automation & Integration",
+        href: "/service-scope/automation-integration",
+      },
       { label: "AI Infrastructure", href: "/service-scope/ai-infrastructure" },
       { label: "Governance & Risk", href: "/service-scope/governance-risk" },
       { label: "LLM Fine-Tuning", href: "/service-scope/llm-fine-tuning" },
@@ -64,11 +76,11 @@ function NavLogo() {
   return (
     <Link href="/" className="flex items-center group">
       <Image
-        src="/logo.png"
+        src="/top-logo.png"
         alt="Suvrin Technologies Logo"
-        width={140}
-        height={40}
-        className="h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+        width={180}
+        height={50}
+        className="h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
         priority
       />
     </Link>
@@ -95,19 +107,37 @@ function DropdownMenu({ items }: { items: SubItem[] }) {
   );
 }
 
-function DesktopNavItem({ item, pathname }: { item: NavItem; pathname: string }) {
-  const isActive = pathname === item.href || (item.dropdown && item.dropdown.some(s => pathname === s.href));
+function DesktopNavItem({
+  item,
+  pathname,
+  isLight,
+}: {
+  item: NavItem;
+  pathname: string;
+  isLight: boolean;
+}) {
+  const isActive =
+    pathname === item.href ||
+    (item.dropdown && item.dropdown.some((s) => pathname === s.href));
 
   return (
     <div className="relative group py-6">
       <Link
         href={item.href}
-        className={`flex items-center gap-2 px-3 py-2 text-[1.05rem] font-medium whitespace-nowrap transition-colors duration-200 ${isActive ? "text-white" : "text-white/70 hover:text-white"
+        className={`flex items-center gap-2 px-3 py-2 text-[1.05rem] font-medium whitespace-nowrap transition-colors duration-200 ${isActive
+            ? isLight
+              ? "text-text-primary"
+              : "text-white"
+            : isLight
+              ? "text-text-secondary hover:text-text-primary"
+              : "text-white/70 hover:text-white"
           }`}
       >
         {item.label}
         {item.dropdown && (
-          <span className="text-[0.6rem] ml-0.5 opacity-70 transition-transform duration-250 group-hover:rotate-180 inline-block">
+          <span
+            className={`text-[0.6rem] ml-0.5 opacity-70 transition-transform duration-250 group-hover:rotate-180 inline-block`}
+          >
             ▼
           </span>
         )}
@@ -138,14 +168,19 @@ export function Navbar() {
 
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "";
-    return () => { document.body.style.overflow = ""; };
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [mobileOpen]);
+
+  const isBlog = pathname === "/blog";
+  const isLight = scrolled || isBlog;
 
   return (
     <nav
-      className={`fixed left-1/2 -translate-x-1/2 z-[1000] w-[95%] max-w-[1240px] rounded-[25px] backdrop-blur-2xl border border-white/20 transition-all duration-300 ease-in-out ${scrolled
-          ? "top-4 bg-black/50 shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
-          : "top-8 bg-[#8a7f76]/20"
+      className={`fixed left-1/2 -translate-x-1/2 z-[1000] w-[95%] max-w-[1240px] rounded-[25px] backdrop-blur-2xl border transition-all duration-300 ease-in-out ${isLight
+          ? "top-4 bg-white/90 border-[#eeeeee] shadow-[0_15px_40px_rgba(0,0,0,0.05)]"
+          : "top-8 bg-[#8a7f76]/20 border-white/20 shadow-none"
         }`}
     >
       <div className="px-8 lg:px-10 flex items-center justify-between h-[84px]">
@@ -154,14 +189,22 @@ export function Navbar() {
         {/* Desktop Nav */}
         <div className="hidden lg:flex items-center gap-2">
           {navItems.map((item) => (
-            <DesktopNavItem key={item.label} item={item} pathname={pathname} />
+            <DesktopNavItem
+              key={item.label}
+              item={item}
+              pathname={pathname}
+              isLight={isLight}
+            />
           ))}
         </div>
 
         {/* CTA Button */}
         <Link
           href="/contact"
-          className="hidden lg:inline-flex items-center px-8 py-3.5 text-[0.95rem] font-medium text-white bg-white/10 hover:bg-white/20 border border-white/20 rounded-full transition-all duration-200"
+          className={`hidden lg:inline-flex items-center px-8 py-3.5 text-[0.95rem] font-bold rounded-full transition-all duration-200 ${isLight
+              ? "text-white bg-[#e8863a] hover:bg-[#d4742e]"
+              : "text-white bg-white/10 hover:bg-white/20 border border-white/20"
+            }`}
         >
           Connect with Us
         </Link>
@@ -172,9 +215,15 @@ export function Navbar() {
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
         >
-          <span className={`block w-[24px] h-[1.5px] bg-white transition-all duration-300 ${mobileOpen ? "rotate-45 translate-y-[7px]" : ""}`} />
-          <span className={`block w-[24px] h-[1.5px] bg-white transition-all duration-300 ${mobileOpen ? "opacity-0" : ""}`} />
-          <span className={`block w-[24px] h-[1.5px] bg-white transition-all duration-300 ${mobileOpen ? "-rotate-45 -translate-y-[7px]" : ""}`} />
+          <span
+            className={`block w-[24px] h-[1.5px] transition-all duration-300 ${isLight ? "bg-black" : "bg-white"} ${mobileOpen ? "rotate-45 translate-y-[7px]" : ""}`}
+          />
+          <span
+            className={`block w-[24px] h-[1.5px] transition-all duration-300 ${isLight ? "bg-black" : "bg-white"} ${mobileOpen ? "opacity-0" : ""}`}
+          />
+          <span
+            className={`block w-[24px] h-[1.5px] transition-all duration-300 ${isLight ? "bg-black" : "bg-white"} ${mobileOpen ? "-rotate-45 -translate-y-[7px]" : ""}`}
+          />
         </button>
       </div>
 
@@ -182,20 +231,36 @@ export function Navbar() {
       {mobileOpen && (
         <div className="lg:hidden fixed top-[110px] left-1/2 -translate-x-1/2 w-[92%] bg-[#111]/95 backdrop-blur-3xl p-6 overflow-y-auto z-[999] rounded-[30px] border border-white/10 shadow-2xl max-h-[70vh]">
           {navItems.map((item) => (
-            <div key={item.label} className="border-b border-white/5 last:border-0">
+            <div
+              key={item.label}
+              className="border-b border-white/5 last:border-0"
+            >
               {item.dropdown ? (
                 <>
                   <button
                     className="flex items-center justify-between w-full py-4 text-[1.05rem] font-medium text-white/90"
-                    onClick={() => setOpenDropdown(openDropdown === item.label ? null : item.label)}
+                    onClick={() =>
+                      setOpenDropdown(
+                        openDropdown === item.label ? null : item.label,
+                      )
+                    }
                   >
                     {item.label}
-                    <span className={`text-[0.6rem] transition-transform duration-300 ${openDropdown === item.label ? "rotate-180" : ""}`}>▼</span>
+                    <span
+                      className={`text-[0.6rem] transition-transform duration-300 ${openDropdown === item.label ? "rotate-180" : ""}`}
+                    >
+                      ▼
+                    </span>
                   </button>
                   {openDropdown === item.label && (
                     <div className="pl-4 pb-4 flex flex-col gap-3">
                       {item.dropdown.map((sub) => (
-                        <Link key={sub.label} href={sub.href} className="text-[0.95rem] text-white/60 hover:text-white" onClick={() => setMobileOpen(false)}>
+                        <Link
+                          key={sub.label}
+                          href={sub.href}
+                          className="text-[0.95rem] text-white/60 hover:text-white"
+                          onClick={() => setMobileOpen(false)}
+                        >
                           {sub.label}
                         </Link>
                       ))}
@@ -203,7 +268,11 @@ export function Navbar() {
                   )}
                 </>
               ) : (
-                <Link href={item.href} className="block py-4 text-[1.05rem] font-medium text-white/90" onClick={() => setMobileOpen(false)}>
+                <Link
+                  href={item.href}
+                  className="block py-4 text-[1.05rem] font-medium text-white/90"
+                  onClick={() => setMobileOpen(false)}
+                >
                   {item.label}
                 </Link>
               )}

@@ -41,47 +41,51 @@ export function Footer() {
 
   const news = [
     {
-      title: "Choosing the Right ERP Solution for Businesses in India and the Middle East",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2426&ixlib=rb-4.0.3",
+      title:
+        "Choosing the Right ERP Solution for Businesses in India and the Middle East",
+      image:
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2426&ixlib=rb-4.0.3",
       link: "#",
     },
     {
-      title: "Odoo's Meteoric Rise in India: From Open-Source Roots to Enterprise Dominance",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=2340&ixlib=rb-4.0.3",
+      title:
+        "Odoo's Meteoric Rise in India: From Open-Source Roots to Enterprise Dominance",
+      image:
+        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=2340&ixlib=rb-4.0.3",
       link: "#",
     },
   ];
 
   return (
-    <footer className="bg-[#053aa3] text-white pt-20 pb-10 font-sans relative" id="site-footer">
+    <footer
+      className="bg-[#053aa3] text-white pt-20 pb-10 font-sans relative"
+      id="site-footer"
+    >
       <div className="max-w-[1240px] mx-auto px-6">
-
         {/* Main Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pb-16 border-b border-white/10">
-
           {/* Column 1: Brandt & Partners */}
           <div className="flex flex-col gap-8">
             <Link href="/" className="inline-block">
               <Image
-                src="/logo.png"
+                src="/suvrin-logo.png"
                 alt="Suvrin Technologies Logo"
-                width={150}
-                height={50}
-                className="h-14 w-auto object-contain"
-                style={{ height: 'auto' }}
+                width={180}
+                height={60}
+                className="h-20 w-auto object-contain"
                 priority
               />
             </Link>
 
             <div className="flex flex-col gap-6 pt-4">
               <div className="relative w-full max-w-[200px]">
-                <Image 
-                  src="/clutch.svg" 
-                  alt="Partner Logos" 
-                  width={200} 
-                  height={300} 
+                <Image
+                  src="/clutch.svg"
+                  alt="Partner Logos"
+                  width={200}
+                  height={300}
                   className="w-full h-auto object-contain"
-                  style={{ height: 'auto' }}
+                  style={{ height: "auto" }}
                 />
               </div>
             </div>
@@ -91,12 +95,16 @@ export function Footer() {
           <div className="flex flex-col gap-10">
             {offices.map((office, idx) => (
               <div key={idx} className="flex flex-col gap-2">
-                <h4 className="text-[0.85rem] font-bold text-white/50 uppercase tracking-widest">{office.city}</h4>
+                <h4 className="text-[0.85rem] font-bold text-white/50 uppercase tracking-widest">
+                  {office.city}
+                </h4>
                 <p className="text-[1rem] font-bold">{office.name}</p>
                 <p className="text-[0.9rem] text-white/70 leading-relaxed max-w-[240px]">
                   {office.address}
                 </p>
-                <p className="text-[0.9rem] font-bold text-white mt-1">{office.phone}</p>
+                <p className="text-[0.9rem] font-bold text-white mt-1">
+                  {office.phone}
+                </p>
               </div>
             ))}
           </div>
@@ -104,10 +112,19 @@ export function Footer() {
           {/* Column 3: Quick Links */}
           <div className="flex flex-col gap-8">
             <div className="flex flex-col gap-6">
-              <h3 className="text-[1.2rem] font-bold border-b border-white/10 pb-2">Navigation</h3>
+              <h3 className="text-[1.2rem] font-bold border-b border-white/10 pb-2">
+                Navigation
+              </h3>
               <ul className="flex flex-col gap-6">
                 {/* Home */}
-                <li><Link href="/" className="text-[1.05rem] font-bold hover:text-white/70 transition-colors">Home</Link></li>
+                <li>
+                  <Link
+                    href="/"
+                    className="text-[1.05rem] font-bold hover:text-white/70 transition-colors"
+                  >
+                    Home
+                  </Link>
+                </li>
 
                 {/* About Section */}
                 <li className="flex flex-col gap-2.5">
@@ -116,13 +133,40 @@ export function Footer() {
                     className="flex items-center justify-between w-full text-[1.05rem] font-bold hover:text-white/70 transition-colors"
                   >
                     <span>About</span>
-                    <span className={`text-[0.7rem] transition-transform duration-300 ${openSections.about ? "rotate-180" : ""}`}>▼</span>
+                    <span
+                      className={`text-[0.7rem] transition-transform duration-300 ${openSections.about ? "rotate-180" : ""}`}
+                    >
+                      ▼
+                    </span>
                   </button>
-                  <div className={`overflow-hidden transition-all duration-300 ${openSections.about ? "max-h-[200px] opacity-100 mt-2" : "max-h-0 opacity-0"}`}>
+                  <div
+                    className={`overflow-hidden transition-all duration-300 ${openSections.about ? "max-h-[200px] opacity-100 mt-2" : "max-h-0 opacity-0"}`}
+                  >
                     <ul className="flex flex-col gap-1.5 pl-3 border-l border-white/10">
-                      <li><Link href="/about" className="text-[0.9rem] text-white/60 hover:text-white transition-colors">Who We Are</Link></li>
-                      <li><Link href="/about/team" className="text-[0.9rem] text-white/60 hover:text-white transition-colors">Team</Link></li>
-                      <li><Link href="/about/careers" className="text-[0.9rem] text-white/60 hover:text-white transition-colors">Careers</Link></li>
+                      <li>
+                        <Link
+                          href="/about"
+                          className="text-[0.9rem] text-white/60 hover:text-white transition-colors"
+                        >
+                          Who We Are
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          href="/about/team"
+                          className="text-[0.9rem] text-white/60 hover:text-white transition-colors"
+                        >
+                          Team
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          href="/about/careers"
+                          className="text-[0.9rem] text-white/60 hover:text-white transition-colors"
+                        >
+                          Careers
+                        </Link>
+                      </li>
                     </ul>
                   </div>
                 </li>
@@ -134,13 +178,40 @@ export function Footer() {
                     className="flex items-center justify-between w-full text-[1.05rem] font-bold hover:text-white/70 transition-colors"
                   >
                     <span>Services</span>
-                    <span className={`text-[0.7rem] transition-transform duration-300 ${openSections.services ? "rotate-180" : ""}`}>▼</span>
+                    <span
+                      className={`text-[0.7rem] transition-transform duration-300 ${openSections.services ? "rotate-180" : ""}`}
+                    >
+                      ▼
+                    </span>
                   </button>
-                  <div className={`overflow-hidden transition-all duration-300 ${openSections.services ? "max-h-[200px] opacity-100 mt-2" : "max-h-0 opacity-0"}`}>
+                  <div
+                    className={`overflow-hidden transition-all duration-300 ${openSections.services ? "max-h-[200px] opacity-100 mt-2" : "max-h-0 opacity-0"}`}
+                  >
                     <ul className="flex flex-col gap-1.5 pl-3 border-l border-white/10">
-                      <li><Link href="/services/startup" className="text-[0.9rem] text-white/60 hover:text-white transition-colors">Startup</Link></li>
-                      <li><Link href="/services/business" className="text-[0.9rem] text-white/60 hover:text-white transition-colors">Business</Link></li>
-                      <li><Link href="/services/enterprise" className="text-[0.9rem] text-white/60 hover:text-white transition-colors">Enterprise</Link></li>
+                      <li>
+                        <Link
+                          href="/services/startup"
+                          className="text-[0.9rem] text-white/60 hover:text-white transition-colors"
+                        >
+                          Startup
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          href="/services/business"
+                          className="text-[0.9rem] text-white/60 hover:text-white transition-colors"
+                        >
+                          Business
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          href="/services/enterprise"
+                          className="text-[0.9rem] text-white/60 hover:text-white transition-colors"
+                        >
+                          Enterprise
+                        </Link>
+                      </li>
                     </ul>
                   </div>
                 </li>
@@ -152,27 +223,117 @@ export function Footer() {
                     className="flex items-center justify-between w-full text-[1.05rem] font-bold hover:text-white/70 transition-colors"
                   >
                     <span>Case Studies</span>
-                    <span className={`text-[0.7rem] transition-transform duration-300 ${openSections.caseStudies ? "rotate-180" : ""}`}>▼</span>
+                    <span
+                      className={`text-[0.7rem] transition-transform duration-300 ${openSections.caseStudies ? "rotate-180" : ""}`}
+                    >
+                      ▼
+                    </span>
                   </button>
-                  <div className={`overflow-hidden transition-all duration-300 ${openSections.caseStudies ? "max-h-[350px] opacity-100 mt-2" : "max-h-0 opacity-0"}`}>
+                  <div
+                    className={`overflow-hidden transition-all duration-300 ${openSections.caseStudies ? "max-h-[350px] opacity-100 mt-2" : "max-h-0 opacity-0"}`}
+                  >
                     <ul className="flex flex-col gap-1.5 pl-3 border-l border-white/10 overflow-y-auto scrollbar-thin pr-2">
-                      <li><Link href="/service-scope/strategy-advisory" className="text-[0.9rem] text-white/60 hover:text-white transition-colors">Strategy & Advisory</Link></li>
-                      <li><Link href="/service-scope/ai-products-platforms" className="text-[0.9rem] text-white/60 hover:text-white transition-colors">AI Products & Platforms</Link></li>
-                      <li><Link href="/service-scope/commercialization-growth" className="text-[0.9rem] text-white/60 hover:text-white transition-colors">Growth</Link></li>
-                      <li><Link href="/service-scope/agents" className="text-[0.9rem] text-white/60 hover:text-white transition-colors">Agents</Link></li>
-                      <li><Link href="/service-scope/knowledge-systems" className="text-[0.9rem] text-white/60 hover:text-white transition-colors">Knowledge Systems</Link></li>
-                      <li><Link href="/service-scope/automation-integration" className="text-[0.9rem] text-white/60 hover:text-white transition-colors">Automation</Link></li>
-                      <li><Link href="/service-scope/ai-infrastructure" className="text-[0.9rem] text-white/60 hover:text-white transition-colors">Infrastructure</Link></li>
-                      <li><Link href="/service-scope/governance-risk" className="text-[0.9rem] text-white/60 hover:text-white transition-colors">Governance</Link></li>
-                      <li><Link href="/service-scope/llm-fine-tuning" className="text-[0.9rem] text-white/60 hover:text-white transition-colors">Fine-Tuning</Link></li>
-                      <li><Link href="/service-scope/web-scraping" className="text-[0.9rem] text-white/60 hover:text-white transition-colors">Web-Scraping</Link></li>
+                      <li>
+                        <Link
+                          href="/service-scope/strategy-advisory"
+                          className="text-[0.9rem] text-white/60 hover:text-white transition-colors"
+                        >
+                          Strategy & Advisory
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          href="/service-scope/ai-products-platforms"
+                          className="text-[0.9rem] text-white/60 hover:text-white transition-colors"
+                        >
+                          AI Products & Platforms
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          href="/service-scope/commercialization-growth"
+                          className="text-[0.9rem] text-white/60 hover:text-white transition-colors"
+                        >
+                          Growth
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          href="/service-scope/agents"
+                          className="text-[0.9rem] text-white/60 hover:text-white transition-colors"
+                        >
+                          Agents
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          href="/service-scope/knowledge-systems"
+                          className="text-[0.9rem] text-white/60 hover:text-white transition-colors"
+                        >
+                          Knowledge Systems
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          href="/service-scope/automation-integration"
+                          className="text-[0.9rem] text-white/60 hover:text-white transition-colors"
+                        >
+                          Automation
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          href="/service-scope/ai-infrastructure"
+                          className="text-[0.9rem] text-white/60 hover:text-white transition-colors"
+                        >
+                          Infrastructure
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          href="/service-scope/governance-risk"
+                          className="text-[0.9rem] text-white/60 hover:text-white transition-colors"
+                        >
+                          Governance
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          href="/service-scope/llm-fine-tuning"
+                          className="text-[0.9rem] text-white/60 hover:text-white transition-colors"
+                        >
+                          Fine-Tuning
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          href="/service-scope/web-scraping"
+                          className="text-[0.9rem] text-white/60 hover:text-white transition-colors"
+                        >
+                          Web-Scraping
+                        </Link>
+                      </li>
                     </ul>
                   </div>
                 </li>
 
                 {/* Blog & Contact */}
-                <li><Link href="/blog" className="text-[1.05rem] font-bold hover:text-white/70 transition-colors">Blog</Link></li>
-                <li><Link href="/contact" className="text-[1.05rem] font-bold hover:text-white/70 transition-colors">Contact</Link></li>
+                <li>
+                  <Link
+                    href="/blog"
+                    className="text-[1.05rem] font-bold hover:text-white/70 transition-colors"
+                  >
+                    Blog
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/contact"
+                    className="text-[1.05rem] font-bold hover:text-white/70 transition-colors"
+                  >
+                    Contact
+                  </Link>
+                </li>
               </ul>
             </div>
           </div>
@@ -199,26 +360,45 @@ export function Footer() {
               ))}
             </div>
           </div>
-
         </div>
 
         {/* Bottom Bar */}
         <div className="flex flex-col md:flex-row justify-between items-center mt-12 gap-8">
           <div className="flex items-center gap-6">
-            <Link href="#" className="text-white/60 hover:text-white transition-colors text-[1.5rem]">𝕏</Link>
-            <Link href="#" className="text-white/60 hover:text-white transition-colors text-[1.5rem]">𝓯</Link>
-            <Link href="#" className="text-white/60 hover:text-white transition-colors text-[1.5rem]">📷</Link>
+            <Link
+              href="#"
+              className="text-white/60 hover:text-white transition-colors text-[1.5rem]"
+            >
+              𝕏
+            </Link>
+            <Link
+              href="#"
+              className="text-white/60 hover:text-white transition-colors text-[1.5rem]"
+            >
+              𝓯
+            </Link>
+            <Link
+              href="#"
+              className="text-white/60 hover:text-white transition-colors text-[1.5rem]"
+            >
+              📷
+            </Link>
           </div>
 
           <div className="text-[1rem] font-medium text-white/80">
-            In Collaboration with <Link href="#" className="text-white hover:underline underline-offset-4 font-bold transition-all">Maxcode Solutions</Link>
+            In Collaboration with{" "}
+            <Link
+              href="#"
+              className="text-white hover:underline underline-offset-4 font-bold transition-all"
+            >
+              Maxcode Solutions
+            </Link>
           </div>
 
           <div className="text-[0.85rem] text-white/50">
             © 2026 Suvrin Technologies.
           </div>
         </div>
-
       </div>
 
       {/* WhatsApp FAB */}

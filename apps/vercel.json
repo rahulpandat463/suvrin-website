@@ -1,0 +1,5 @@
+{
+    "installCommand": "cd apps/suvrin-frontend && npm install",
+    "buildCommand": "cd apps/suvrin-frontend && npm run build",
+    "outputDirectory": "apps/suvrin-frontend/.next"
+}

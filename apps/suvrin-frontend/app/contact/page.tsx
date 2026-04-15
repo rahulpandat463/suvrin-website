@@ -2,6 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 import Link from "next/link";
+import FrameworkLogos from "@/components/shared/FrameworkLogos";
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
@@ -11,146 +12,159 @@ export default function Contact() {
     setSubmitted(true);
   };
 
+  const contactInfo = [
+    {
+      label: "Email",
+      value: "contact@suvrin.com",
+      icon: (
+        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+        </svg>
+      ),
+    },
+    {
+      label: "Phone",
+      value: "+1 917 689 3693",
+      icon: (
+        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
+        </svg>
+      ),
+    },
+    {
+      label: "Address",
+      value: "Riverfront Center, 221 River St 9th Floor, Hoboken, NJ 07030",
+      icon: (
+        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+        </svg>
+      ),
+    },
+  ];
+
   return (
-    <>
-      {/* Page Hero */}
-      <section className="pt-40 pb-20 bg-gradient-to-br from-bg-primary via-bg-secondary to-bg-primary border-b border-border" id="contact-hero">
-        <div className="max-w-[1200px] mx-auto px-6">
-          <p className="text-[0.8rem] font-semibold text-accent uppercase tracking-[3px] mb-4">Contact</p>
-          <h1 className="text-[clamp(2rem,4.5vw,3.5rem)] font-light leading-[1.1] mb-4 text-text-primary max-w-[700px]">
-            Let&apos;s shape your
-            <br />
-            <em className="font-light">AI strategy together</em>
-          </h1>
-          <p className="text-[1.15rem] text-text-secondary max-w-[500px] leading-7">
-            Ready to bring AI into your business? Get in touch and our team will
-            respond within 24 hours.
-          </p>
-        </div>
-      </section>
+    <div className="bg-[#fbfcff] min-h-screen pt-40 pb-20">
+      <div className="max-w-[1240px] mx-auto px-6">
+        
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
+          
+          {/* Left Column: Info & Logos */}
+          <div className="lg:col-span-7 flex flex-col gap-12">
+            <div className="flex flex-col gap-8">
+              <h1 className="text-[clamp(2.5rem,5vw,4.2rem)] font-heading font-medium leading-[1.05] text-[#111] tracking-tight">
+                Shaping the future <br /> of AI together
+              </h1>
+              <p className="text-[1.15rem] text-[#555] leading-relaxed max-w-[600px]">
+                Whether you're exploring AI's potential, planning your first project, or 
+                growing your business — our expert team is here to help you move from vision to impact.
+              </p>
+            </div>
 
-      {/* Contact Form + Info */}
-      <section className="py-24">
-        <div className="max-w-[1200px] mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-            {/* Form */}
-            <div>
-              <h2 className="text-2xl font-bold text-text-primary mb-8">
-                Send us a message
-              </h2>
-
-              {submitted ? (
-                <div className="bg-bg-card border border-border rounded-2xl p-12 text-center">
-                  <div className="text-5xl mb-4">✅</div>
-                  <h3 className="text-[1.15rem] font-semibold text-text-primary mb-2.5">Thank you!</h3>
-                  <p className="text-[0.92rem] text-text-secondary leading-relaxed">
-                    We&apos;ve received your message and will get back to you
-                    within 24 hours.
+            {/* Info Cards Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {contactInfo.map((info) => (
+                <div key={info.label} className="bg-white p-6 rounded-2xl border border-[#eeeeee] shadow-sm flex flex-col gap-6">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 bg-gray-50 rounded-xl flex items-center justify-center text-gray-400 border border-gray-100">
+                      {info.icon}
+                    </div>
+                    <span className="text-base font-medium text-[#111]">{info.label}</span>
+                  </div>
+                  <p className="text-[0.92rem] text-[#666] leading-relaxed">
+                    {info.value}
                   </p>
                 </div>
+              ))}
+            </div>
+
+            {/* Worked with Section */}
+            <div className="pt-8 border-t border-[#e5e5e5] border-dashed">
+              <p className="text-[0.9rem] font-medium text-[#888] mb-8">Worked with:</p>
+              <div className="opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
+                <FrameworkLogos />
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column: Form */}
+          <div className="lg:col-span-5">
+            <div className="bg-white p-8 lg:p-10 rounded-[30px] border border-[#eeeeee] shadow-[0_20px_50px_rgba(0,0,0,0.04)]">
+              {submitted ? (
+                <div className="py-12 text-center flex flex-col items-center gap-6">
+                  <div className="w-20 h-20 bg-green-50 rounded-full flex items-center justify-center text-4xl text-green-500 border border-green-100">
+                    ✓
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-[#111] mb-2">Message Sent!</h3>
+                    <p className="text-[#666]">We'll get back to you within 24 hours.</p>
+                  </div>
+                  <button 
+                    onClick={() => setSubmitted(false)}
+                    className="text-accent font-bold hover:underline"
+                  >
+                    Send another message
+                  </button>
+                </div>
               ) : (
-                <form onSubmit={handleSubmit}>
-                  <div className="mb-5">
-                    <label className="block text-[0.85rem] font-medium text-text-secondary mb-2" htmlFor="contact-name">
-                      Full Name
-                    </label>
+                <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+                  <div className="flex flex-col gap-2">
+                    <label className="text-[0.95rem] font-bold text-[#111]" htmlFor="first-name">First Name</label>
                     <input
-                      id="contact-name"
+                      id="first-name"
                       type="text"
-                      className="w-full px-4 py-3 text-[0.95rem] text-text-primary bg-bg-card border border-border rounded-md outline-none transition-colors focus:border-accent"
-                      placeholder="Your full name"
+                      placeholder="Jane"
+                      className="w-full px-5 py-3.5 bg-[#f4f4f5] border-none rounded-2xl outline-none focus:ring-2 focus:ring-accent/20 transition-all font-sans text-base placeholder:text-gray-400"
                       required
                     />
                   </div>
-                  <div className="mb-5">
-                    <label className="block text-[0.85rem] font-medium text-text-secondary mb-2" htmlFor="contact-email">
-                      Email
-                    </label>
+                  
+                  <div className="flex flex-col gap-2">
+                    <label className="text-[0.95rem] font-bold text-[#111]" htmlFor="email">Email</label>
                     <input
-                      id="contact-email"
+                      id="email"
                       type="email"
-                      className="w-full px-4 py-3 text-[0.95rem] text-text-primary bg-bg-card border border-border rounded-md outline-none transition-colors focus:border-accent"
-                      placeholder="you@company.com"
+                      placeholder="jane@company.com"
+                      className="w-full px-5 py-3.5 bg-[#f4f4f5] border-none rounded-2xl outline-none focus:ring-2 focus:ring-accent/20 transition-all font-sans text-base placeholder:text-gray-400"
                       required
                     />
                   </div>
-                  <div className="mb-5">
-                    <label className="block text-[0.85rem] font-medium text-text-secondary mb-2" htmlFor="contact-company">
-                      Company
-                    </label>
+
+                  <div className="flex flex-col gap-2">
+                    <label className="text-[0.95rem] font-bold text-[#111]" htmlFor="topic">Topic</label>
                     <input
-                      id="contact-company"
+                      id="topic"
                       type="text"
-                      className="w-full px-4 py-3 text-[0.95rem] text-text-primary bg-bg-card border border-border rounded-md outline-none transition-colors focus:border-accent"
-                      placeholder="Your company name"
-                    />
-                  </div>
-                  <div className="mb-5">
-                    <label className="block text-[0.85rem] font-medium text-text-secondary mb-2" htmlFor="contact-message">
-                      Message
-                    </label>
-                    <textarea
-                      id="contact-message"
-                      className="w-full px-4 py-3 text-[0.95rem] text-text-primary bg-bg-card border border-border rounded-md outline-none transition-colors focus:border-accent min-h-[140px] resize-y"
-                      placeholder="Tell us about your project..."
+                      placeholder="AI strategy, product, or partnership"
+                      className="w-full px-5 py-3.5 bg-[#f4f4f5] border-none rounded-2xl outline-none focus:ring-2 focus:ring-accent/20 transition-all font-sans text-base placeholder:text-gray-400"
                       required
                     />
                   </div>
+
+                  <div className="flex flex-col gap-2">
+                    <label className="text-[0.95rem] font-bold text-[#111]" htmlFor="message">Message</label>
+                    <textarea
+                      id="message"
+                      rows={4}
+                      placeholder="Tell us about your goals, challenges, or ideas. The more context you share, the better we can help."
+                      className="w-full px-5 py-3.5 bg-[#f4f4f5] border-none rounded-2xl outline-none focus:ring-2 focus:ring-accent/20 transition-all font-sans text-base resize-none placeholder:text-gray-400"
+                      required
+                    />
+                  </div>
+
                   <button
                     type="submit"
-                    className="inline-flex items-center gap-2 px-8 py-3.5 text-[0.95rem] font-semibold text-text-primary bg-accent border-none rounded-full cursor-pointer transition-all duration-250 hover:bg-accent-hover hover:-translate-y-0.5"
+                    className="w-full py-5 bg-accent hover:bg-accent-hover text-white font-bold text-[1.1rem] rounded-2xl transition-all duration-300 hover:shadow-[0_15px_30px_rgba(232,134,58,0.3)] hover:-translate-y-1 mt-2"
                   >
-                    Send Message →
+                    Send a Message
                   </button>
                 </form>
               )}
             </div>
-
-            {/* Contact Info */}
-            <div>
-              <h2 className="text-2xl font-bold text-text-primary mb-8">
-                Get in touch
-              </h2>
-              <div className="flex flex-col gap-7">
-                {[
-                  { icon: "📧", label: "Email", value: "hello@suvrin.com" },
-                  { icon: "📞", label: "Phone", value: "+91 70335 57104" },
-                  { icon: "📍", label: "Location", value: "India" },
-                  { icon: "🕐", label: "Response Time", value: "Within 24 hours" },
-                ].map((item) => (
-                  <div key={item.label} className="flex gap-4 items-start">
-                    <div className="w-11 h-11 bg-accent-light rounded-[10px] flex items-center justify-center text-xl shrink-0">
-                      {item.icon}
-                    </div>
-                    <div>
-                      <div className="text-[0.82rem] text-text-muted uppercase tracking-wider mb-1">{item.label}</div>
-                      <div className="text-base text-text-primary">{item.value}</div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
           </div>
-        </div>
-      </section>
 
-      {/* CTA */}
-      <section className="py-24 bg-gradient-to-br from-bg-secondary to-bg-primary text-center">
-        <div className="max-w-[1200px] mx-auto px-6">
-          <h2 className="text-[clamp(2rem,4vw,3rem)] font-bold mb-5 text-text-primary">Prefer to schedule a call?</h2>
-          <p className="text-[1.1rem] text-text-secondary mb-10 max-w-[500px] mx-auto">
-            Book a free 30-minute consultation with our AI experts.
-          </p>
-          <a
-            href="https://calendly.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-9 py-4 text-base font-semibold text-text-primary bg-accent rounded-full transition-all duration-250 hover:bg-accent-hover hover:-translate-y-0.5 hover:shadow-[0_6px_30px_rgba(232,134,58,0.35)]"
-          >
-            Schedule a Call →
-          </a>
         </div>
-      </section>
-    </>
+
+      </div>
+    </div>
   );
 }
