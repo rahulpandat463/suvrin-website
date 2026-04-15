@@ -68,6 +68,7 @@ export function Footer() {
                 width={150}
                 height={50}
                 className="h-14 w-auto object-contain"
+                style={{ height: 'auto' }}
                 priority
               />
             </Link>
@@ -80,6 +81,7 @@ export function Footer() {
                   width={200} 
                   height={300} 
                   className="w-full h-auto object-contain"
+                  style={{ height: 'auto' }}
                 />
               </div>
             </div>
@@ -186,6 +188,7 @@ export function Footer() {
                       src={item.image}
                       alt={item.title}
                       fill
+                      sizes="(max-width: 768px) 80px, 80px"
                       className="object-cover transition-transform duration-500 group-hover:scale-110"
                     />
                   </div>
