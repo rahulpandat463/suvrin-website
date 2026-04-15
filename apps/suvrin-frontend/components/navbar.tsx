@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 // --- Types ---
@@ -62,10 +63,14 @@ const navItems: NavItem[] = [
 function NavLogo() {
   return (
     <Link href="/" className="flex items-center group">
-      <div className="flex flex-col font-black text-white text-[1.4rem] leading-[1.05] tracking-[0.1em] uppercase">
-        <span>S U</span>
-        <span>V R</span>
-      </div>
+      <Image
+        src="/logo.png"
+        alt="Suvrin Technologies Logo"
+        width={140}
+        height={40}
+        className="h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+        priority
+      />
     </Link>
   );
 }
