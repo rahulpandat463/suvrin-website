@@ -64,9 +64,11 @@ export default function Blog() {
       <div className="max-w-[1340px] mx-auto px-6 lg:px-10">
 
         {/* Featured Section Container */}
-        <div className="mb-20">
-          <BlogHero post={featuredPost} />
-        </div>
+        {featuredPost && (
+          <div className="mb-20">
+            <BlogHero post={featuredPost} />
+          </div>
+        )}
 
         {/* List Section with Sidebar */}
         <div className="flex flex-col lg:flex-row gap-16">
