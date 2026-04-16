@@ -8,21 +8,21 @@ export default function CaseStudiesHero({
   description?: string;
 }) {
   return (
-    <div className="pt-32 px-6 lg:px-10 pb-16">
+    <div className="pt-36 sm:pt-40 md:pt-44 px-6 lg:px-10 pb-16">
       <section className="mx-auto max-w-[1240px] w-full" id="case-studies-hero">
         <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-6">
           {/* Left Card */}
-          <div className="bg-white rounded-[24px] p-10 md:p-14 lg:p-[4.5rem] flex flex-col justify-end min-h-[500px] lg:min-h-[550px] shadow-[0_4px_20px_rgba(0,0,0,0.02)] border border-black/[0.03]">
-            <h1 className="text-[clamp(3rem,5vw,4.5rem)] tracking-tight text-[#111] leading-[1.1] mb-8 font-serif">
+          <div className="bg-white rounded-[24px] p-6 sm:p-10 md:p-14 lg:p-[4.5rem] flex flex-col justify-end min-h-[440px] sm:min-h-[500px] lg:min-h-[550px] shadow-[0_4px_20px_rgba(0,0,0,0.02)] border border-black/[0.03]">
+            <h1 className="text-[clamp(2.2rem,5vw,4.5rem)] tracking-tight text-[#111] leading-[1.1] mb-8 font-serif">
               {title}
             </h1>
-            <p className="text-[1.15rem] text-[#444] leading-relaxed mb-12 max-w-[500px]">
+            <p className="text-[1.1rem] md:text-[1.15rem] text-[#444] leading-relaxed mb-12 max-w-full sm:max-w-[500px]">
               {description}
             </p>
             <div>
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center px-9 py-4 text-[1rem] font-semibold text-white bg-[#ef652a] rounded-full transition-all duration-300 hover:bg-[#d4561a] hover:-translate-y-0.5 shadow-[0_8px_32px_rgba(239,101,42,0.3)]"
+                className="inline-flex items-center justify-center px-9 py-4 text-[0.95rem] md:text-[1rem] font-semibold text-white bg-[#ef652a] rounded-full transition-all duration-300 hover:bg-[#d4561a] hover:-translate-y-0.5 shadow-[0_8px_32px_rgba(239,101,42,0.35)]"
               >
                 Speak with Our AI Innovation Team
               </Link>

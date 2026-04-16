@@ -16,21 +16,21 @@ export default function ServicesHero({
   ctaText = "Speak with Our AI Innovation Team",
 }: ServicesHeroProps) {
   return (
-    <div className="bg-bg-secondary pt-40 px-6 lg:px-10 pb-32 min-h-[90vh]">
+    <div className="bg-bg-secondary pt-36 sm:pt-40 md:pt-44 px-6 lg:px-10 pb-28 md:pb-32 min-h-[85vh] md:min-h-[90vh]">
       <section className="mx-auto max-w-[1240px] w-full" id={id}>
-        <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-8">
           {/* Left Card */}
-          <div className="bg-bg-card rounded-[32px] p-10 md:p-14 lg:p-[4.5rem] flex flex-col justify-end min-h-[500px] lg:min-h-[580px] shadow-[0_4px_24px_rgba(0,0,0,0.02)] border border-black/[0.04]">
-            <h2 className="text-[clamp(3.2rem,4.5vw,4.6rem)] tracking-[0.01em] text-[#111] leading-[1.05] mb-6 font-serif">
+          <div className="bg-bg-card rounded-[32px] p-8 sm:p-10 md:p-14 lg:p-[4.5rem] flex flex-col justify-end min-h-[460px] sm:min-h-[500px] lg:min-h-[580px] shadow-[0_4px_24px_rgba(0,0,0,0.02)] border border-black/[0.04]">
+            <h2 className="text-[clamp(2.2rem,5vw,4.6rem)] tracking-[0.01em] text-[#111] leading-[1.05] mb-6 font-serif">
               {title}
             </h2>
-            <p className="text-[1.12rem] text-[#555] leading-relaxed mb-10 max-w-[500px]">
+            <p className="text-[1.05rem] md:text-[1.12rem] text-[#555] leading-relaxed mb-10 max-w-full sm:max-w-[500px]">
               {description}
             </p>
             <div>
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center px-8 py-4 text-[1rem] font-medium text-white bg-accent rounded-full transition-all duration-250 hover:bg-accent-hover hover:-translate-y-0.5 shadow-[0_8px_30px_rgba(232,134,58,0.3)]"
+                className="inline-flex items-center justify-center px-8 py-4 text-[0.95rem] md:text-[1rem] font-medium text-white bg-accent rounded-full transition-all duration-250 hover:bg-accent-hover hover:-translate-y-0.5 shadow-[0_8px_30px_rgba(232,134,58,0.3)]"
               >
                 {ctaText}
               </Link>
