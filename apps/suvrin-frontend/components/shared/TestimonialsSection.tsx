@@ -60,15 +60,15 @@ export default function TestimonialsSection() {
       id="testimonials"
     >
       <div className="max-w-[1440px] w-full mx-auto px-6 border-x border-[#e5e5e5] border-dashed">
-        <h2 className="text-[clamp(2.5rem,4vw,3.5rem)] text-text-primary tracking-tight font-serif text-center mb-16">
+        <h2 className="text-[clamp(2rem,6vw,3.5rem)] text-text-primary tracking-tight font-serif text-center mb-16">
           What our customers say
         </h2>
 
-        <div className="w-full bg-white border border-[#eaeaea] shadow-[0_4px_30px_rgba(0,0,0,0.03)] rounded-[24px] p-10 md:p-14 relative transition-all duration-300">
+        <div className="w-full bg-white border border-[#eaeaea] shadow-[0_4px_30px_rgba(0,0,0,0.03)] rounded-[24px] p-6 sm:p-10 md:p-14 relative transition-all duration-300">
           {/* Header: User Info & Logo */}
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 w-full gap-6">
             <div className="flex items-center gap-5">
-              <div className="w-16 h-16 rounded-full overflow-hidden bg-gray-100 shrink-0 border border-gray-200">
+              <div className="w-14 h-14 md:w-16 md:h-16 rounded-full overflow-hidden bg-gray-100 shrink-0 border border-gray-200">
                 <img
                   src={currentT?.image}
                   alt={currentT?.name}
@@ -76,15 +76,15 @@ export default function TestimonialsSection() {
                 />
               </div>
               <div>
-                <h4 className="text-[1.15rem] font-serif text-text-primary tracking-tight">
+                <h4 className="text-[1.1rem] md:text-[1.15rem] font-serif text-text-primary tracking-tight">
                   {currentT?.name}
                 </h4>
-                <p className="text-[0.9rem] text-[#666] mt-0.5">
+                <p className="text-[0.85rem] md:text-[0.9rem] text-[#666] mt-0.5">
                   {currentT?.role}
                 </p>
               </div>
             </div>
-            <div className="shrink-0 grayscale opacity-90 absolute top-10 right-10 md:static">
+            <div className="shrink-0 grayscale opacity-90 static md:static lg:absolute lg:top-10 lg:right-14">
               {/* Logo Placeholder */}
               <div className="flex flex-col items-center">
                 <div className="text-[2.2rem] font-serif font-black text-[#111] leading-none mb-1">
@@ -123,7 +123,7 @@ export default function TestimonialsSection() {
           </div>
 
           {/* Metrics Footer */}
-          <div className="border-t border-[#f0f0f0] pt-8 flex gap-16 md:gap-28">
+          <div className="border-t border-[#f0f0f0] pt-8 flex gap-10 sm:gap-16 md:gap-28">
             {currentT?.metrics?.map((metric, i) => (
               <div key={i}>
                 <div className="text-2xl font-serif text-[#111] mb-1">

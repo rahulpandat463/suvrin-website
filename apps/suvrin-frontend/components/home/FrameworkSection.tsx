@@ -12,7 +12,7 @@ export default function FrameworkSection() {
 
           <FrameworkLogos />
 
-          <h2 className="text-[clamp(2.5rem,4.5vw,4rem)] text-text-primary tracking-tight font-serif whitespace-nowrap mb-2">
+          <h2 className="text-[clamp(1.8rem,4.5vw,4rem)] text-text-primary tracking-tight font-serif mb-2">
             Our proven AI delivery framework
           </h2>
         </div>
