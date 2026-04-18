@@ -22,7 +22,7 @@ export default function CaseStudiesHero({
             <div>
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center px-9 py-4 text-[0.95rem] md:text-[1rem] font-semibold text-white bg-[#ef652a] rounded-full transition-all duration-300 hover:bg-[#d4561a] hover:-translate-y-0.5 shadow-[0_8px_32px_rgba(239,101,42,0.35)]"
+                className="inline-flex items-center justify-center px-9 py-4 text-[0.95rem] md:text-[1rem] font-semibold text-white bg-blue-600 rounded-full transition-all duration-300 hover:bg-blue-700 hover:-translate-y-0.5 shadow-[0_8px_32px_rgba(239,101,42,0.35)]"
               >
                 Speak with Our AI Innovation Team
               </Link>

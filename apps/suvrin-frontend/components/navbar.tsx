@@ -9,7 +9,9 @@ import { usePathname } from "next/navigation";
 interface SubItem {
   label: string;
   href: string;
+  dropdown?: SubItem[];
 }
+
 
 interface NavItem {
   label: string;
@@ -19,7 +21,41 @@ interface NavItem {
 
 // --- Data ---
 const navItems: NavItem[] = [
-  { label: "Home", href: "/" },
+  {
+    label: "Tech Stack",
+    href: "/tech-stack",
+    dropdown: [
+      {
+        label: "Front-end",
+        href: "/tech-stack/front-end",
+        dropdown: [
+          { label: "Front-end Development", href: "/tech-stack/front-end" },
+          { label: "Angular", href: "/tech-stack/angular" },
+          { label: "React", href: "/tech-stack/react" },
+          { label: "Vue", href: "/tech-stack/vue" },
+        ]
+      },
+      {
+        label: "Back-end",
+        href: "/tech-stack/back-end",
+        dropdown: [
+          { label: "Java", href: "/tech-stack/java" },
+          { label: "Node.js", href: "/tech-stack/nodejs" },
+          { label: "Python", href: "/tech-stack/python" },
+        ]
+      },
+      {
+        label: "Mobile",
+        href: "/tech-stack/mobile",
+        dropdown: [
+          { label: "iOS", href: "/tech-stack/ios" },
+          { label: "Android", href: "/tech-stack/android" },
+          { label: "React Native", href: "/tech-stack/react-native" },
+          { label: "Flutter", href: "/tech-stack/flutter" },
+        ]
+      }
+    ]
+  },
   {
     label: "About",
     href: "/about",
@@ -33,9 +69,67 @@ const navItems: NavItem[] = [
     label: "Services",
     href: "/services",
     dropdown: [
-      { label: "Startup", href: "/services/startup" },
-      { label: "Business", href: "/services/business" },
-      { label: "Enterprise", href: "/services/enterprise" },
+      {
+        label: "Application Development",
+        href: "/service-scope/application-development",
+        dropdown: [
+          { label: "Mobile Development", href: "/service-scope/mobile-development" },
+          { label: "Web Development", href: "/service-scope/web-development" },
+          { label: "Cross-Platform Development", href: "/service-scope/cross-platform-development" },
+          { label: "PWA Development", href: "/service-scope/pwa-development" },
+          { label: "CMS-Based Web Development", href: "/service-scope/cms-web-development" },
+        ]
+      },
+      { label: "Cybersecurity", href: "/service-scope/cybersecurity" },
+      {
+        label: "Digital Transformation",
+        href: "/service-scope/digital-transformation",
+        dropdown: [
+          { label: "Digital Transformation", href: "/service-scope/digital-transformation-service" },
+          { label: "IT Consulting", href: "/service-scope/it-consulting" },
+          { label: "Digital Sovereignty", href: "/service-scope/digital-sovereignty" },
+        ]
+      },
+      {
+        label: "Software Engineering",
+        href: "/service-scope/software-engineering",
+        dropdown: [
+          { label: "Software Engineering", href: "/service-scope/software-engineering-service" },
+          { label: "IoT Development", href: "/service-scope/iot-development" },
+          { label: "DevOps Services", href: "/service-scope/devops-services" },
+          { label: "Custom Software Development", href: "/service-scope/custom-software" },
+          { label: "Legacy Modernization", href: "/service-scope/legacy-modernization" },
+          { label: "API Integration", href: "/service-scope/api-integration" },
+          { label: "Project Development Services", href: "/service-scope/project-development" },
+          { label: "Quality Assurance Services", href: "/service-scope/quality-assurance" },
+          { label: "AI Powered Robotic Integration", href: "/service-scope/robotic-integration-software" },
+        ]
+      },
+      {
+        label: "Enterprise Applications",
+        href: "/service-scope/enterprise-applications",
+        dropdown: [
+          { label: "SAP", href: "/service-scope/sap" },
+          { label: "Salesforce Implementation", href: "/service-scope/salesforce-implementation" },
+          { label: "Salesforce Consulting Services", href: "/service-scope/salesforce-consulting" },
+          { label: "CRM Consulting Services", href: "/service-scope/crm-consulting" },
+          { label: "Creatio CRM Implementation", href: "/service-scope/creatio-crm" },
+          { label: "Oracle Managed Services", href: "/service-scope/oracle-managed" },
+        ]
+      },
+      { label: "Staff Augmentation", href: "/service-scope/staff-augmentation" },
+      {
+        label: "Support Services",
+        href: "/service-scope/support-services",
+        dropdown: [
+          { label: "Support Services", href: "/service-scope/support-services-main" },
+          { label: "Product Development Services", href: "/service-scope/product-development" },
+          { label: "UI/UX Design", href: "/service-scope/ui-ux-design" },
+          { label: "QA & Testing", href: "/service-scope/qa-testing" },
+          { label: "IT Infrastructure Services", href: "/service-scope/it-infrastructure" },
+          { label: "Maintenance & Support", href: "/service-scope/maintenance-support" },
+        ]
+      },
     ],
   },
   {
@@ -78,7 +172,7 @@ function NavLogo() {
       <Image
         src="/top-logo.png"
         alt="Suvrin Technologies Logo"
-        width={180}
+        width={250}
         height={50}
         className="h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
         priority
@@ -87,25 +181,91 @@ function NavLogo() {
   );
 }
 
-function DropdownMenu({ items }: { items: SubItem[] }) {
+function DropdownMenu({ items, depth = 0, align = "top" }: { items: SubItem[], depth?: number, align?: "top" | "bottom" }) {
+  const isNested = depth > 0;
+
+  if (isNested) {
+    return (
+      <div className={`absolute ${align === "bottom" ? "bottom-0" : "top-0"} left-full pl-5 opacity-0 invisible pointer-events-none group-hover/nestedItem:opacity-100 group-hover/nestedItem:visible group-hover/nestedItem:pointer-events-auto transition-all duration-200 ease-out z-[100]`}>
+        {/* Transparent bridge to ensure mouse never loses connection */}
+        <div className="absolute top-0 -left-6 w-6 h-full" />
+        <div className="min-w-[260px] w-max max-w-[320px] bg-[#1a1a1a]/95 backdrop-blur-3xl border border-white/10 rounded-[24px] py-4 px-2 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+          <div className="flex flex-col gap-1">
+            {items.map((sub) => (
+              <div key={sub.label} className="relative group/nestedItem">
+                {sub.dropdown ? (
+                  <>
+                    <Link
+                      href={sub.href}
+                      className="w-full text-left px-5 py-2.5 text-[0.95rem] font-medium text-white/70 hover:text-white hover:bg-white/10 rounded-[12px] transition-all duration-150 flex items-center justify-between"
+                    >
+                      <span>{sub.label}</span>
+                      <span className="opacity-40 text-[0.85rem]">›</span>
+                    </Link>
+                    <div className="absolute top-0 left-full pl-5 opacity-0 invisible pointer-events-none group-hover/nestedItem:opacity-100 group-hover/nestedItem:visible group-hover/nestedItem:pointer-events-auto transition-all duration-200 ease-out">
+                      <div className="absolute top-0 -left-6 w-6 h-full" />
+                      <DropdownMenu items={sub.dropdown} depth={depth + 1} align="top" />
+                    </div>
+                  </>
+                ) : (
+                  <Link
+                    href={sub.href}
+                    className="block w-full px-5 py-2.5 text-[0.95rem] font-medium text-white/50 hover:text-white hover:bg-white/10 rounded-[12px] transition-all duration-150"
+                  >
+                    {sub.label}
+                  </Link>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // Top level dropdown (depth === 0)
   return (
-    <div className="absolute top-full left-0 pt-3 opacity-0 invisible pointer-events-none translate-y-2 transition-all duration-250 ease-out group-hover:opacity-100 group-hover:visible group-hover:pointer-events-auto group-hover:translate-y-0">
-      <div className="min-w-[240px] bg-[#1a1a1a]/90 backdrop-blur-3xl border border-white/10 rounded-[20px] py-4 px-3 shadow-[0_20px_50px_rgba(0,0,0,0.45)]">
-        <div className="flex flex-col gap-1">
-          {items.map((sub) => (
-            <Link
-              key={sub.label}
-              href={sub.href}
-              className="px-5 py-3 text-[0.95rem] font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-[14px] transition-all duration-150"
-            >
-              {sub.label}
-            </Link>
-          ))}
+    <div className="absolute top-full left-0 pt-4 opacity-0 invisible pointer-events-none translate-y-3 transition-all duration-250 ease-out group-hover:opacity-100 group-hover:visible group-hover:pointer-events-auto group-hover:translate-y-0 z-50">
+      <div className="min-w-[280px] w-max max-w-[340px] bg-[#1a1a1a]/95 backdrop-blur-3xl border border-white/10 rounded-[28px] py-4 shadow-[0_20px_60px_rgba(0,0,0,0.65)]">
+        <div className="flex flex-col gap-1.5 px-3">
+          {items.map((sub, index) => {
+            // Zone-based alignment: top items align top, bottom items align bottom
+            const alignMode = index >= 4 ? "bottom" : "top";
+            
+            return (
+              <div
+                key={sub.label}
+                className="relative group/nestedItem"
+              >
+                {sub.dropdown ? (
+                  <>
+                    <Link
+                      href={sub.href}
+                      className="w-full text-left px-5 py-3 text-[1rem] font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-[14px] transition-all duration-150 flex items-center justify-between"
+                    >
+                      <span>{sub.label}</span>
+                      <span className="opacity-40 text-[1.1rem]">›</span>
+                    </Link>
+                    <DropdownMenu items={sub.dropdown} depth={depth + 1} align={alignMode} />
+                  </>
+                ) : (
+                  <Link
+                    href={sub.href}
+                    className="block w-full px-5 py-3 text-[1rem] font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-[14px] transition-all duration-150"
+                  >
+                    {sub.label}
+                  </Link>
+                )}
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>
   );
 }
+
+
 
 function DesktopNavItem({
   item,
@@ -121,16 +281,16 @@ function DesktopNavItem({
     (item.dropdown && item.dropdown.some((s) => pathname === s.href));
 
   return (
-    <div className="relative group py-6">
+    <div className="relative group parent-item py-6">
       <Link
         href={item.href}
         className={`flex items-center gap-2 px-3 py-2 text-[1.05rem] font-medium whitespace-nowrap transition-colors duration-200 ${isActive
-            ? isLight
-              ? "text-text-primary"
-              : "text-white"
-            : isLight
-              ? "text-text-secondary hover:text-text-primary"
-              : "text-white/70 hover:text-white"
+          ? isLight
+            ? "text-text-primary"
+            : "text-white"
+          : isLight
+            ? "text-text-secondary hover:text-text-primary"
+            : "text-white/70 hover:text-white"
           }`}
       >
         {item.label}
@@ -154,6 +314,7 @@ export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [openNested, setOpenNested] = useState<string[]>([]);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -164,6 +325,7 @@ export function Navbar() {
   useEffect(() => {
     setMobileOpen(false);
     setOpenDropdown(null);
+    setOpenNested([]);
   }, [pathname]);
 
   useEffect(() => {
@@ -179,8 +341,8 @@ export function Navbar() {
   return (
     <nav
       className={`fixed left-1/2 -translate-x-1/2 z-[1000] w-[95%] max-w-[1240px] rounded-[25px] backdrop-blur-2xl border transition-all duration-300 ease-in-out ${isLight
-          ? "top-4 bg-white/90 border-[#eeeeee] shadow-[0_15px_40px_rgba(0,0,0,0.05)]"
-          : "top-8 bg-[#8a7f76]/20 border-white/20 shadow-none"
+        ? "top-4 bg-white/90 border-[#eeeeee] shadow-[0_15px_40px_rgba(0,0,0,0.05)]"
+        : "top-8 bg-white/[0.28] border-white/35 shadow-[0_12px_44px_rgba(0,0,0,0.5)]"
         }`}
     >
       <div className="px-8 lg:px-10 flex items-center justify-between h-[84px]">
@@ -202,8 +364,8 @@ export function Navbar() {
         <Link
           href="/contact"
           className={`hidden lg:inline-flex items-center px-8 py-3.5 text-[0.95rem] font-bold rounded-full transition-all duration-200 ${isLight
-              ? "text-white bg-[#e8863a] hover:bg-[#d4742e]"
-              : "text-white bg-white/10 hover:bg-white/20 border border-white/20"
+            ? "text-white bg-[#0052cc] hover:bg-[#0043a6] shadow-md"
+            : "text-white bg-[#0052cc] hover:bg-[#0043a6] shadow-[0_4px_14px_0_rgba(0,82,204,0.39)] border border-white/10"
             }`}
         >
           Connect with Us
@@ -255,14 +417,51 @@ export function Navbar() {
                   {openDropdown === item.label && (
                     <div className="pl-4 pb-4 flex flex-col gap-3">
                       {item.dropdown.map((sub) => (
-                        <Link
+                        <div
                           key={sub.label}
-                          href={sub.href}
-                          className="text-[0.95rem] text-white/60 hover:text-white"
-                          onClick={() => setMobileOpen(false)}
+                          className="flex flex-col gap-2"
                         >
-                          {sub.label}
-                        </Link>
+                          {sub.dropdown ? (
+                            <div className="flex flex-col gap-2">
+                              <button
+                                className="flex items-center justify-between w-full text-[0.95rem] font-medium text-white/70 py-2 transition-colors active:text-blue-400"
+                                onClick={() => {
+                                  setOpenNested((prev) =>
+                                    prev.includes(sub.label) ? prev.filter(i => i !== sub.label) : [...prev, sub.label]
+                                  );
+                                }}
+                              >
+                                <span>{sub.label}</span>
+                                <span className={`text-[0.6rem] transition-transform duration-300 ${openNested.includes(sub.label) ? "rotate-180" : ""}`}>
+                                  ▼
+                                </span>
+                              </button>
+
+                              {openNested.includes(sub.label) && (
+                                <div className="pl-4 pb-2 flex flex-col gap-4 border-l border-white/10 ml-1">
+                                  {sub.dropdown.map((sub2) => (
+                                    <Link
+                                      key={sub2.label}
+                                      href={sub2.href}
+                                      className="text-[0.85rem] text-white/40 hover:text-white py-1 transition-colors"
+                                      onClick={() => setMobileOpen(false)}
+                                    >
+                                      {sub2.label}
+                                    </Link>
+                                  ))}
+                                </div>
+                              )}
+                            </div>
+                          ) : (
+                            <Link
+                              href={sub.href}
+                              className="text-[0.95rem] font-medium text-white/70 hover:text-white py-2 transition-colors"
+                              onClick={() => setMobileOpen(false)}
+                            >
+                              {sub.label}
+                            </Link>
+                          )}
+                        </div>
                       ))}
                     </div>
                   )}
