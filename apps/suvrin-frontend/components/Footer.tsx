@@ -58,21 +58,21 @@ export function Footer() {
 
   return (
     <footer
-      className="bg-[#053aa3] text-white pt-20 pb-10 font-sans relative"
+      className="bg-[#053aa3] text-white pt-16 pb-8 md:pt-24 md:pb-12 font-sans relative"
       id="site-footer"
     >
       <div className="max-w-[1240px] mx-auto px-6">
         {/* Main Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pb-16 border-b border-white/10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 pb-16 border-b border-white/10">
           {/* Column 1: Brandt & Partners */}
-          <div className="flex flex-col gap-8">
-            <Link href="/" className="inline-block">
+          <div className="flex flex-col gap-8 items-center md:items-start">
+            <Link href="/" className="inline-block md:self-start">
               <Image
                 src="/suvrin-logo.png"
                 alt="Suvrin Technologies Logo"
                 width={180}
                 height={60}
-                className="h-20 w-auto object-contain"
+                className="h-16 md:h-20 w-auto object-contain"
                 priority
               />
             </Link>
@@ -92,7 +92,7 @@ export function Footer() {
           </div>
 
           {/* Column 2: Addresses */}
-          <div className="flex flex-col gap-10">
+          <div className="flex flex-col gap-10 items-center md:items-start text-center md:text-left">
             {offices.map((office, idx) => (
               <div key={idx} className="flex flex-col gap-2">
                 <h4 className="text-[0.85rem] font-bold text-white/50 uppercase tracking-widest">
@@ -109,9 +109,9 @@ export function Footer() {
             ))}
           </div>
 
-          {/* Column 3: Quick Links */}
-          <div className="flex flex-col gap-8">
-            <div className="flex flex-col gap-6">
+          {/* Column 3: Navigation */}
+          <div className="flex flex-col gap-8 items-center md:items-start w-full text-center md:text-left">
+            <div className="flex flex-col gap-6 w-full">
               <h3 className="text-[1.2rem] font-bold border-b border-white/10 pb-2">
                 Navigation
               </h3>
@@ -126,23 +126,23 @@ export function Footer() {
                   </Link>
                 </li>
 
-                {/* About Section */}
-                <li className="flex flex-col gap-2.5">
+                {/* About Section - FIXED ALIGNMENT */}
+                <li className="flex flex-col items-center md:items-start gap-2.5">
                   <button
                     onClick={() => toggleSection("about")}
-                    className="flex items-center justify-between w-full text-[1.05rem] font-bold hover:text-white/70 transition-colors"
+                    className="flex items-center justify-center md:justify-start gap-2 w-auto text-[1.05rem] font-bold hover:text-white/70 transition-colors md:cursor-default"
                   >
                     <span>About</span>
                     <span
-                      className={`text-[0.7rem] transition-transform duration-300 ${openSections.about ? "rotate-180" : ""}`}
+                      className={`text-[0.7rem] transition-transform duration-300 md:hidden ${openSections.about ? "rotate-180" : ""}`}
                     >
                       ▼
                     </span>
                   </button>
                   <div
-                    className={`overflow-hidden transition-all duration-300 ${openSections.about ? "max-h-[200px] opacity-100 mt-2" : "max-h-0 opacity-0"}`}
+                    className={`overflow-hidden transition-all duration-300 md:max-h-none md:opacity-100 md:mt-2 ${openSections.about ? "max-h-[200px] opacity-100 mt-2" : "max-h-0 opacity-0"}`}
                   >
-                    <ul className="flex flex-col gap-1.5 pl-3 border-l border-white/10">
+                    <ul className="flex flex-col gap-1.5 pl-0 md:pl-3 border-l-0 md:border-l border-white/10 items-center md:items-start">
                       <li>
                         <Link
                           href="/about"
@@ -171,148 +171,61 @@ export function Footer() {
                   </div>
                 </li>
 
-                {/* Services Section */}
-                <li className="flex flex-col gap-2.5">
+                {/* Services Section - FIXED ALIGNMENT */}
+                <li className="flex flex-col items-center md:items-start gap-2.5">
                   <button
                     onClick={() => toggleSection("services")}
-                    className="flex items-center justify-between w-full text-[1.05rem] font-bold hover:text-white/70 transition-colors"
+                    className="flex items-center justify-center md:justify-start gap-2 w-auto text-[1.05rem] font-bold hover:text-white/70 transition-colors md:cursor-default"
                   >
                     <span>Services</span>
                     <span
-                      className={`text-[0.7rem] transition-transform duration-300 ${openSections.services ? "rotate-180" : ""}`}
+                      className={`text-[0.7rem] transition-transform duration-300 md:hidden ${openSections.services ? "rotate-180" : ""}`}
                     >
                       ▼
                     </span>
                   </button>
                   <div
-                    className={`overflow-hidden transition-all duration-300 ${openSections.services ? "max-h-[200px] opacity-100 mt-2" : "max-h-0 opacity-0"}`}
+                    className={`overflow-hidden transition-all duration-300 md:max-h-none md:opacity-100 md:mt-2 ${openSections.services ? "max-h-[350px] opacity-100 mt-2" : "max-h-0 opacity-0"}`}
                   >
-                    <ul className="flex flex-col gap-1.5 pl-3 border-l border-white/10">
-                      <li>
-                        <Link
-                          href="/services/startup"
-                          className="text-[0.9rem] text-white/60 hover:text-white transition-colors"
-                        >
-                          Startup
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          href="/services/business"
-                          className="text-[0.9rem] text-white/60 hover:text-white transition-colors"
-                        >
-                          Business
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          href="/services/enterprise"
-                          className="text-[0.9rem] text-white/60 hover:text-white transition-colors"
-                        >
-                          Enterprise
-                        </Link>
-                      </li>
+                    <ul className="flex flex-col gap-1.5 pl-0 md:pl-3 border-l-0 md:border-l border-white/10 items-center md:items-start">
+                      <li><Link href="/service-scope/application-development" className="text-[0.9rem] text-white/60 hover:text-white transition-colors">Application Development</Link></li>
+                      <li><Link href="/service-scope/cybersecurity" className="text-[0.9rem] text-white/60 hover:text-white transition-colors">Cybersecurity</Link></li>
+                      <li><Link href="/service-scope/digital-transformation" className="text-[0.9rem] text-white/60 hover:text-white transition-colors">Digital Transformation</Link></li>
+                      <li><Link href="/service-scope/software-engineering" className="text-[0.9rem] text-white/60 hover:text-white transition-colors">Software Engineering</Link></li>
+                      <li><Link href="/service-scope/enterprise-applications" className="text-[0.9rem] text-white/60 hover:text-white transition-colors">Enterprise Applications</Link></li>
+                      <li><Link href="/service-scope/staff-augmentation" className="text-[0.9rem] text-white/60 hover:text-white transition-colors">Staff Augmentation</Link></li>
+                      <li><Link href="/service-scope/support-services" className="text-[0.9rem] text-white/60 hover:text-white transition-colors">Support Services</Link></li>
                     </ul>
                   </div>
                 </li>
 
-                {/* Case Studies Section */}
-                <li className="flex flex-col gap-2.5">
+                {/* Case Studies Section - FIXED ALIGNMENT */}
+                <li className="flex flex-col items-center md:items-start gap-2.5">
                   <button
                     onClick={() => toggleSection("caseStudies")}
-                    className="flex items-center justify-between w-full text-[1.05rem] font-bold hover:text-white/70 transition-colors"
+                    className="flex items-center justify-center md:justify-start gap-2 w-auto text-[1.05rem] font-bold hover:text-white/70 transition-colors md:cursor-default"
                   >
                     <span>Case Studies</span>
                     <span
-                      className={`text-[0.7rem] transition-transform duration-300 ${openSections.caseStudies ? "rotate-180" : ""}`}
+                      className={`text-[0.7rem] transition-transform duration-300 md:hidden ${openSections.caseStudies ? "rotate-180" : ""}`}
                     >
                       ▼
                     </span>
                   </button>
                   <div
-                    className={`overflow-hidden transition-all duration-300 ${openSections.caseStudies ? "max-h-[350px] opacity-100 mt-2" : "max-h-0 opacity-0"}`}
+                    className={`overflow-hidden transition-all duration-300 md:max-h-none md:opacity-100 md:mt-2 ${openSections.caseStudies ? "max-h-[450px] opacity-100 mt-2" : "max-h-0 opacity-0"}`}
                   >
-                    <ul className="flex flex-col gap-1.5 pl-3 border-l border-white/10 overflow-y-auto scrollbar-thin pr-2">
-                      <li>
-                        <Link
-                          href="/service-scope/strategy-advisory"
-                          className="text-[0.9rem] text-white/60 hover:text-white transition-colors"
-                        >
-                          Strategy & Advisory
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          href="/service-scope/ai-products-platforms"
-                          className="text-[0.9rem] text-white/60 hover:text-white transition-colors"
-                        >
-                          AI Products & Platforms
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          href="/service-scope/commercialization-growth"
-                          className="text-[0.9rem] text-white/60 hover:text-white transition-colors"
-                        >
-                          Growth
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          href="/service-scope/agents"
-                          className="text-[0.9rem] text-white/60 hover:text-white transition-colors"
-                        >
-                          Agents
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          href="/service-scope/knowledge-systems"
-                          className="text-[0.9rem] text-white/60 hover:text-white transition-colors"
-                        >
-                          Knowledge Systems
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          href="/service-scope/automation-integration"
-                          className="text-[0.9rem] text-white/60 hover:text-white transition-colors"
-                        >
-                          Automation
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          href="/service-scope/ai-infrastructure"
-                          className="text-[0.9rem] text-white/60 hover:text-white transition-colors"
-                        >
-                          Infrastructure
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          href="/service-scope/governance-risk"
-                          className="text-[0.9rem] text-white/60 hover:text-white transition-colors"
-                        >
-                          Governance
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          href="/service-scope/llm-fine-tuning"
-                          className="text-[0.9rem] text-white/60 hover:text-white transition-colors"
-                        >
-                          Fine-Tuning
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          href="/service-scope/web-scraping"
-                          className="text-[0.9rem] text-white/60 hover:text-white transition-colors"
-                        >
-                          Web-Scraping
-                        </Link>
-                      </li>
+                    <ul className="flex flex-col gap-1.5 pl-0 md:pl-3 border-l-0 md:border-l border-white/10 items-center md:items-start">
+                      <li><Link href="/service-scope/strategy-advisory" className="text-[0.9rem] text-white/60 hover:text-white transition-colors">Strategy & Advisory</Link></li>
+                      <li><Link href="/service-scope/ai-products-platforms" className="text-[0.9rem] text-white/60 hover:text-white transition-colors">AI Products & Platforms</Link></li>
+                      <li><Link href="/service-scope/commercialization-growth" className="text-[0.9rem] text-white/60 hover:text-white transition-colors">Commercialization & Growth</Link></li>
+                      <li><Link href="/service-scope/agents" className="text-[0.9rem] text-white/60 hover:text-white transition-colors">Agents</Link></li>
+                      <li><Link href="/service-scope/knowledge-systems" className="text-[0.9rem] text-white/60 hover:text-white transition-colors">Knowledge Systems</Link></li>
+                      <li><Link href="/service-scope/automation-integration" className="text-[0.9rem] text-white/60 hover:text-white transition-colors">Automation & Integration</Link></li>
+                      <li><Link href="/service-scope/ai-infrastructure" className="text-[0.9rem] text-white/60 hover:text-white transition-colors">AI Infrastructure</Link></li>
+                      <li><Link href="/service-scope/governance-risk" className="text-[0.9rem] text-white/60 hover:text-white transition-colors">Governance & Risk</Link></li>
+                      <li><Link href="/service-scope/llm-fine-tuning" className="text-[0.9rem] text-white/60 hover:text-white transition-colors">LLM Fine-Tuning</Link></li>
+                      <li><Link href="/service-scope/web-scraping" className="text-[0.9rem] text-white/60 hover:text-white transition-colors">Web-Scraping</Link></li>
                     </ul>
                   </div>
                 </li>
@@ -339,11 +252,11 @@ export function Footer() {
           </div>
 
           {/* Column 4: Latest News */}
-          <div className="flex flex-col gap-8">
+          <div className="flex flex-col gap-8 items-center md:items-start w-full text-center md:text-left">
             <h3 className="text-[1.2rem] font-bold">Latest news</h3>
-            <div className="flex flex-col gap-10">
+            <div className="flex flex-col gap-10 w-full items-center md:items-start">
               {news.map((item, idx) => (
-                <Link key={idx} href={item.link} className="flex gap-4 group">
+                <Link key={idx} href={item.link} className="flex flex-col items-center md:items-start gap-4 group">
                   <div className="relative w-20 h-20 flex-shrink-0 rounded-lg overflow-hidden border border-white/20">
                     <Image
                       src={item.image}
@@ -363,7 +276,7 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="flex flex-col md:flex-row justify-between items-center mt-12 gap-8">
+        <div className="flex flex-col md:flex-row justify-between items-center mt-12 gap-8 text-center md:text-left">
           <div className="flex items-center gap-6">
             <Link
               href="#"
@@ -395,7 +308,7 @@ export function Footer() {
             </Link>
           </div>
 
-          <div className="text-[0.85rem] text-white/50">
+          <div className="text-[0.85rem] text-white/50 order-3 md:order-none">
             © 2026 Suvrin Technologies.
           </div>
         </div>
