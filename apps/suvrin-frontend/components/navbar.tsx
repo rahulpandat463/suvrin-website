@@ -335,8 +335,8 @@ export function Navbar() {
     };
   }, [mobileOpen]);
 
-  const isBlog = pathname === "/blog";
-  const isLight = scrolled || isBlog;
+  const isHome = pathname === "/";
+  const isLight = scrolled || !isHome;
 
   return (
     <nav
