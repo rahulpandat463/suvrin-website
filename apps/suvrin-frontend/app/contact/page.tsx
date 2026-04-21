@@ -79,7 +79,9 @@ export default function Contact() {
 
             {/* Worked with Section */}
             <div className="pt-8 border-t border-[#e5e5e5] border-dashed">
-              <p className="text-[0.9rem] font-medium text-[#888] mb-8">Worked with:</p>
+              <p className="text-[#888] font-bold text-[0.95rem] font-sans mb-8">
+              Worked with:
+              </p>
               <div className="opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
                 <FrameworkLogos />
               </div>

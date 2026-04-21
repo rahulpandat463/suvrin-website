@@ -7,7 +7,7 @@ export default function ToolsSection() {
       id="tools"
     >
       <div className="max-w-[1440px] w-full mx-auto border-x border-[#e5e5e5] border-dashed relative z-10">
-        <p className="text-center text-[#888] text-[0.95rem] font-medium mb-10">
+        <p className="text-center font-bold text-[#888] text-[0.95rem] font-medium mb-10">
           Tools & Technologies
         </p>
         <div className="w-full overflow-hidden relative [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">

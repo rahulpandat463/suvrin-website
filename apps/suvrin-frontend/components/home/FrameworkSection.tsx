@@ -6,9 +6,9 @@ export default function FrameworkSection() {
       <div className="max-w-[1440px] w-full mx-auto border-x border-[#e5e5e5] border-dashed flex flex-col text-center">
         {/* Logos and Title */}
         <div className="pt-12 px-6">
-          <p className="text-[#888] text-[0.95rem] font-sans mb-8">
-            Worked with:
-          </p>
+          <p className="text-[#888] font-bold text-[0.95rem] font-sans mb-8">
+              Worked with:
+            </p>
 
           <FrameworkLogos />
 
