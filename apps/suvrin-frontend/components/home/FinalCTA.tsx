@@ -7,7 +7,7 @@ export default function FinalCTA() {
         <div className="relative w-full rounded-[32px] md:rounded-[40px] overflow-hidden bg-[#0546e0] py-16 md:py-36 px-5 md:px-6 flex flex-col items-center justify-center text-center mt-8 md:mt-12 shadow-2xl shadow-blue-500/10">
           {/* Base Mesh Background */}
           <div className="absolute inset-0 bg-[#0546e0]"></div>
-          
+
           {/* Animated Mesh Gradients */}
           <div className="absolute inset-0 overflow-hidden opacity-60">
             <div className="absolute -top-[20%] -left-[10%] w-[80%] md:w-[60%] h-[60%] rounded-full bg-[#3a76f0] blur-[80px] md:blur-[120px] animate-pulse"></div>
@@ -16,8 +16,8 @@ export default function FinalCTA() {
           </div>
 
           {/* Grain Texture Overlay */}
-          <div className="absolute inset-0 opacity-[0.3] md:opacity-[0.4] mix-blend-overlay pointer-events-none" 
-               style={{ backgroundImage: `url('https://grainy-gradients.vercel.app/noise.svg')` }}></div>
+          <div className="absolute inset-0 opacity-[0.3] md:opacity-[0.4] mix-blend-overlay pointer-events-none"
+            style={{ backgroundImage: `url('https://grainy-gradients.vercel.app/noise.svg')` }}></div>
 
           {/* Premium Grid Pattern */}
           <div
@@ -36,33 +36,30 @@ export default function FinalCTA() {
           </div>
 
           <div className="relative z-20 flex flex-col items-center gap-6 md:gap-8 max-w-4xl">
-            {/* Tagline */}
-            <div className="px-3 md:px-4 py-1 md:py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white/90 text-[0.75rem] md:text-sm font-medium tracking-wide mb-1 md:mb-2">
-              Ready to accelerate?
-            </div>
+
 
             <h2 className="text-[clamp(2.2rem,8vw,5.5rem)] font-serif tracking-tight leading-[1.1] md:leading-[1] text-white">
-              Let's shape your <br className="hidden md:block" />
+              Let's Shape Your <br className="hidden md:block" />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-blue-200">
-                AI strategy together
+                AI Strategy Together
               </span>
             </h2>
 
             <p className="text-blue-100/80 text-[1rem] md:text-[1.25rem] max-w-2xl leading-relaxed font-sans font-light px-2">
-              Join the forward-thinking enterprises building high-impact AI labs with Suvrin.
+              Join forward-thinking enterprises across India, Dubai, and the USA building high-impact AI solutions with Suvrin Technologies. Strategic advisory slots are now open — speak with our team today.
             </p>
 
             <div className="flex flex-col items-center gap-6 md:gap-8 mt-2 md:mt-4 w-full">
               <button className="w-full sm:w-auto group relative bg-white text-[#0546e0] px-8 md:px-10 py-3.5 md:py-4 rounded-full font-semibold text-[1rem] md:text-[1.1rem] transition-all hover:scale-105 active:scale-95 shadow-xl shadow-blue-900/20">
-                <span className="relative z-10">Connect with Our Team</span>
+                <span className="relative z-10">Connect with Our Team →</span>
                 <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-50 to-white opacity-0 group-hover:opacity-100 transition-opacity"></div>
               </button>
-              
+
               <div className="flex flex-col sm:flex-row items-center gap-3 text-white/70 text-[0.8rem] md:text-sm font-medium">
                 <div className="flex -space-x-3">
                   {[1, 2, 3].map((i) => (
                     <div key={i} className="w-7 h-7 md:w-8 md:h-8 rounded-full border-2 border-[#0546e0] bg-blue-400 overflow-hidden shadow-sm">
-                      <img src={`https://i.pravatar.cc/100?img=${i+10}`} alt="User" className="w-full h-full object-cover" />
+                      <img src={`https://i.pravatar.cc/100?img=${i + 10}`} alt="User" className="w-full h-full object-cover" />
                     </div>
                   ))}
                 </div>

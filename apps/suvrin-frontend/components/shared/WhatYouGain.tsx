@@ -8,7 +8,7 @@ export default function WhatYouGain() {
     >
       <div className="max-w-[1440px] w-full mx-auto px-6 border-x border-[#e5e5e5] border-dashed">
         <h2 className="text-[clamp(2.5rem,4vw,3.5rem)] text-text-primary tracking-tight font-serif text-center mb-16">
-          What you gain with Suvrin Technologies
+          Everything You Need to Win with AI
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -30,8 +30,7 @@ export default function WhatYouGain() {
                 AI Strategy & Alignment
               </h3>
               <p className="text-[0.95rem] text-[#666] leading-relaxed">
-                Define your AI vision, structure a project, and align stakeholders
-                with 1-on-1 AI consulting sessions.
+                Define your AI vision, align your leadership team, and structure your first AI project with confidence. Our 1-on-1 AI consulting sessions cut through the noise and give you a clear, actionable direction.
               </p>
             </div>
           </div>
@@ -53,8 +52,7 @@ export default function WhatYouGain() {
                 Roadmap & Costing
               </h3>
               <p className="text-[0.95rem] text-[#666] leading-relaxed">
-                Create a comprehensive AI roadmap covering your project&apos;s scope,
-                costing, ROI and timelines.
+                Get a comprehensive AI project roadmap with defined scope, realistic cost estimates, projected ROI, and delivery timelines — so you can present a business case that gets approved.
               </p>
             </div>
           </div>
@@ -82,8 +80,7 @@ export default function WhatYouGain() {
                 AI Development & Deployment
               </h3>
               <p className="text-[0.95rem] text-[#666] leading-relaxed">
-                Build AI with best-in-class development techniques,
-                enterprise-grade UX, and scalable deployments.
+                Build AI with best-in-class engineering practices, enterprise-grade UX, and deployments that scale. From MVPs to full enterprise systems, we build for long-term reliability and performance.
               </p>
             </div>
           </div>
@@ -114,8 +111,7 @@ export default function WhatYouGain() {
                 Testing, Validation & Launch
               </h3>
               <p className="text-[0.95rem] text-[#666] leading-relaxed">
-                Commercialize your AI with validation and performance metrics to
-                ensure launch value.
+                Commercialise your AI with confidence. We validate performance metrics, run quality assurance, and ensure your AI delivers measurable value from day one of launch.
               </p>
             </div>
           </div>
@@ -148,8 +144,7 @@ export default function WhatYouGain() {
                 Continuous Advisory & Support
               </h3>
               <p className="text-[0.95rem] text-[#666] leading-relaxed">
-                Receive executive-level AI advising to adapt to evolving
-                markets.
+                Receive executive-level AI guidance as your business evolves. We stay with you after launch — helping you adapt to new market conditions, regulatory changes, and emerging AI capabilities.
               </p>
             </div>
           </div>
@@ -168,7 +163,7 @@ export default function WhatYouGain() {
                 }}
               ></div>
               <div className="absolute bg-white text-[0.75rem] px-3 py-1.5 rounded-full shadow-md flex items-center gap-1.5 font-medium text-[#111] border border-gray-100 z-10">
-                <span className="text-[#e23f33]">📍</span> San Francisco
+                <span className="text-[#e23f33]">📍</span> India • Dubai • USA
               </div>
             </div>
             <div className="p-8 pt-6 flex-1 bg-[#fafafc]">
@@ -176,8 +171,7 @@ export default function WhatYouGain() {
                 Expert Network
               </h3>
               <p className="text-[0.95rem] text-[#666] leading-relaxed">
-                Access a San Francisco-based ecosystem of AI experts, investors,
-                and industry leaders.
+                Access our global ecosystem of AI specialists, technology partners, investors, and industry leaders across India, Dubai, and the USA — giving you connections that accelerate growth.
               </p>
             </div>
           </div>

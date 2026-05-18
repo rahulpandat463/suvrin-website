@@ -13,7 +13,7 @@ export default function FrameworkSection() {
           <FrameworkLogos />
 
           <h2 className="text-[clamp(1.8rem,4.5vw,4rem)] text-text-primary tracking-tight font-serif mb-2">
-            Our proven AI delivery framework
+            How We Deliver AI — From Idea to Impact 
           </h2>
         </div>
 
@@ -36,12 +36,27 @@ export default function FrameworkSection() {
                 <h3 className="text-3xl font-serif tracking-tight text-text-primary mb-4">
                   Strategy
                 </h3>
-                <p className="text-[0.98rem] text-[#666] leading-[1.6]">
-                  Clarify your high-value AI opportunities and set an AI roadmap
-                  to accelerate your business&apos; growth. We help you minimize
-                  technical risk and maximize value return through professional
-                  AI strategy, starting with first-principles.
+                <p className="text-[0.98rem] text-[#666] leading-[1.6] mb-4">
+                  Clarify your highest-value AI opportunities and build a practical roadmap. We identify where AI creates the most impact for your business — starting with first-principles thinking and a deep understanding of your market. You leave with a clear vision, a prioritised backlog, and confidence in the ROI.
                 </p>
+                <ul className="space-y-3 text-[0.95rem] text-[#666]">
+                  <li className="flex items-start gap-2">
+                    <span className="w-1.5 h-1.5 bg-[#666] rounded-full mt-2 flex-shrink-0"></span>
+                    <span>AI opportunity assessment and prioritisation</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="w-1.5 h-1.5 bg-[#666] rounded-full mt-2 flex-shrink-0"></span>
+                    <span>Technical feasibility and risk analysis</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="w-1.5 h-1.5 bg-[#666] rounded-full mt-2 flex-shrink-0"></span>
+                    <span>AI roadmap with milestones, timelines, and budget estimates</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="w-1.5 h-1.5 bg-[#666] rounded-full mt-2 flex-shrink-0"></span>
+                    <span>Stakeholder alignment workshops</span>
+                  </li>
+                </ul>
               </div>
             </div>
 
@@ -58,12 +73,31 @@ export default function FrameworkSection() {
                 <h3 className="text-3xl font-serif tracking-tight text-text-primary mb-4">
                   Development
                 </h3>
-                <p className="text-[0.98rem] text-[#666] leading-[1.6]">
-                  Our team of AI engineers and designers build scalable AI
-                  custom to your business. From prototypes to enterprise-grade
-                  systems, we ensure all projects — from Agents to Platforms —
-                  create long-term impact.
+                <p className="text-[0.98rem] text-[#666] leading-[1.6] mb-4">
+                  Our team of AI engineers, architects, and designers build scalable, production-grade AI systems tailored to your specific business context. From intelligent agents to enterprise platforms — we deliver AI that works in the real world, not just the demo room.
                 </p>
+                <ul className="space-y-3 text-[0.95rem] text-[#666]">
+                  <li className="flex items-start gap-2">
+                    <span className="w-1.5 h-1.5 bg-[#666] rounded-full mt-2 flex-shrink-0"></span>
+                    <span>Custom AI model development and fine-tuning</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="w-1.5 h-1.5 bg-[#666] rounded-full mt-2 flex-shrink-0"></span>
+                    <span>Intelligent agent and automation development</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="w-1.5 h-1.5 bg-[#666] rounded-full mt-2 flex-shrink-0"></span>
+                    <span>Enterprise-grade UI/UX design and development</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="w-1.5 h-1.5 bg-[#666] rounded-full mt-2 flex-shrink-0"></span>
+                    <span>API integrations and third-party system connections</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="w-1.5 h-1.5 bg-[#666] rounded-full mt-2 flex-shrink-0"></span>
+                    <span>Scalable cloud deployment on AWS, GCP, or Azure</span>
+                  </li>
+                </ul>
               </div>
             </div>
 
@@ -80,12 +114,27 @@ export default function FrameworkSection() {
                 <h3 className="text-3xl font-serif tracking-tight text-text-primary mb-4">
                   Commercial
                 </h3>
-                <p className="text-[0.98rem] text-[#666] leading-[1.6]">
-                  Turn your AI into a market-winning product. From launch to
-                  scaled adoption to continuous optimization, we help you create
-                  real-world value and turn your AI innovation into a lasting
-                  competitive advantage.
+                <p className="text-[0.98rem] text-[#666] leading-[1.6] mb-4">
+                  Building AI is only half the job. We help you turn your AI into a market-winning product — from launch strategy and user onboarding to performance optimisation and continuous improvement. We measure success by the business value your AI creates, not just the code we ship.
                 </p>
+                <ul className="space-y-3 text-[0.95rem] text-[#666]">
+                  <li className="flex items-start gap-2">
+                    <span className="w-1.5 h-1.5 bg-[#666] rounded-full mt-2 flex-shrink-0"></span>
+                    <span>Go-to-market strategy for AI products</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="w-1.5 h-1.5 bg-[#666] rounded-full mt-2 flex-shrink-0"></span>
+                    <span>User adoption and change management</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="w-1.5 h-1.5 bg-[#666] rounded-full mt-2 flex-shrink-0"></span>
+                    <span>Performance monitoring and KPI frameworks</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="w-1.5 h-1.5 bg-[#666] rounded-full mt-2 flex-shrink-0"></span>
+                    <span>Continuous optimisation and iteration cycles</span>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>

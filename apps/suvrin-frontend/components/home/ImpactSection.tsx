@@ -5,17 +5,17 @@ export default function ImpactSection() {
     <section className="bg-white pt-16 pb-20" id="impact">
       <div className="max-w-[1440px] w-full mx-auto border-x border-[#e5e5e5] border-dashed px-6">
         <h2 className="text-[clamp(2.8rem,5vw,4.5rem)] text-text-primary tracking-tight font-serif mb-16">
-          Our impact
+          Our Impact — By the Numbers
         </h2>
 
         <div className="grid grid-cols-2 md:grid-cols-6 gap-4 md:gap-6 w-full">
           {/* ROW 1 */}
           <div className="col-span-2 bg-[#f8f8f8] rounded-[24px] p-8 md:p-10 flex flex-col justify-between aspect-[2/1] hover:scale-[1.02] transition-transform duration-300">
             <h3 className="text-[3rem] lg:text-[4.5rem] font-serif tracking-tight leading-none text-black">
-              $10M
+              $10M+
             </h3>
             <p className="text-[#444] font-medium text-[0.95rem]">
-              Business Value Created
+              Business Value Created for clients
             </p>
           </div>
           <div className="col-span-2 bg-[#f8f8f8] rounded-[24px] p-8 md:p-10 flex flex-col justify-between aspect-[2/1] hover:scale-[1.02] transition-transform duration-300">
@@ -23,7 +23,7 @@ export default function ImpactSection() {
               3x
             </h3>
             <p className="text-[#444] font-medium text-[0.95rem]">
-              Faster Time-to-Market
+              Faster Time-to-Market vs. in-house AI teams
             </p>
           </div>
           <div className="hidden md:block col-span-2"></div> {/* Blank */}
@@ -33,7 +33,7 @@ export default function ImpactSection() {
               50+
             </h3>
             <p className="text-[#444] font-medium text-[0.95rem]">
-              Companies Supported
+              Companies Supported across 3 continents
             </p>
           </div>
           <div className="col-span-2 bg-[#f8f8f8] rounded-[24px] p-8 md:p-10 flex flex-col justify-between aspect-[2/1] hover:scale-[1.02] transition-transform duration-300">
@@ -41,7 +41,7 @@ export default function ImpactSection() {
               30+
             </h3>
             <p className="text-[#444] font-medium text-[0.95rem]">
-              Years of Collective AI Expertise
+              Years of Collective AI & Technology Expertise
             </p>
           </div>
           <div className="hidden md:block col-span-1"></div> {/* Blank */}

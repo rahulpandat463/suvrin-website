@@ -4,19 +4,19 @@ interface FrameworkLogosProps {
 }
 
 const logos = [
-  { src: "/velocity.jpg", alt: "Velocity" },
-  { src: "/UFAST Logo.png", alt: "UFAST" },
+  { src: "/DLF_logo.png", alt: "DLF" },
+  { src: "/Apollo Dialysis.png", alt: "Apollo Dialysis" },
   { src: "/UDrive.png", alt: "UDrive" },
   { src: "/kpmg logo.jpg", alt: "KPMG" },
   { src: "/honda.png", alt: "Honda" },
   { src: "/hitachi.png", alt: "Hitachi" },
   { src: "/Hazet logo.png", alt: "Hazet" },
-  { src: "/Ficci Logo.png", alt: "Ficci" },
-  { src: "/Ezma.png", alt: "Ezma" },
+  { src: "/Ficci Logo.png", alt: "FICCI" },
+  { src: "/Ezma.png", alt: "EZMA" },
   { src: "/EY logo.png", alt: "EY" },
   { src: "/Douglas Eliman.png", alt: "Douglas Eliman" },
   { src: "/DeloitteNewLogo.png", alt: "Deloitte" },
-  { src: "/compass logo.png", alt: "Compass" },
+  { src: "/Conic Automotive.webp", alt: "Conic Automotive" },
   { src: "/Charu Parashar Logo.png", alt: "Charu Parashar" },
 ];
 

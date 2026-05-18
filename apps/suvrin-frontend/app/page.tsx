@@ -17,7 +17,6 @@ export default function Home() {
       <ImpactSection />
       <MidCTA />
       <TestimonialsSection />
-      <FrameworkSection />
       <WhatYouGain />
       <AccelerationSection />
       <ToolsSection />

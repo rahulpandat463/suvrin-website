@@ -14,10 +14,10 @@ export default function TestimonialsSection() {
         "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=150&q=80",
       initial: "A",
       company: "aperian",
-      text: `"Working with Suvrin Technologies was an eye-opening experience. In a matter of weeks, we were able to fully spec out two AI-powered products that furthered our organization&apos;s mission and goals, with a vision for how those products could scale in the future. Their expertise and guidance helped us transform rough ideas into reality!"`,
+      text: `"Working with Suvrin Technologies was an eye-opening experience. In a matter of weeks, we were able to fully spec out two AI-powered products that furthered our organisation's mission and goals, with a clear vision for how those products could scale in the future. Their expertise and guidance helped us transform rough ideas into reality."`,
       metrics: [
-        { value: "2x", label: "AI Products" },
-        { value: "+40%", label: "Improved Efficiency" },
+        { value: "2x", label: "AI Products delivered" },
+        { value: "+40%", label: "Improved in team efficiency" },
       ],
     },
     {
@@ -61,7 +61,7 @@ export default function TestimonialsSection() {
     >
       <div className="max-w-[1440px] w-full mx-auto px-6 border-x border-[#e5e5e5] border-dashed">
         <h2 className="text-[clamp(2rem,6vw,3.5rem)] text-text-primary tracking-tight font-serif text-center mb-16">
-          What our customers say
+          What Our Clients Say 
         </h2>
 
         <div className="w-full bg-white border border-[#eaeaea] shadow-[0_4px_30px_rgba(0,0,0,0.03)] rounded-[24px] p-6 sm:p-10 md:p-14 relative transition-all duration-300">
