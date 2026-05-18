@@ -4,13 +4,12 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {
-  LayoutDashboard,
-  CalendarDays,
-  FileText,
-  Image as ImageIcon,
-  User,
+  Home,
+  Briefcase,
+  MessageSquare,
+  Cpu,
+  PenTool,
   Users,
-  Wand2,
   ChevronRight
 } from "lucide-react";
 
@@ -19,24 +18,12 @@ const Sidebar = ({ isOpen }: { isOpen: boolean }) => {
     {
       title: "MAIN",
       items: [
-        { name: "Dashboard", icon: LayoutDashboard, path: "/" },
-        { name: "Calendly Events", icon: CalendarDays, path: "/calendly" },
-      ]
-    },
-    {
-      title: "RADIOLIVE",
-      items: [
-        { name: "Radiolive shows", icon: FileText, path: "/shows", hasArrow: true },
-        { name: "Thumbnails", icon: ImageIcon, path: "/thumbnails", hasArrow: true },
-      ]
-    },
-    {
-      title: "USER CONTROL",
-      items: [
-        { name: "Admin list", icon: User, path: "/admins" },
-        { name: "Creators", icon: Users, path: "/creators", hasArrow: true },
-        { name: "Mentorship Plan", icon: Users, path: "/mentorship", hasArrow: true },
-        { name: "Create Creator", icon: Wand2, path: "/create-creator", hasArrow: true },
+        { name: "Home", Icon: Home, path: "/" },
+        { name: "Work With", Icon: Briefcase, path: "/work-with", hasArrow: true },
+        { name: "Testimonial", Icon: MessageSquare, path: "/testimonials", hasArrow: true },
+        { name: "Tools & Technology", Icon: Cpu, path: "/tools", hasArrow: true },
+        { name: "Blogs", Icon: PenTool, path: "/blogs", hasArrow: true },
+        { name: "Our Team", Icon: Users, path: "/team", hasArrow: true },
       ]
     }
   ];
@@ -44,7 +31,7 @@ const Sidebar = ({ isOpen }: { isOpen: boolean }) => {
   return (
     <div className={`fixed left-0 top-0 h-full bg-sidebar-bg text-sidebar-text border-r border-border z-20 flex flex-col transition-all duration-300 ${isOpen ? "w-64" : "w-20"}`}>
       {/* Logo Section */}
-      <div className={`h-16 flex items-center transition-all duration-300 border-b border-border ${isOpen ? "px-15 h-28" : "justify-center"}`}>
+      <div className={`h-16 flex items-center transition-all duration-300 border-b border-border ${isOpen ? "px-8 h-28" : "justify-center"}`}>
         {isOpen ? (
           <Image
             src="/top-logo.png"
@@ -79,7 +66,7 @@ const Sidebar = ({ isOpen }: { isOpen: boolean }) => {
                   title={!isOpen ? item.name : ""}
                 >
                   <div className={`flex items-center gap-3 ${!isOpen && "justify-center"}`}>
-                    <item.icon className="w-5 h-5 opacity-70 group-hover:opacity-100 transition-opacity" />
+                    <item.Icon className="w-5 h-5 opacity-70 group-hover:opacity-100 transition-opacity" />
                     {isOpen && (
                       <span className="text-sm font-medium">{item.name}</span>
                     )}

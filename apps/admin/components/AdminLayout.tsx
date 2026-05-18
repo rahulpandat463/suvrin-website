@@ -15,11 +15,11 @@ export default function AdminLayout({
   const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
 
   return (
-    <div className="flex min-h-screen">
+    <div className="flex h-screen overflow-hidden">
       <Sidebar isOpen={isSidebarOpen} />
       <div className={`flex-1 flex flex-col transition-all duration-300 ${isSidebarOpen ? "ml-64" : "ml-20"}`}>
         <Navbar onToggleSidebar={toggleSidebar} />
-        <main className="flex-1 p-8 bg-bg-secondary">
+        <main className="flex-1 overflow-y-auto p-8 bg-bg-secondary">
           <div className="max-w-7xl mx-auto">
             {children}
           </div>
