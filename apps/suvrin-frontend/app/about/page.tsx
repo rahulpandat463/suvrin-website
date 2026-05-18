@@ -2,6 +2,14 @@ import WhoWeAre from "@/components/about/WhoWeAre";
 import FrameworkLogos from "@/components/shared/FrameworkLogos";
 import Mission from "@/components/about/Mission";
 import OriginStory from "@/components/about/OriginStory";
+import Values from "@/components/about/Values";
+import GlobalPresence from "@/components/about/GlobalPresence";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About Suvrin Technologies | AI & Technology Consulting Firm — India, Dubai, USA ",
+  description: "Suvrin Technologies is a global AI and technology consulting firm with offices in Gurgaon, Dubai, and the USA. We help businesses in India and the GCC transform through AI, ERP, and custom software solutions.",
+};
 
 export default function About() {
   return (
@@ -19,6 +27,8 @@ export default function About() {
       </section>
       <Mission />
       <OriginStory />
+      <Values />
+      <GlobalPresence />
     </>
   );
 }

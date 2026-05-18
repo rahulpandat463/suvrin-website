@@ -71,13 +71,12 @@ export default function Mission() {
           {/* Left Content */}
           <div>
             <h2 className="text-[clamp(2.2rem,4.5vw,3.2rem)] font-serif tracking-tight leading-[1.1] text-[#111] mb-6">
-              Turning AI innovation
+              Empowering Businesses to
               <br />
-              into value
+              Compete in the AI Era
             </h2>
-            <p className="text-[1.05rem] text-[#666] max-w-[420px] leading-[1.75] mb-10">
-              Our mission is to help teams harness AI to amplify human potential
-              and create measurable business value.
+            <p className="text-[1.05rem] text-[#666] max-w-[500px] leading-[1.75] mb-10">
+              We believe AI is the most transformative technology of our generation — and that every business, regardless of size or industry, deserves access to AI expertise that drives real growth. Our mission is to make world-class AI and technology consulting accessible, practical, and impactful for businesses in India, the Middle East, and beyond.
             </p>
 
             {/* Feature List */}

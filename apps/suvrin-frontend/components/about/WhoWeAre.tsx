@@ -43,10 +43,11 @@ export default function WhoWeAre() {
           </h2>
 
           {/* Description */}
-          <p className="text-[1.1rem] text-[#555] leading-[1.8] max-w-[620px]">
-            Suvrin Technologies is a team of vetted ex-AI Researchers and
-            ex-VC-backed Founders who have built AI Products from scratch and
-            sold them, too.
+          <p className="text-[1.1rem] text-[#555] leading-[1.8] max-w-[700px] mb-4">
+            Suvrin Technologies is a global technology and AI consulting firm founded on a simple belief: technology should create real, measurable value for the businesses that adopt it. We work with companies across India, the UAE, and the United States to design, build, and deploy AI solutions, enterprise ERP systems, and custom digital products that solve real business problems.
+          </p>
+          <p className="text-[1.1rem] text-[#555] leading-[1.8] max-w-[700px]">
+            Based in Gurgaon (India), Dubai (UAE), and Hoboken (USA), our team of engineers, AI specialists, business analysts, and project managers bring together decades of combined experience across industries including manufacturing, healthcare, logistics, finance, real estate, and professional services.
           </p>
         </div>
       </section>

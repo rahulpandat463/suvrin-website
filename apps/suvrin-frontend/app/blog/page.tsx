@@ -3,54 +3,36 @@ import BlogHero from "@/components/blog/BlogHero";
 import BlogListItem from "@/components/blog/BlogListItem";
 import BlogSidebar from "@/components/blog/BlogSidebar";
 import FinalCTA from "@/components/home/FinalCTA";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Technology & AI Blog | Insights from Suvrin Technologies",
+  description: "Read the latest insights on AI, Odoo ERP, digital transformation, and software development from the Suvrin Technologies team. Practical guides for business leaders and technology teams.",
+};
 
 const ALL_POSTS = [
   {
-    slug: "ai-product-strategy",
-    tag: "Featured",
+    slug: "journey-from-idea-to-ai-product",
+    tag: "AI Products",
     date: "JAN 8, 2026",
-    title: "The journey from idea to AI product",
-    excerpt: "Learn how AI product strategy is different from regular product strategy. A comprehensive guide on going from an initial AI concept to a live, production-ready AI product that delivers real value.",
+    title: "The Journey from Idea to AI Product",
+    excerpt: "Every great AI product started as a half-formed idea in a meeting room. The gap between that idea and a shipped, valuable product is where most AI initiatives fall apart. This guide walks you through our proven process for turning an AI concept into a production system — with the discipline and clarity that actually gets things built.",
     image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=1200&q=80",
   },
   {
-    slug: "data-strategy",
-    tag: "Data Strategy",
+    slug: "choosing-right-erp-india-middle-east",
+    tag: "ERP",
     date: "DEC 10, 2025",
-    title: "Data strategies for AI applications",
-    excerpt: "If data is gold, how do you think about it? Learn how to structure your data for optimal AI performance.",
-    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=600&q=80",
-  },
-  {
-    slug: "ai-chatbot-healthcare",
-    tag: "Healthcare",
-    date: "JAN 12, 2025",
-    title: "How to build an AI chatbot for clinics",
-    excerpt: "Everything you need to know about chatbots before getting one for your clinic. Compliance, safety, and patient experience.",
-    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=600&q=80",
-  },
-  {
-    slug: "fractional-cto",
-    tag: "Engineering",
-    date: "JAN 4, 2026",
-    title: "Why work with a Fractional CTO?",
-    excerpt: "Learn how to get a CTO to work on the most high-leverage tasks without the full-time overhead.",
-    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=80",
-  },
-  {
-    slug: "ai-startups-finance",
-    tag: "AI Agents",
-    date: "DEC 2, 2025",
-    title: "9 Hot AI Startups Are Disrupting the Finance Industry",
-    excerpt: "Get inspiration where your company could increase profit with the help of AI agents and automation.",
+    title: "Choosing the Right ERP for India and the Middle East",
+    excerpt: "ERP selection is one of the highest-stakes technology decisions a growing business will make. Get it right and you unlock years of operational efficiency. Get it wrong and you are looking at failed implementations, sunk costs, and frustrated teams. This guide gives you the framework to evaluate ERP options specifically for the Indian and GCC market context.",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80",
   },
   {
-    slug: "saas-mistakes",
-    tag: "Strategy",
-    date: "JAN 26, 2026",
-    title: "7 SaaS Mistakes You Don't Want to Make",
-    excerpt: "A guide for learnings on product building that could save you $100ks if you implement them fast.",
+    slug: "odoos-rise-in-india",
+    tag: "Odoo",
+    date: "JAN 12, 2025",
+    title: "Odoo's Rise in India",
+    excerpt: "Five years ago, most Indian CFOs had never heard of Odoo. Today, it is the fastest-growing ERP platform in the SME segment — competing directly with SAP and Oracle at a fraction of the cost. Here is the story of how that happened, and what it means for businesses evaluating ERP in 2025 and beyond.",
     image: "https://images.unsplash.com/photo-1454165205744-3b78555e5572?auto=format&fit=crop&w=600&q=80",
   },
 ];
@@ -62,6 +44,17 @@ export default function Blog() {
   return (
     <div className="bg-[#f4f4f5] min-h-screen pt-32 pb-24">
       <div className="max-w-[1340px] mx-auto px-6 lg:px-10">
+
+        {/* Page Header */}
+        <div className="text-center mb-16">
+          <span className="text-sm font-bold text-[#0546e0] uppercase tracking-wider">Insights from Our Experts</span>
+          <h1 className="text-[2.5rem] font-serif font-bold text-[#111] mt-2 mb-4">
+            Technology Intelligence for Business Leaders
+          </h1>
+          <p className="text-[#666] max-w-[600px] mx-auto text-[1.1rem] leading-relaxed">
+            The Suvrin blog is where our engineers, AI specialists, and consultants share what they are learning, building, and thinking about. No fluff. No vendor pitches. Just practical intelligence to help you make better technology decisions.
+          </p>
+        </div>
 
         {/* Featured Section Container */}
         {featuredPost && (
@@ -90,4 +83,3 @@ export default function Blog() {
     </div>
   );
 }
-

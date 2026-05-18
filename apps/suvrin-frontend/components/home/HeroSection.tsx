@@ -23,22 +23,30 @@ export default function HeroSection() {
       </div>
 
       <div className="relative z-10 max-w-[1440px] w-full mx-auto px-8 md:px-16 pt-32 pb-24 text-left">
-        <h1 className="text-[clamp(3rem,6vw,5rem)] leading-[0.92] mb-10 text-white tracking-tight font-heading">
-          AI
+        <h1 className="text-[clamp(2rem,5vw,4rem)] leading-[0.92] mb-10 text-white tracking-tight font-heading">
+          AI Solutions
           <br />
-          <em className="not-italic font-serif">for Modern Companies</em>
+          <em className="not-italic font-serif">That Drive Real Business Growth </em>
         </h1>
         <p className="text-[1.1rem] md:text-[1.2rem] text-white/75 max-w-[460px] leading-relaxed mb-12">
-          We support your business through the entire lifecycle of AI
-          projects, from strategy to launch.
+          We support your business through the entire lifecycle of AI projects — from strategy and development to commercial launch. Trusted by enterprises across India, Dubai, and the USA.
         </p>
-        <Link
-          href="/contact"
-          className="inline-flex items-center justify-center px-9 py-4 text-[1rem] font-semibold text-white bg-blue-600 rounded-full transition-all duration-300 hover:bg-blue-700 hover:-translate-y-0.5 shadow-0 8px 32px rgba(0, 123, 255, 0.35)"
-          id="hero-cta"
-        >
-          Speak with Our AI Innovation Team
-        </Link>
+        <div className="flex flex-col sm:flex-row gap-4">
+          <Link
+            href="/contact"
+            className="inline-flex items-center justify-center px-9 py-4 text-[1rem] font-semibold text-white bg-blue-600 rounded-full transition-all duration-300 hover:bg-blue-700 hover:-translate-y-0.5 shadow-0 8px 32px rgba(0, 123, 255, 0.35)"
+            id="hero-cta"
+          >
+            Speak with Our AI Innovation Team →
+          </Link>
+          <Link
+            href="/services"
+            className="inline-flex items-center justify-center px-9 py-4 text-[1rem] font-semibold text-white bg-blue-600 rounded-full transition-all duration-300 hover:bg-blue-700 hover:-translate-y-0.5 shadow-0 8px 32px rgba(0, 123, 255, 0.35)"
+            id="hero-secondary-cta"
+          >
+            Explore Our Services
+          </Link>
+        </div>
       </div>
     </section>
   );
