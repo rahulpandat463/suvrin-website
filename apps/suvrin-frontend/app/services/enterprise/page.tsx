@@ -32,17 +32,6 @@ export default function EnterpriseServices() {
         }
         description="We support you through your entire AI innovation lifecycle, from strategy to launch."
       />
-
-      <PartnersSection variant="standard" />
-
-      <TestimonialsSection />
-      <ProprietaryFramework />
-      <InnovationCycle />
-      <WhitepaperCTA />
-      <WhatYouGain />
-      <LabsAccelerationTable />
-      <ToolsSection />
-      <FAQSection />
     </>
   );
 }

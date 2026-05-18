@@ -11,8 +11,8 @@ import ToolsSection from "@/components/home/ToolsSection";
 import FAQSection from "@/components/services/FAQSection";
 
 export const metadata: Metadata = {
-  title: "AI Services & Solutions | Suvrin Technologies",
-  description: "Explore our end-to-end AI transformation services for startups and enterprises.",
+  title: "Technology & AI Services | Suvrin Technologies — India, Dubai, USA ",
+  description: "Suvrin Technologies offers end-to-end technology services including AI development, Odoo ERP implementation, custom software development, cybersecurity, digital transformation, and IT consulting across India and the UAE. ",
 };
 
 export default function Services() {
@@ -22,24 +22,15 @@ export default function Services() {
         id="services-hero"
         title={
           <>
-            Scale your vision
+            Technology Services Built
             <br />
-            with AI
+            for Impact
           </>
         }
-        description="We design, build, and launch AI products that create real business value. From strategy to deployment, we are your partner in innovation."
+        description="From AI strategy to enterprise ERP — Suvrin Technologies delivers the full spectrum of technology services that modern businesses need to compete, grow, and lead. Our work spans seven service domains, with teams operating across India, Dubai, and the USA."
       />
 
       <PartnersSection variant="standard" />
-
-      <TestimonialsSection />
-      <ProprietaryFramework />
-      <InnovationCycle />
-      <WhitepaperCTA />
-      <WhatYouGain />
-      <LabsAccelerationTable />
-      <ToolsSection />
-      <FAQSection />
     </>
   );
 }

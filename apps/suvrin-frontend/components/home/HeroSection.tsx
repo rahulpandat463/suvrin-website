@@ -23,7 +23,7 @@ export default function HeroSection() {
       </div>
 
       <div className="relative z-10 max-w-[1440px] w-full mx-auto px-8 md:px-16 pt-32 pb-24 text-left">
-        <h1 className="text-[clamp(3rem,6vw,5rem)] leading-[0.92] mb-10 text-white tracking-tight font-heading">
+        <h1 className="text-[clamp(2rem,5vw,4rem)] leading-[0.92] mb-10 text-white tracking-tight font-heading">
           AI Solutions
           <br />
           <em className="not-italic font-serif">That Drive Real Business Growth </em>

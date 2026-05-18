@@ -7,22 +7,18 @@ export default function OriginStory() {
           {/* Left Side */}
           <div>
             <h2 className="text-[clamp(1.25rem,4vw,3rem)] font-serif tracking-tight text-[#111] leading-[1.15]">
-              Born at the intersection <br />
-              of research, startups, and AI.
+              Built on Delivery. <br />
+              Grown on Trust.
             </h2>
           </div>
 
           {/* Right Side */}
           <div>
             <p className="text-[1rem] text-[#555] leading-[1.85]">
-              SFAI Labs was founded by a collective of Ex-AI Researcher and
-              Ex-VC-backed Founders who saw a gap between AI research and
-              business reality.
+              Suvrin Technologies was founded by technology practitioners who had seen too many digital projects fail — not because of bad technology, but because of poor strategy, misaligned expectations, and lack of execution discipline. We built Suvrin to be different: a firm where every project is delivered with the same rigour, transparency, and client focus that we would demand if it were our own business.
             </p>
             <p className="text-[1rem] text-[#555] leading-[1.85] mt-6">
-              What started as a small innovation unit is evolving into a global
-              network — delivering AI products that learn, adapt, and transform
-              industries.
+              From our first ERP implementation in India to AI platform deployments for global clients, we have grown by doing one thing consistently well: helping our clients win with technology.
             </p>
           </div>
         </div>

@@ -28,31 +28,14 @@ const navItems: NavItem[] = [
       {
         label: "Front-end",
         href: "/tech-stack/front-end",
-        dropdown: [
-          { label: "Front-end Development", href: "/tech-stack/front-end" },
-          { label: "Angular", href: "/tech-stack/angular" },
-          { label: "React", href: "/tech-stack/react" },
-          { label: "Vue", href: "/tech-stack/vue" },
-        ]
       },
       {
         label: "Back-end",
         href: "/tech-stack/back-end",
-        dropdown: [
-          { label: "Java", href: "/tech-stack/java" },
-          { label: "Node.js", href: "/tech-stack/nodejs" },
-          { label: "Python", href: "/tech-stack/python" },
-        ]
       },
       {
         label: "Mobile",
         href: "/tech-stack/mobile",
-        dropdown: [
-          { label: "iOS", href: "/tech-stack/ios" },
-          { label: "Android", href: "/tech-stack/android" },
-          { label: "React Native", href: "/tech-stack/react-native" },
-          { label: "Flutter", href: "/tech-stack/flutter" },
-        ]
       }
     ]
   },
@@ -71,64 +54,24 @@ const navItems: NavItem[] = [
     dropdown: [
       {
         label: "Application Development",
-        href: "/service-scope/application-development",
-        dropdown: [
-          { label: "Mobile Development", href: "/service-scope/mobile-development" },
-          { label: "Web Development", href: "/service-scope/web-development" },
-          { label: "Cross-Platform Development", href: "/service-scope/cross-platform-development" },
-          { label: "PWA Development", href: "/service-scope/pwa-development" },
-          { label: "CMS-Based Web Development", href: "/service-scope/cms-web-development" },
-        ]
+        href: "/services/app-development",
       },
       { label: "Cybersecurity", href: "/service-scope/cybersecurity" },
       {
         label: "Digital Transformation",
-        href: "/service-scope/digital-transformation",
-        dropdown: [
-          { label: "Digital Transformation", href: "/service-scope/digital-transformation-service" },
-          { label: "IT Consulting", href: "/service-scope/it-consulting" },
-          { label: "Digital Sovereignty", href: "/service-scope/digital-sovereignty" },
-        ]
+        href: "/services/digital-transformation",
       },
       {
         label: "Software Engineering",
-        href: "/service-scope/software-engineering",
-        dropdown: [
-          { label: "Software Engineering", href: "/service-scope/software-engineering-service" },
-          { label: "IoT Development", href: "/service-scope/iot-development" },
-          { label: "DevOps Services", href: "/service-scope/devops-services" },
-          { label: "Custom Software Development", href: "/service-scope/custom-software" },
-          { label: "Legacy Modernization", href: "/service-scope/legacy-modernization" },
-          { label: "API Integration", href: "/service-scope/api-integration" },
-          { label: "Project Development Services", href: "/service-scope/project-development" },
-          { label: "Quality Assurance Services", href: "/service-scope/quality-assurance" },
-          { label: "AI Powered Robotic Integration", href: "/service-scope/robotic-integration-software" },
-        ]
+        href: "/services/software-engineering",
       },
       {
         label: "Enterprise Applications",
-        href: "/service-scope/enterprise-applications",
-        dropdown: [
-          { label: "SAP", href: "/service-scope/sap" },
-          { label: "Salesforce Implementation", href: "/service-scope/salesforce-implementation" },
-          { label: "Salesforce Consulting Services", href: "/service-scope/salesforce-consulting" },
-          { label: "CRM Consulting Services", href: "/service-scope/crm-consulting" },
-          { label: "Creatio CRM Implementation", href: "/service-scope/creatio-crm" },
-          { label: "Oracle Managed Services", href: "/service-scope/oracle-managed" },
-        ]
+        href: "/services/enterprise-applications",
       },
-      { label: "Staff Augmentation", href: "/service-scope/staff-augmentation" },
       {
         label: "Support Services",
-        href: "/service-scope/support-services",
-        dropdown: [
-          { label: "Support Services", href: "/service-scope/support-services-main" },
-          { label: "Product Development Services", href: "/service-scope/product-development" },
-          { label: "UI/UX Design", href: "/service-scope/ui-ux-design" },
-          { label: "QA & Testing", href: "/service-scope/qa-testing" },
-          { label: "IT Infrastructure Services", href: "/service-scope/it-infrastructure" },
-          { label: "Maintenance & Support", href: "/service-scope/maintenance-support" },
-        ]
+        href: "/services/support-services",
       },
     ],
   },
@@ -138,25 +81,25 @@ const navItems: NavItem[] = [
     dropdown: [
       {
         label: "Strategy & Advisory",
-        href: "/service-scope/strategy-advisory",
+        href: "/case-studies/strategy-advisory",
       },
       {
         label: "AI Products & Platforms",
-        href: "/service-scope/ai-products-platforms",
+        href: "/case-studies/ai-products-platforms",
       },
       {
         label: "Commercialization & Growth",
         href: "/service-scope/commercialization-growth",
       },
-      { label: "Agents", href: "/service-scope/agents" },
-      { label: "Knowledge Systems", href: "/service-scope/knowledge-systems" },
+      { label: "Agents", href: "/case-studies/agents" },
+      { label: "Knowledge Systems", href: "/case-studies/knowledge-systems" },
       {
         label: "Automation & Integration",
-        href: "/service-scope/automation-integration",
+        href: "/case-studies/automation-integration",
       },
-      { label: "AI Infrastructure", href: "/service-scope/ai-infrastructure" },
-      { label: "Governance & Risk", href: "/service-scope/governance-risk" },
-      { label: "LLM Fine-Tuning", href: "/service-scope/llm-fine-tuning" },
+      { label: "AI Infrastructure", href: "/case-studies/ai-infrastructure" },
+      { label: "Governance & Risk", href: "/case-studies/governance-risk" },
+      { label: "LLM Fine-Tuning", href: "/case-studies/llm-fine-tuning" },
       { label: "Web-Scraping", href: "/service-scope/web-scraping" },
     ],
   },

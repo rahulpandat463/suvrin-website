@@ -19,9 +19,9 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "Suvrin Technologies | AI Solutions for Modern Businesses",
+  title: "Suvrin Technologies | AI Solutions, ERP & Digital Transformation — India, UAE, USA ",
   description:
-    "We design, build & launch AI solutions that create real business value. Partner with Suvrin Technologies for strategy, development, and deployment.",
+    "Suvrin Technologies delivers AI solutions, Odoo ERP implementation, custom software development, and digital transformation services across India, Dubai, and the USA. Build smarter. Grow faster. ",
 };
 
 export default function RootLayout({
