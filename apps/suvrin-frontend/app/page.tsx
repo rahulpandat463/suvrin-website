@@ -1,4 +1,5 @@
 import HeroSection from "@/components/home/HeroSection";
+import WorkedWithSection from "@/components/home/WorkedWithSection";
 import FrameworkSection from "@/components/home/FrameworkSection";
 import ImpactSection from "@/components/home/ImpactSection";
 import MidCTA from "@/components/home/MidCTA";
@@ -13,15 +14,16 @@ export default function Home() {
   return (
     <>
       <HeroSection />
-      <FrameworkSection />
+      <WorkedWithSection />
       <ImpactSection />
-      <MidCTA />
+      <FrameworkSection />
       <TestimonialsSection />
-      <WhatYouGain />
-      <AccelerationSection />
+      {/* <WhatYouGain /> */}
+      {/* <AccelerationSection /> */}
       <ToolsSection />
-      <BlogSection />
-      <FinalCTA />
+      {/* <BlogSection /> */}
+      <MidCTA />
+      {/* <FinalCTA /> */}
     </>
   );
 }

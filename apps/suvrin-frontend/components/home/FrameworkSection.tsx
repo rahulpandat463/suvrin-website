@@ -1,19 +1,12 @@
-import FrameworkLogos from "../shared/FrameworkLogos";
-
+/* eslint-disable @next/next/no-img-element */
 export default function FrameworkSection() {
   return (
     <section className="bg-white" id="framework">
       <div className="max-w-[1440px] w-full mx-auto border-x border-[#e5e5e5] border-dashed flex flex-col text-center">
-        {/* Logos and Title */}
+        {/* Section Title */}
         <div className="pt-12 px-6">
-          <p className="text-[#888] font-bold text-[0.95rem] font-sans mb-8">
-              Worked with:
-            </p>
-
-          <FrameworkLogos />
-
           <h2 className="text-[clamp(1.8rem,4.5vw,4rem)] text-text-primary tracking-tight font-serif mb-2">
-            How We Deliver AI — From Idea to Impact 
+            How We Deliver AI — From Idea to Impact
           </h2>
         </div>
 
