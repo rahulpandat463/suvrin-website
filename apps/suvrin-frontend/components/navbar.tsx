@@ -278,15 +278,13 @@ export function Navbar() {
     };
   }, [mobileOpen]);
 
-  const isHome = pathname === "/";
-  const isLight = scrolled || !isHome;
+  const isLight = true;
 
   return (
     <nav
-      className={`fixed left-1/2 -translate-x-1/2 z-[1000] w-[95%] max-w-[1240px] rounded-[25px] backdrop-blur-2xl border transition-all duration-300 ease-in-out ${isLight
-        ? "top-4 bg-white/90 border-[#eeeeee] shadow-[0_15px_40px_rgba(0,0,0,0.05)]"
-        : "top-8 bg-white/[0.28] border-white/35 shadow-[0_12px_44px_rgba(0,0,0,0.5)]"
-        }`}
+      className={`fixed left-1/2 -translate-x-1/2 z-[1000] w-[95%] max-w-[1240px] rounded-[25px] border transition-all duration-300 ease-in-out bg-white border-[#eeeeee] shadow-[0_15px_40px_rgba(0,0,0,0.05)] ${
+        scrolled ? "top-4" : "top-8"
+      }`}
     >
       <div className="px-8 lg:px-10 flex items-center justify-between h-[84px]">
         <NavLogo />

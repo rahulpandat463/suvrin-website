@@ -8,7 +8,6 @@ const logos = [
   { src: "/Apollo Dialysis.png", alt: "Apollo Dialysis" },
   { src: "/UDrive.png", alt: "UDrive" },
   { src: "/kpmg logo.jpg", alt: "KPMG" },
-  { src: "/honda.png", alt: "Honda" },
   { src: "/hitachi.png", alt: "Hitachi" },
   { src: "/Hazet logo.png", alt: "Hazet" },
   { src: "/Ficci Logo.png", alt: "FICCI" },
@@ -18,6 +17,7 @@ const logos = [
   { src: "/DeloitteNewLogo.png", alt: "Deloitte" },
   { src: "/Conic Automotive.webp", alt: "Conic Automotive" },
   { src: "/Charu Parashar Logo.png", alt: "Charu Parashar" },
+  { src: "/Honda-Logo.png", alt: "Honda" }
 ];
 
 export default function FrameworkLogos({ variant = "standard" }: FrameworkLogosProps) {
