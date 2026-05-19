@@ -8,21 +8,21 @@ export default function ImpactSection() {
           Our Impact — By the Numbers
         </h2>
 
-        <div className="grid grid-cols-2 md:grid-cols-6 gap-4 md:gap-6 w-full">
-          {/* ROW 1 — 2 stat cards + 2 images */}
-          <div className="col-span-2 bg-[#f8f8f8] rounded-[24px] p-8 md:p-10 flex flex-col justify-between aspect-[2/1] hover:scale-[1.02] transition-transform duration-300">
-            <h3 className="text-[3rem] lg:text-[4.5rem] font-serif tracking-tight leading-none text-black">
+        <div className="grid grid-cols-2 md:grid-cols-7 gap-4 md:gap-6 w-full">
+          {/* ROW 1 — 2 stat cards + 3 images */}
+          <div className="col-span-2 bg-[#f8f8f8] rounded-[24px] p-7 md:p-8 flex flex-col justify-between aspect-[2/1] hover:scale-[1.02] transition-transform duration-300">
+            <h3 className="text-[2.5rem] lg:text-[3.5rem] font-serif tracking-tight leading-none text-black">
               $10M+
             </h3>
-            <p className="text-[#444] font-medium text-[0.95rem]">
+            <p className="text-[#444] font-medium text-[0.9rem] lg:text-[0.95rem]">
               Business Value Created for clients
             </p>
           </div>
-          <div className="col-span-2 bg-[#f8f8f8] rounded-[24px] p-8 md:p-10 flex flex-col justify-between aspect-[2/1] hover:scale-[1.02] transition-transform duration-300">
-            <h3 className="text-[3rem] lg:text-[4.5rem] font-serif tracking-tight leading-none text-black">
+          <div className="col-span-2 bg-[#f8f8f8] rounded-[24px] p-7 md:p-8 flex flex-col justify-between aspect-[2/1] hover:scale-[1.02] transition-transform duration-300">
+            <h3 className="text-[2.5rem] lg:text-[3.5rem] font-serif tracking-tight leading-none text-black">
               3x
             </h3>
-            <p className="text-[#444] font-medium text-[0.95rem]">
+            <p className="text-[#444] font-medium text-[0.9rem] lg:text-[0.95rem]">
               Faster Time-to-Market vs. in-house AI teams
             </p>
           </div>
@@ -40,29 +40,30 @@ export default function ImpactSection() {
               className="w-full h-full object-cover"
             />
           </div>
-          {/* ROW 2 — 2 stat cards + 2 images */}
-          <div className="col-span-2 bg-[#f8f8f8] rounded-[24px] p-8 md:p-10 flex flex-col justify-between aspect-[2/1] hover:scale-[1.02] transition-transform duration-300">
-            <h3 className="text-[3rem] lg:text-[4.5rem] font-serif tracking-tight leading-none text-black">
-              50+
-            </h3>
-            <p className="text-[#444] font-medium text-[0.95rem]">
-              Companies Supported across 3 continents
-            </p>
-          </div>
-          <div className="col-span-2 bg-[#f8f8f8] rounded-[24px] p-8 md:p-10 flex flex-col justify-between aspect-[2/1] hover:scale-[1.02] transition-transform duration-300">
-            <h3 className="text-[3rem] lg:text-[4.5rem] font-serif tracking-tight leading-none text-black">
-              30+
-            </h3>
-            <p className="text-[#444] font-medium text-[0.95rem]">
-              Years of Collective AI & Technology Expertise
-            </p>
-          </div>
           <div className="col-span-1 rounded-[24px] overflow-hidden aspect-square shadow-sm hover:shadow-xl transition-shadow duration-300">
             <img
               src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=600&q=80"
               alt="Cyber"
               className="w-full h-full object-cover"
             />
+          </div>
+
+          {/* ROW 2 — 2 stat cards + 3 images */}
+          <div className="col-span-2 bg-[#f8f8f8] rounded-[24px] p-7 md:p-8 flex flex-col justify-between aspect-[2/1] hover:scale-[1.02] transition-transform duration-300">
+            <h3 className="text-[2.5rem] lg:text-[3.5rem] font-serif tracking-tight leading-none text-black">
+              50+
+            </h3>
+            <p className="text-[#444] font-medium text-[0.9rem] lg:text-[0.95rem]">
+              Companies Supported across 3 continents
+            </p>
+          </div>
+          <div className="col-span-2 bg-[#f8f8f8] rounded-[24px] p-7 md:p-8 flex flex-col justify-between aspect-[2/1] hover:scale-[1.02] transition-transform duration-300">
+            <h3 className="text-[2.5rem] lg:text-[3.5rem] font-serif tracking-tight leading-none text-black">
+              30+
+            </h3>
+            <p className="text-[#444] font-medium text-[0.9rem] lg:text-[0.95rem]">
+              Years of Collective AI & Technology Expertise
+            </p>
           </div>
           <div className="col-span-1 rounded-[24px] overflow-hidden aspect-square shadow-sm hover:shadow-xl transition-shadow duration-300">
             <img
@@ -71,7 +72,6 @@ export default function ImpactSection() {
               className="w-full h-full object-cover"
             />
           </div>
-          {/* ROW 3 — 6 images filling the full width */}
           <div className="col-span-1 rounded-[24px] overflow-hidden aspect-square shadow-sm hover:shadow-xl transition-shadow duration-300">
             <img
               src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80"
@@ -86,6 +86,8 @@ export default function ImpactSection() {
               className="w-full h-full object-cover"
             />
           </div>
+
+          {/* ROW 3 — 7 images filling the full width */}
           <div className="col-span-1 rounded-[24px] overflow-hidden aspect-square shadow-sm hover:shadow-xl transition-shadow duration-300">
             <img
               src="https://images.unsplash.com/photo-1531366936337-7785443115cf?auto=format&fit=crop&w=600&q=80"
@@ -111,6 +113,27 @@ export default function ImpactSection() {
             <img
               src="https://images.unsplash.com/photo-1574169208507-84376144848b?auto=format&fit=crop&w=600&q=80"
               alt="Lab"
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div className="col-span-1 rounded-[24px] overflow-hidden aspect-square shadow-sm hover:shadow-xl transition-shadow duration-300">
+            <img
+              src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80"
+              alt="Space Tech"
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div className="col-span-1 rounded-[24px] overflow-hidden aspect-square shadow-sm hover:shadow-xl transition-shadow duration-300">
+            <img
+              src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80"
+              alt="Microchip"
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div className="col-span-1 rounded-[24px] overflow-hidden aspect-square shadow-sm hover:shadow-xl transition-shadow duration-300">
+            <img
+              src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=600&q=80"
+              alt="Matrix"
               className="w-full h-full object-cover"
             />
           </div>
