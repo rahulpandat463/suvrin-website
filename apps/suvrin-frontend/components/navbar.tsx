@@ -75,34 +75,7 @@ const navItems: NavItem[] = [
       },
     ],
   },
-  {
-    label: "Case Studies",
-    href: "/case-studies",
-    dropdown: [
-      {
-        label: "Strategy & Advisory",
-        href: "/case-studies/strategy-advisory",
-      },
-      {
-        label: "AI Products & Platforms",
-        href: "/case-studies/ai-products-platforms",
-      },
-      {
-        label: "Commercialization & Growth",
-        href: "/service-scope/commercialization-growth",
-      },
-      { label: "Agents", href: "/case-studies/agents" },
-      { label: "Knowledge Systems", href: "/case-studies/knowledge-systems" },
-      {
-        label: "Automation & Integration",
-        href: "/case-studies/automation-integration",
-      },
-      { label: "AI Infrastructure", href: "/case-studies/ai-infrastructure" },
-      { label: "Governance & Risk", href: "/case-studies/governance-risk" },
-      { label: "LLM Fine-Tuning", href: "/case-studies/llm-fine-tuning" },
-      { label: "Web-Scraping", href: "/service-scope/web-scraping" },
-    ],
-  },
+  { label: "Case Studies", href: "/case-studies" },
   { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
 ];
@@ -174,7 +147,7 @@ function DropdownMenu({ items, depth = 0, align = "top" }: { items: SubItem[], d
           {items.map((sub, index) => {
             // Zone-based alignment: top items align top, bottom items align bottom
             const alignMode = index >= 4 ? "bottom" : "top";
-            
+
             return (
               <div
                 key={sub.label}
@@ -282,9 +255,8 @@ export function Navbar() {
 
   return (
     <nav
-      className={`fixed left-1/2 -translate-x-1/2 z-[1000] w-[95%] max-w-[1240px] rounded-[25px] border transition-all duration-300 ease-in-out bg-white border-[#eeeeee] shadow-[0_15px_40px_rgba(0,0,0,0.05)] ${
-        scrolled ? "top-4" : "top-8"
-      }`}
+      className={`fixed left-1/2 -translate-x-1/2 z-[1000] w-[95%] max-w-[1240px] rounded-[25px] border transition-all duration-300 ease-in-out bg-white border-[#eeeeee] shadow-[0_15px_40px_rgba(0,0,0,0.05)] ${scrolled ? "top-4" : "top-8"
+        }`}
     >
       <div className="px-8 lg:px-10 flex items-center justify-between h-[84px]">
         <NavLogo />
