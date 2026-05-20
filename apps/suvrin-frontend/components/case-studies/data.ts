@@ -25,11 +25,11 @@ export const categoryDescriptions: Record<string, string> = {
 };
 
 // Helper to slugify category names
-export const slugify = (name: string) => 
+export const slugify = (name: string) =>
   name.toLowerCase()
-      .replace(/ & /g, "-")
-      .replace(/ /g, "-")
-      .replace(/[^\w-]/g, "");
+    .replace(/ & /g, "-")
+    .replace(/ /g, "-")
+    .replace(/[^\w-]/g, "");
 
 export interface CaseStudy {
   id: string;
@@ -45,6 +45,15 @@ export interface CaseStudy {
   solution: string;
   results: { value: string; label: string }[];
   image: string;
+  
+  // Custom detailed fields
+  clientOverview?: string;
+  challengesList?: string[];
+  solutionsList?: { title: string; description: string }[];
+  techStack?: { category: string; items: string[] }[];
+  keyFeatures?: string[];
+  impact?: { category: string; points: string[] }[];
+  conclusion?: string;
 }
 
 export const caseStudies: CaseStudy[] = [
@@ -67,22 +76,127 @@ export const caseStudies: CaseStudy[] = [
     image: "https://images.unsplash.com/photo-1614850523296-e8c041df43a0?auto=format&fit=crop&w=1200&q=80",
   },
   {
-    id: "pharmacy-automation",
-    slug: "pharmacy-automation",
+    id: "real-estate-platform",
+    slug: "real-estate-platform",
     tag: "AI Products & Platforms",
     categories: ["AI Products & Platforms", "Strategy & Advisory", "Automation & Integration"],
-    industry: "Healthcare",
-    location: "United States",
-    title: "AI Product Strategy for Enterprise Pharmacy Automation",
-    client: "HealthLogistics",
-    overview: "Strategic roadmap and product development for an AI-enabled pharmacy fulfillment system.",
-    challenge: "Manual prescription sorting was slow and prone to errors, causing significant delays in life-saving medication delivery.",
-    solution: "Full execution of an AI strategy that integrated computer vision for pill identification and predictive modeling for inventory management.",
+    industry: "Real Estate",
+    location: "New York, NY",
+    title: "AI-Powered Real Estate Intelligence & Lead Management Platform",
+    client: "Investly",
+    overview: "End-to-end strategic design and engineering of a next-generation real estate intelligence platform that automates lead scoring, property matching, and NYC-wide market monitoring at scale.",
+    challenge: "Investly's brokers struggled with fragmented listing data, slow lead response times, and manually synthesizing micro-market trends. They needed a centralized repository and cron-based monitoring engine to track price drops, inventory, and new listings in real time.",
+    solution: "We designed a comprehensive intelligence platform powered by an intelligent web scraping framework and an automated monitoring engine. Fully integrated with their CRM, the system automates lead enrichment, provides HNI investment reports, and tracks micro-market analytics across NYC.",
     results: [
-      { value: "3x", label: "Throughput" },
-      { value: "Zero", label: "Error Rate" },
+      { value: "4.8x", label: "Lead Conv. Boost" },
+      { value: "75%", label: "Time Saved/Agent" },
+      { value: "10k+", label: "listings monitored" },
     ],
-    image: "https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1200&q=80",
+    
+    // Custom detailed fields
+    clientOverview: "One of the largest real estate brokerage firms in New York approached Suvrin Technologies with the objective of building a centralized real estate intelligence platform capable of aggregating, monitoring, analyzing, and operationalizing real estate market data across New York City. The client's primary challenge was the fragmented nature of real estate listing information spread across multiple online platforms, making it difficult for brokers, analysts, and relationship managers to derive actionable market insights or respond quickly to high-value leads.",
+    
+    challengesList: [
+      "Fragmented Property Data: Property listings were distributed across multiple websites, marketplaces, public records, and brokerage networks, creating data inconsistency and duplication.",
+      "Lack of Real-Time Market Intelligence: The brokerage teams lacked centralized visibility into property price changes, open house updates, inventory movement, and micro-market performance trends.",
+      "Slow Lead Response Time: Potential buyers and investors were not receiving timely responses because property intelligence and CRM workflows were disconnected.",
+      "Manual Reporting Processes: Generating investment and market intelligence reports for HNI (High Net Worth Individual) clients involved significant manual effort and data collection.",
+      "No Centralized Analytics Engine: There was no unified system to monitor market behavior and predict pricing trends across NYC neighborhoods."
+    ],
+    
+    solutionsList: [
+      {
+        title: "Real Estate Data Aggregation Engine",
+        description: "Developed a sophisticated property data scraping and aggregation framework capable of collecting, normalizing, and storing listing data (prices, addresses, status, schedules, agent info) from public portals, feeds, directories, and brokerage networks continuously in a central repository."
+      },
+      {
+        title: "Centralized Property Intelligence Repository",
+        description: "Transformed listing data into a unified, NYC-wide database enabling property-level historical tracking, price benchmarking, neighborhood intelligence, and inventory monitoring to create a single source of truth."
+      },
+      {
+        title: "Automated Cron-Based Monitoring",
+        description: "Implemented an automated monitoring engine that scans listings for price adjustments, status updates, open houses, or new listings, giving real-time visibility into market movements."
+      },
+      {
+        title: "Micro-Market Trend Analytics",
+        description: "Built advanced analytics for boroughs and neighborhoods to track pricing trends, supply-demand indicators, inventory heatmaps, absorption rates, and property appreciation, enabling data-backed HNI advisory."
+      },
+      {
+        title: "CRM Integration & Lead Intelligence",
+        description: "Integrated the property intelligence engine directly into their CRM to enable automated lead enrichment, instant matching, rapid lead routing, and highly personalized buyer alerts."
+      },
+      {
+        title: "HNI Market Intelligence Reporting",
+        description: "Designed an automated generator for premium branded reports covering market performance, residential/commercial growth indicators, and investment opportunities for portfolio managers."
+      }
+    ],
+    
+    techStack: [
+      {
+        category: "Backend",
+        items: ["Python", "Node.js", "Data Processing Pipelines"]
+      },
+      {
+        category: "Database",
+        items: ["PostgreSQL", "Elasticsearch"]
+      },
+      {
+        category: "Data Collection",
+        items: ["Intelligent Web Scraping", "Scheduled Cron Jobs", "ETL Pipelines"]
+      },
+      {
+        category: "Analytics",
+        items: ["Real-Time Market Trend Engine", "BI Dashboards", "Predictive Modules"]
+      },
+      {
+        category: "CRM & Cloud",
+        items: ["API Integration", "AWS Cloud Environment", "Microservices Architecture"]
+      }
+    ],
+    
+    keyFeatures: [
+      "Centralized NYC property repository",
+      "Real-time listing monitoring",
+      "Automated property change detection",
+      "Price trend analysis",
+      "Open house intelligence tracking",
+      "Micro-market analytics",
+      "CRM-integrated lead intelligence",
+      "HNI investment reporting",
+      "Commercial & residential intelligence",
+      "Automated cron-based data pipelines",
+      "Executive dashboards & reporting"
+    ],
+    
+    impact: [
+      {
+        category: "Operational Improvements",
+        points: [
+          "Significant reduction in manual market research effort",
+          "Faster access to accurate property intelligence",
+          "Improved broker productivity and decision-making"
+        ]
+      },
+      {
+        category: "Sales & Lead Conversion",
+        points: [
+          "Improved lead response times through automated enrichment",
+          "Better targeting of high-intent buyers",
+          "Increased engagement with HNI clients"
+        ]
+      },
+      {
+        category: "Strategic & Efficiency Gains",
+        points: [
+          "Positioned the brokerage as a technology-driven market leader",
+          "Enabled data-backed advisory services",
+          "Automated executive-grade report generation, reducing analyst overhead"
+        ]
+      }
+    ],
+    
+    conclusion: "Suvrin Technologies successfully delivered a large-scale Real Estate Intelligence & CRM Integration Platform that transformed how the client monitored, analyzed, and operationalized real estate market data in New York City. By combining data aggregation, automation, analytics, and CRM intelligence, the platform empowered the brokerage firm to make faster decisions, improve client engagement, and establish itself as a market intelligence leader in the highly competitive NYC real estate sector."
   },
   {
     id: "coaching-chatbot",

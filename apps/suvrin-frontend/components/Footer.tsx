@@ -55,7 +55,7 @@ export function Footer() {
       <div className="max-w-[1240px] mx-auto px-6">
         {/* Main Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 pb-12 border-b border-gray-200">
-          
+
           {/* Column 1: Brand & SEO Description */}
           <div className="flex flex-col gap-6">
             <Link href="/" className="inline-block">
@@ -76,8 +76,8 @@ export function Footer() {
             </p>
             <div className="relative w-full max-w-[140px] mt-2">
               <Image
-                src="/clutch.svg"
-                alt="Clutch Partner"
+                src="/footer_Logo.jpeg"
+                alt="Footer Logo"
                 width={200}
                 height={300}
                 className="w-full h-auto object-contain"
