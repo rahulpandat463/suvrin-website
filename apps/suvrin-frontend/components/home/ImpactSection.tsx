@@ -8,39 +8,39 @@ export default function ImpactSection() {
           Our Impact — By the Numbers
         </h2>
 
-        <div className="grid grid-cols-2 md:grid-cols-7 gap-4 md:gap-6 w-full">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-7 gap-4 md:gap-6 w-full">
           {/* ROW 1 — 2 stat cards + 3 images */}
-          <div className="col-span-2 bg-[#f8f8f8] rounded-[24px] p-7 md:p-8 flex flex-col justify-between aspect-[2/1] hover:scale-[1.02] transition-transform duration-300">
+          <div className="col-span-1 sm:col-span-1 md:col-span-2 bg-[#f8f8f8] rounded-[24px] p-6 sm:p-7 md:p-8 flex flex-col justify-between min-h-[140px] aspect-auto md:aspect-[2/1] hover:scale-[1.02] transition-transform duration-300">
             <h3 className="text-[2.5rem] lg:text-[3.5rem] font-serif tracking-tight leading-none text-black">
               $10M+
             </h3>
-            <p className="text-[#444] font-medium text-[0.9rem] lg:text-[0.95rem]">
+            <p className="text-[#444] font-medium text-[0.9rem] lg:text-[0.95rem] mt-4 md:mt-0">
               Business Value Created for clients
             </p>
           </div>
-          <div className="col-span-2 bg-[#f8f8f8] rounded-[24px] p-7 md:p-8 flex flex-col justify-between aspect-[2/1] hover:scale-[1.02] transition-transform duration-300">
+          <div className="col-span-1 sm:col-span-1 md:col-span-2 bg-[#f8f8f8] rounded-[24px] p-6 sm:p-7 md:p-8 flex flex-col justify-between min-h-[140px] aspect-auto md:aspect-[2/1] hover:scale-[1.02] transition-transform duration-300">
             <h3 className="text-[2.5rem] lg:text-[3.5rem] font-serif tracking-tight leading-none text-black">
               3x
             </h3>
-            <p className="text-[#444] font-medium text-[0.9rem] lg:text-[0.95rem]">
+            <p className="text-[#444] font-medium text-[0.9rem] lg:text-[0.95rem] mt-4 md:mt-0">
               Faster Time-to-Market vs. in-house AI teams
             </p>
           </div>
-          <div className="col-span-1 rounded-[24px] overflow-hidden aspect-square shadow-sm hover:shadow-xl transition-shadow duration-300">
+          <div className="col-span-1 rounded-[24px] overflow-hidden aspect-square shadow-sm hover:shadow-xl transition-shadow duration-300 hidden sm:block">
             <img
               src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80"
               alt="Architecture"
               className="w-full h-full object-cover"
             />
           </div>
-          <div className="col-span-1 rounded-[24px] overflow-hidden aspect-square shadow-sm hover:shadow-xl transition-shadow duration-300">
+          <div className="col-span-1 rounded-[24px] overflow-hidden aspect-square shadow-sm hover:shadow-xl transition-shadow duration-300 hidden md:block">
             <img
               src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80"
               alt="Tech Lab"
               className="w-full h-full object-cover"
             />
           </div>
-          <div className="col-span-1 rounded-[24px] overflow-hidden aspect-square shadow-sm hover:shadow-xl transition-shadow duration-300">
+          <div className="col-span-1 rounded-[24px] overflow-hidden aspect-square shadow-sm hover:shadow-xl transition-shadow duration-300 hidden md:block">
             <img
               src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=600&q=80"
               alt="Cyber"
@@ -49,37 +49,37 @@ export default function ImpactSection() {
           </div>
 
           {/* ROW 2 — 2 stat cards + 3 images */}
-          <div className="col-span-2 bg-[#f8f8f8] rounded-[24px] p-7 md:p-8 flex flex-col justify-between aspect-[2/1] hover:scale-[1.02] transition-transform duration-300">
+          <div className="col-span-1 sm:col-span-1 md:col-span-2 bg-[#f8f8f8] rounded-[24px] p-6 sm:p-7 md:p-8 flex flex-col justify-between min-h-[140px] aspect-auto md:aspect-[2/1] hover:scale-[1.02] transition-transform duration-300">
             <h3 className="text-[2.5rem] lg:text-[3.5rem] font-serif tracking-tight leading-none text-black">
               50+
             </h3>
-            <p className="text-[#444] font-medium text-[0.9rem] lg:text-[0.95rem]">
+            <p className="text-[#444] font-medium text-[0.9rem] lg:text-[0.95rem] mt-4 md:mt-0">
               Companies Supported across 3 continents
             </p>
           </div>
-          <div className="col-span-2 bg-[#f8f8f8] rounded-[24px] p-7 md:p-8 flex flex-col justify-between aspect-[2/1] hover:scale-[1.02] transition-transform duration-300">
+          <div className="col-span-1 sm:col-span-1 md:col-span-2 bg-[#f8f8f8] rounded-[24px] p-6 sm:p-7 md:p-8 flex flex-col justify-between min-h-[140px] aspect-auto md:aspect-[2/1] hover:scale-[1.02] transition-transform duration-300">
             <h3 className="text-[2.5rem] lg:text-[3.5rem] font-serif tracking-tight leading-none text-black">
               30+
             </h3>
-            <p className="text-[#444] font-medium text-[0.9rem] lg:text-[0.95rem]">
+            <p className="text-[#444] font-medium text-[0.9rem] lg:text-[0.95rem] mt-4 md:mt-0">
               Years of Collective AI & Technology Expertise
             </p>
           </div>
-          <div className="col-span-1 rounded-[24px] overflow-hidden aspect-square shadow-sm hover:shadow-xl transition-shadow duration-300">
+          <div className="col-span-1 rounded-[24px] overflow-hidden aspect-square shadow-sm hover:shadow-xl transition-shadow duration-300 hidden sm:block">
             <img
               src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=600&q=80"
               alt="Blueprint"
               className="w-full h-full object-cover"
             />
           </div>
-          <div className="col-span-1 rounded-[24px] overflow-hidden aspect-square shadow-sm hover:shadow-xl transition-shadow duration-300">
+          <div className="col-span-1 rounded-[24px] overflow-hidden aspect-square shadow-sm hover:shadow-xl transition-shadow duration-300 hidden md:block">
             <img
               src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80"
               alt="Abstract"
               className="w-full h-full object-cover"
             />
           </div>
-          <div className="col-span-1 rounded-[24px] overflow-hidden aspect-square shadow-sm hover:shadow-xl transition-shadow duration-300">
+          <div className="col-span-1 rounded-[24px] overflow-hidden aspect-square shadow-sm hover:shadow-xl transition-shadow duration-300 hidden md:block">
             <img
               src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=600&q=80"
               alt="Screens"
@@ -87,56 +87,25 @@ export default function ImpactSection() {
             />
           </div>
 
-          {/* ROW 3 — 7 images filling the full width */}
-          <div className="col-span-1 rounded-[24px] overflow-hidden aspect-square shadow-sm hover:shadow-xl transition-shadow duration-300">
-            <img
-              src="https://images.unsplash.com/photo-1531366936337-7785443115cf?auto=format&fit=crop&w=600&q=80"
-              alt="Aurora Tech"
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <div className="col-span-1 rounded-[24px] overflow-hidden aspect-square shadow-sm hover:shadow-xl transition-shadow duration-300">
-            <img
-              src="https://images.unsplash.com/photo-1557672172-298e090bd0f1?auto=format&fit=crop&w=600&q=80"
-              alt="Gradient"
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <div className="col-span-1 rounded-[24px] overflow-hidden aspect-square shadow-sm hover:shadow-xl transition-shadow duration-300">
-            <img
-              src="https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=600&q=80"
-              alt="Industrial"
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <div className="col-span-1 rounded-[24px] overflow-hidden aspect-square shadow-sm hover:shadow-xl transition-shadow duration-300">
-            <img
-              src="https://images.unsplash.com/photo-1574169208507-84376144848b?auto=format&fit=crop&w=600&q=80"
-              alt="Lab"
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <div className="col-span-1 rounded-[24px] overflow-hidden aspect-square shadow-sm hover:shadow-xl transition-shadow duration-300">
-            <img
-              src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80"
-              alt="Space Tech"
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <div className="col-span-1 rounded-[24px] overflow-hidden aspect-square shadow-sm hover:shadow-xl transition-shadow duration-300">
-            <img
-              src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80"
-              alt="Microchip"
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <div className="col-span-1 rounded-[24px] overflow-hidden aspect-square shadow-sm hover:shadow-xl transition-shadow duration-300">
-            <img
-              src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=600&q=80"
-              alt="Matrix"
-              className="w-full h-full object-cover"
-            />
-          </div>
+          {/* ROW 3 — 7 images filling the full width - hidden on mobile/tablet */}
+          {[
+            "https://images.unsplash.com/photo-1531366936337-7785443115cf?auto=format&fit=crop&w=600&q=80",
+            "https://images.unsplash.com/photo-1557672172-298e090bd0f1?auto=format&fit=crop&w=600&q=80",
+            "https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=600&q=80",
+            "https://images.unsplash.com/photo-1574169208507-84376144848b?auto=format&fit=crop&w=600&q=80",
+            "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80",
+            "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80",
+            "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=600&q=80"
+          ].map((src, idx) => (
+            <div key={idx} className="col-span-1 rounded-[24px] overflow-hidden aspect-square shadow-sm hover:shadow-xl transition-shadow duration-300 hidden md:block">
+              <img
+                src={src}
+                alt={`Decorative tech aspect ${idx + 1}`}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          ))}
+
         </div>
       </div>
     </section>
