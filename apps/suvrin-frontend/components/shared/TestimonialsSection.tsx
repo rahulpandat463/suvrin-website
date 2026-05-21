@@ -123,7 +123,7 @@ export default function TestimonialsSection() {
           </div>
 
           {/* Metrics Footer */}
-          <div className="border-t border-[#f0f0f0] pt-8 flex gap-10 sm:gap-16 md:gap-28">
+          <div className="border-t border-[#f0f0f0] pt-8 flex flex-wrap gap-8 sm:gap-16 md:gap-28">
             {currentT?.metrics?.map((metric, i) => (
               <div key={i}>
                 <div className="text-2xl font-serif text-[#111] mb-1">

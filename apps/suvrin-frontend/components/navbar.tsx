@@ -304,7 +304,7 @@ export function Navbar() {
 
       {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="lg:hidden fixed top-[110px] left-1/2 -translate-x-1/2 w-[92%] bg-[#111]/95 backdrop-blur-3xl p-6 overflow-y-auto z-[999] rounded-[30px] border border-white/10 shadow-2xl max-h-[70vh]">
+        <div className="lg:hidden absolute top-[calc(100%+8px)] left-0 w-full bg-[#111]/95 backdrop-blur-3xl p-6 overflow-y-auto z-[999] rounded-[25px] border border-white/10 shadow-2xl max-h-[75vh]">
           {navItems.map((item) => (
             <div
               key={item.label}

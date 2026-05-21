@@ -12,6 +12,7 @@ export function Footer() {
   });
 
   const toggleSection = (section: string) => {
+    if (typeof window !== "undefined" && window.innerWidth >= 1024) return;
     setOpenSections((prev) => {
       const isCurrentlyOpen = prev[section];
       return {
@@ -129,14 +130,14 @@ export function Footer() {
               <li className="flex flex-col gap-1.5">
                 <button
                   onClick={() => toggleSection("about")}
-                  className="flex items-center gap-1 w-auto text-[0.9rem] font-bold hover:text-[#0546e0] transition-colors text-gray-900 cursor-pointer"
+                  className="flex items-center gap-1 w-auto text-[0.9rem] font-bold hover:text-[#0546e0] lg:hover:text-gray-900 transition-colors text-gray-900 cursor-pointer lg:cursor-default"
                 >
                   <span>About</span>
-                  <span className={`text-[0.6rem] transition-transform duration-300 ml-1 ${openSections.about ? "rotate-180" : ""}`}>
+                  <span className={`text-[0.6rem] transition-transform duration-300 ml-1 lg:hidden ${openSections.about ? "rotate-180" : ""}`}>
                     ▼
                   </span>
                 </button>
-                <div className={`overflow-hidden transition-all duration-300 ${openSections.about ? "max-h-[200px] opacity-100 mt-1" : "max-h-0 opacity-0"}`}>
+                <div className={`overflow-hidden transition-all duration-300 lg:max-h-none lg:opacity-100 lg:mt-0 ${openSections.about ? "max-h-[200px] opacity-100 mt-1" : "max-h-0 opacity-0"}`}>
                   <ul className="flex flex-col gap-1.5 pl-3 border-l border-gray-200">
                     <li><Link href="/about" className="text-[0.8rem] text-gray-600 hover:text-gray-900">Who We Are</Link></li>
                     <li><Link href="/about/team" className="text-[0.8rem] text-gray-600 hover:text-gray-900">Team</Link></li>
@@ -149,14 +150,14 @@ export function Footer() {
               <li className="flex flex-col gap-1.5">
                 <button
                   onClick={() => toggleSection("services")}
-                  className="flex items-center gap-1 w-auto text-[0.9rem] font-bold hover:text-[#0546e0] transition-colors text-gray-900 cursor-pointer"
+                  className="flex items-center gap-1 w-auto text-[0.9rem] font-bold hover:text-[#0546e0] lg:hover:text-gray-900 transition-colors text-gray-900 cursor-pointer lg:cursor-default"
                 >
                   <span>Services</span>
-                  <span className={`text-[0.6rem] transition-transform duration-300 ml-1 ${openSections.services ? "rotate-180" : ""}`}>
+                  <span className={`text-[0.6rem] transition-transform duration-300 ml-1 lg:hidden ${openSections.services ? "rotate-180" : ""}`}>
                     ▼
                   </span>
                 </button>
-                <div className={`overflow-hidden transition-all duration-300 ${openSections.services ? "max-h-[350px] opacity-100 mt-1" : "max-h-0 opacity-0"}`}>
+                <div className={`overflow-hidden transition-all duration-300 lg:max-h-none lg:opacity-100 lg:mt-0 ${openSections.services ? "max-h-[350px] opacity-100 mt-1" : "max-h-0 opacity-0"}`}>
                   <ul className="flex flex-col gap-1.5 pl-3 border-l border-gray-200">
                     <li><Link href="/services/app-development" className="text-[0.8rem] text-gray-600 hover:text-gray-900">Application Development</Link></li>
                     <li><Link href="/service-scope/cybersecurity" className="text-[0.8rem] text-gray-600 hover:text-gray-900">Cybersecurity</Link></li>
@@ -173,14 +174,14 @@ export function Footer() {
               <li className="flex flex-col gap-1.5">
                 <button
                   onClick={() => toggleSection("caseStudies")}
-                  className="flex items-center gap-1 w-auto text-[0.9rem] font-bold hover:text-[#0546e0] transition-colors text-gray-900 cursor-pointer"
+                  className="flex items-center gap-1 w-auto text-[0.9rem] font-bold hover:text-[#0546e0] lg:hover:text-gray-900 transition-colors text-gray-900 cursor-pointer lg:cursor-default"
                 >
                   <span>Case Studies</span>
-                  <span className={`text-[0.6rem] transition-transform duration-300 ml-1 ${openSections.caseStudies ? "rotate-180" : ""}`}>
+                  <span className={`text-[0.6rem] transition-transform duration-300 ml-1 lg:hidden ${openSections.caseStudies ? "rotate-180" : ""}`}>
                     ▼
                   </span>
                 </button>
-                <div className={`overflow-hidden transition-all duration-300 ${openSections.caseStudies ? "max-h-[450px] opacity-100 mt-1" : "max-h-0 opacity-0"}`}>
+                <div className={`overflow-hidden transition-all duration-300 lg:max-h-none lg:opacity-100 lg:mt-0 ${openSections.caseStudies ? "max-h-[450px] opacity-100 mt-1" : "max-h-0 opacity-0"}`}>
                   <ul className="flex flex-col gap-1.5 pl-3 border-l border-gray-200">
                     <li><Link href="/case-studies/strategy-advisory" className="text-[0.8rem] text-gray-600 hover:text-gray-900">Strategy & Advisory</Link></li>
                     <li><Link href="/case-studies/ai-products-platforms" className="text-[0.8rem] text-gray-600 hover:text-gray-900">AI Products & Platforms</Link></li>

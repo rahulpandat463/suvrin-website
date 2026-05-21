@@ -2,7 +2,6 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { caseStudies } from "@/components/case-studies/data";
-import { Footer } from "@/components/Footer";
 import StudiesFinalCTA from "@/components/case-studies/StudiesFinalCTA";
 
 interface StudyPageProps {
@@ -66,20 +65,20 @@ export default async function CaseStudyPage({ params }: StudyPageProps) {
 
         {/* Metadata Grid */}
         <div className="max-w-[1240px] mx-auto px-6 mb-20">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 bg-white rounded-[24px] border border-gray-100 p-8 shadow-sm">
-            <div className="flex flex-col gap-1 border-r border-gray-100 last:border-0 pr-4">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-8 bg-white rounded-[20px] md:rounded-[24px] border border-gray-100 p-6 md:p-8 shadow-sm">
+            <div className="flex flex-col gap-1 border-b md:border-b-0 md:border-r border-gray-100 pb-4 md:pb-0 md:pr-4">
               <span className="text-[0.8rem] font-bold text-gray-400 uppercase tracking-wider">Client</span>
               <span className="text-[1.1rem] font-semibold text-gray-800">NYC Real Estate Brokerage Firm</span>
             </div>
-            <div className="flex flex-col gap-1 border-r border-gray-100 last:border-0 pr-4">
+            <div className="flex flex-col gap-1 border-b md:border-b-0 md:border-r border-gray-100 pb-4 md:pb-0 md:pr-4">
               <span className="text-[0.8rem] font-bold text-gray-400 uppercase tracking-wider">Industry</span>
               <span className="text-[1.1rem] font-semibold text-gray-800">Real Estate</span>
             </div>
-            <div className="flex flex-col gap-1 border-r border-gray-100 last:border-0 pr-4">
+            <div className="flex flex-col gap-1 border-b md:border-b-0 md:border-r border-gray-100 pb-4 md:pb-0 md:pr-4">
               <span className="text-[0.8rem] font-bold text-gray-400 uppercase tracking-wider">Location</span>
               <span className="text-[1.1rem] font-semibold text-gray-800">New York, United States</span>
             </div>
-            <div className="flex flex-col gap-1">
+            <div className="flex flex-col gap-1 pt-4 md:pt-0">
               <span className="text-[0.8rem] font-bold text-gray-400 uppercase tracking-wider">Key Impact</span>
               <span className="text-[1.1rem] font-semibold text-[#0546e0]">4.8x Lead Conv. Boost</span>
             </div>
@@ -90,7 +89,7 @@ export default async function CaseStudyPage({ params }: StudyPageProps) {
         <div className="max-w-[1240px] mx-auto px-6 mb-24 flex flex-col gap-16">
           
           {/* Client Overview Section */}
-          <section className="bg-white rounded-[32px] p-8 md:p-12 border border-gray-100 shadow-sm">
+          <section className="bg-white rounded-[20px] md:rounded-[32px] p-6 md:p-12 border border-gray-100 shadow-sm">
             <h2 className="text-[1.8rem] md:text-[2rem] font-serif font-medium text-[#111] mb-6 tracking-tight">
               Client Overview
             </h2>
@@ -123,7 +122,7 @@ export default async function CaseStudyPage({ params }: StudyPageProps) {
           </section>
 
           {/* Business Challenges Section */}
-          <section className="bg-white rounded-[32px] p-8 md:p-12 border border-gray-100 shadow-sm relative overflow-hidden">
+          <section className="bg-white rounded-[20px] md:rounded-[32px] p-6 md:p-12 border border-gray-100 shadow-sm relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-1.5 bg-[#0546e0]" />
             <div className="flex items-center gap-4 mb-8">
               <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center text-[#0546e0]">
@@ -213,7 +212,7 @@ export default async function CaseStudyPage({ params }: StudyPageProps) {
           </section>
 
           {/* Suvrin's Solution Section */}
-          <section className="bg-white rounded-[32px] p-8 md:p-12 border border-gray-100 shadow-sm relative overflow-hidden">
+          <section className="bg-white rounded-[20px] md:rounded-[32px] p-6 md:p-12 border border-gray-100 shadow-sm relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-1.5 bg-emerald-500" />
             <div className="flex items-center gap-4 mb-10">
               <div className="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center text-emerald-500">
@@ -246,7 +245,7 @@ export default async function CaseStudyPage({ params }: StudyPageProps) {
                     Suvrin developed a sophisticated property data scraping and aggregation framework capable of collecting listing data from public real estate portals, brokerage websites, listing directories, property feeds, open datasets, and market inventory sources.
                   </p>
                   <p className="font-semibold text-gray-700 text-[0.95rem] mb-2">The platform continuously collected and normalized:</p>
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                  <div className="flex flex-wrap gap-2.5">
                     {[
                       "Property prices",
                       "Address information",
@@ -363,7 +362,7 @@ export default async function CaseStudyPage({ params }: StudyPageProps) {
           </section>
 
           {/* Technical Architecture Section */}
-          <section className="bg-white rounded-[32px] p-8 md:p-12 border border-gray-100 shadow-sm">
+          <section className="bg-white rounded-[20px] md:rounded-[32px] p-6 md:p-12 border border-gray-100 shadow-sm">
             <h2 className="text-[1.8rem] md:text-[2rem] font-serif font-medium text-[#111] mb-2 tracking-tight">
               Technical Architecture
             </h2>
@@ -394,7 +393,7 @@ export default async function CaseStudyPage({ params }: StudyPageProps) {
           </section>
 
           {/* Key Features Delivered Section */}
-          <section className="bg-white rounded-[32px] p-8 md:p-12 border border-gray-100 shadow-sm">
+          <section className="bg-white rounded-[20px] md:rounded-[32px] p-6 md:p-12 border border-gray-100 shadow-sm">
             <h2 className="text-[1.8rem] md:text-[2rem] font-serif font-medium text-[#111] mb-8 tracking-tight">
               Key Features Delivered
             </h2>
@@ -424,7 +423,7 @@ export default async function CaseStudyPage({ params }: StudyPageProps) {
           </section>
 
           {/* Business Impact Section */}
-          <section className="bg-white rounded-[32px] p-8 md:p-12 border border-gray-100 shadow-sm">
+          <section className="bg-white rounded-[20px] md:rounded-[32px] p-6 md:p-12 border border-gray-100 shadow-sm">
             <h2 className="text-[1.8rem] md:text-[2rem] font-serif font-medium text-[#111] mb-2 tracking-tight">
               Business Impact
             </h2>
@@ -485,7 +484,7 @@ export default async function CaseStudyPage({ params }: StudyPageProps) {
           </section>
 
           {/* Results Achieved Section */}
-          <section className="bg-white rounded-[32px] p-8 md:p-12 border border-gray-100 shadow-sm relative overflow-hidden">
+          <section className="bg-white rounded-[20px] md:rounded-[32px] p-6 md:p-12 border border-gray-100 shadow-sm relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-1.5 bg-[#0546e0]" />
             <h2 className="text-[1.8rem] md:text-[2rem] font-serif font-medium text-[#111] mb-8 tracking-tight">
               Results Achieved
@@ -508,7 +507,7 @@ export default async function CaseStudyPage({ params }: StudyPageProps) {
           </section>
 
           {/* Conclusion Section */}
-          <section className="bg-[#0546e0] rounded-[32px] p-8 md:p-12 text-white shadow-md relative overflow-hidden">
+          <section className="bg-[#0546e0] rounded-[20px] md:rounded-[32px] p-6 md:p-12 text-white shadow-md relative overflow-hidden">
             <div className="absolute top-0 right-0 opacity-10 pointer-events-none transform translate-x-20 -translate-y-20">
               <svg width="400" height="400" viewBox="0 0 100 100" fill="currentColor">
                 <circle cx="50" cy="50" r="40" />
@@ -543,7 +542,6 @@ export default async function CaseStudyPage({ params }: StudyPageProps) {
         </div>
 
         <StudiesFinalCTA />
-        <Footer />
       </main>
     );
   }
@@ -601,9 +599,9 @@ export default async function CaseStudyPage({ params }: StudyPageProps) {
 
       {/* Meta Info & Results Section */}
       <div className="max-w-[1240px] mx-auto px-6 mb-20">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 bg-white rounded-[32px] border border-gray-100 p-8 md:p-12 shadow-sm">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 bg-white rounded-[20px] md:rounded-[32px] p-6 md:p-12 shadow-sm border border-gray-100">
           {/* Metadata Cards */}
-          <div className="lg:col-span-5 grid grid-cols-3 lg:grid-cols-1 gap-6 lg:border-r lg:border-gray-100 lg:pr-12">
+          <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-1 gap-6 lg:border-r lg:border-gray-100 lg:pr-12 pb-6 sm:pb-0 lg:pb-0 border-b sm:border-b-0 lg:border-b-0 border-gray-100">
             <div className="flex flex-col gap-1">
               <span className="text-[0.8rem] font-bold text-gray-400 uppercase tracking-wider">Client</span>
               <span className="text-[1.15rem] font-semibold text-gray-800">{study.client}</span>
@@ -643,7 +641,7 @@ export default async function CaseStudyPage({ params }: StudyPageProps) {
           
           {/* Client Overview Section */}
           {study.clientOverview && (
-            <section className="bg-white rounded-[32px] p-8 md:p-12 border border-gray-100 shadow-sm">
+            <section className="bg-white rounded-[20px] md:rounded-[32px] p-6 md:p-12 border border-gray-100 shadow-sm">
               <h2 className="text-[1.8rem] md:text-[2rem] font-serif font-medium text-[#111] mb-6 tracking-tight">
                 Client Overview
               </h2>
@@ -655,7 +653,7 @@ export default async function CaseStudyPage({ params }: StudyPageProps) {
 
           {/* Business Challenges Section */}
           {study.challengesList && (
-            <section className="bg-white rounded-[32px] p-8 md:p-12 border border-gray-100 shadow-sm relative overflow-hidden">
+            <section className="bg-white rounded-[20px] md:rounded-[32px] p-6 md:p-12 border border-gray-100 shadow-sm relative overflow-hidden">
               <div className="absolute top-0 left-0 w-full h-1.5 bg-[#0546e0]" />
               <div className="flex items-center gap-4 mb-8">
                 <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center text-[#0546e0]">
@@ -688,7 +686,7 @@ export default async function CaseStudyPage({ params }: StudyPageProps) {
 
           {/* Suvrin's Solutions Section */}
           {study.solutionsList && (
-            <section className="bg-white rounded-[32px] p-8 md:p-12 border border-gray-100 shadow-sm relative overflow-hidden">
+            <section className="bg-white rounded-[20px] md:rounded-[32px] p-6 md:p-12 border border-gray-100 shadow-sm relative overflow-hidden">
               <div className="absolute top-0 left-0 w-full h-1.5 bg-emerald-500" />
               <div className="flex items-center gap-4 mb-10">
                 <div className="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center text-emerald-500">
@@ -718,7 +716,7 @@ export default async function CaseStudyPage({ params }: StudyPageProps) {
 
           {/* Technical Architecture Section */}
           {study.techStack && (
-            <section className="bg-white rounded-[32px] p-8 md:p-12 border border-gray-100 shadow-sm">
+            <section className="bg-white rounded-[20px] md:rounded-[32px] p-6 md:p-12 border border-gray-100 shadow-sm">
               <h2 className="text-[1.8rem] md:text-[2rem] font-serif font-medium text-[#111] mb-8 tracking-tight">
                 Technical Architecture
               </h2>
@@ -741,7 +739,7 @@ export default async function CaseStudyPage({ params }: StudyPageProps) {
 
           {/* Key Features Delivered Section */}
           {study.keyFeatures && (
-            <section className="bg-white rounded-[32px] p-8 md:p-12 border border-gray-100 shadow-sm">
+            <section className="bg-white rounded-[20px] md:rounded-[32px] p-6 md:p-12 border border-gray-100 shadow-sm">
               <h2 className="text-[1.8rem] md:text-[2rem] font-serif font-medium text-[#111] mb-8 tracking-tight">
                 Key Features Delivered
               </h2>
@@ -760,7 +758,7 @@ export default async function CaseStudyPage({ params }: StudyPageProps) {
 
           {/* Business Impact Section */}
           {study.impact && (
-            <section className="bg-white rounded-[32px] p-8 md:p-12 border border-gray-100 shadow-sm">
+            <section className="bg-white rounded-[20px] md:rounded-[32px] p-6 md:p-12 border border-gray-100 shadow-sm">
               <h2 className="text-[1.8rem] md:text-[2rem] font-serif font-medium text-[#111] mb-8 tracking-tight">
                 Business Impact
               </h2>
@@ -784,7 +782,7 @@ export default async function CaseStudyPage({ params }: StudyPageProps) {
 
           {/* Conclusion Section */}
           {study.conclusion && (
-            <section className="bg-blue-600 rounded-[32px] p-8 md:p-12 text-white shadow-md relative overflow-hidden">
+            <section className="bg-blue-600 rounded-[20px] md:rounded-[32px] p-6 md:p-12 text-white shadow-md relative overflow-hidden">
               <div className="absolute top-0 right-0 opacity-10 pointer-events-none transform translate-x-20 -translate-y-20">
                 <svg width="400" height="400" viewBox="0 0 100 100" fill="currentColor">
                   <circle cx="50" cy="50" r="40" />
@@ -805,7 +803,7 @@ export default async function CaseStudyPage({ params }: StudyPageProps) {
         <div className="max-w-[1240px] mx-auto px-6 mb-24">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
             {/* Challenge */}
-            <div className="flex flex-col gap-6 bg-white rounded-[24px] p-8 md:p-10 border border-gray-100 shadow-sm relative overflow-hidden group">
+            <div className="flex flex-col gap-6 bg-white rounded-[20px] md:rounded-[24px] p-6 md:p-10 border border-gray-100 shadow-sm relative overflow-hidden group">
               <div className="absolute top-0 left-0 w-2 h-full bg-[#0546e0]" />
               <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center text-[#0546e0] mb-2">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-6 h-6">
@@ -821,7 +819,7 @@ export default async function CaseStudyPage({ params }: StudyPageProps) {
             </div>
 
             {/* Solution */}
-            <div className="flex flex-col gap-6 bg-white rounded-[24px] p-8 md:p-10 border border-gray-100 shadow-sm relative overflow-hidden group">
+            <div className="flex flex-col gap-6 bg-white rounded-[20px] md:rounded-[24px] p-6 md:p-10 border border-gray-100 shadow-sm relative overflow-hidden group">
               <div className="absolute top-0 left-0 w-2 h-full bg-emerald-500" />
               <div className="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center text-emerald-500 mb-2">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-6 h-6">
@@ -850,7 +848,6 @@ export default async function CaseStudyPage({ params }: StudyPageProps) {
       </div>
 
       <StudiesFinalCTA />
-      <Footer />
     </main>
   );
 }

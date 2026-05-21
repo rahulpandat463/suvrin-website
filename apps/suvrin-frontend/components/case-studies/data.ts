@@ -45,7 +45,7 @@ export interface CaseStudy {
   solution: string;
   results: { value: string; label: string }[];
   image: string;
-  
+
   // Custom detailed fields
   clientOverview?: string;
   challengesList?: string[];
@@ -64,7 +64,7 @@ export const caseStudies: CaseStudy[] = [
     categories: ["LLM Fine-Tuning", "Strategy & Advisory"],
     industry: "Consulting",
     location: "United States",
-    title: "Fine-Tuning Program for Enterprise Consulting Firm",
+    title: "Odoo ERP Implementation for Indo-Japanese Precision Tools Manufacturing Company",
     client: "Global Consulting Group",
     overview: "A specialized LLM fine-tuning initiative aimed at automating complex report generation for a top-tier consulting firm.",
     challenge: "The firm's consultants were spending thousands of hours manually synthesizing data into high-stakes reports, leading to burnout and varied quality.",
@@ -73,7 +73,7 @@ export const caseStudies: CaseStudy[] = [
       { value: "60%", label: "Time Saved" },
       { value: "98%", label: "Accuracy" },
     ],
-    image: "https://images.unsplash.com/photo-1614850523296-e8c041df43a0?auto=format&fit=crop&w=1200&q=80",
+    image: "https://static.wixstatic.com/media/b0d27a_8f92d5aa653f4c3182be59d3ab55bb1a~mv2.png/v1/fill/w_740,h_416,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/b0d27a_8f92d5aa653f4c3182be59d3ab55bb1a~mv2.png",
   },
   {
     id: "real-estate-platform",
@@ -93,10 +93,10 @@ export const caseStudies: CaseStudy[] = [
       { value: "10k+", label: "listings monitored" },
     ],
     image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1200&q=80",
-    
+
     // Custom detailed fields
     clientOverview: "One of the largest real estate brokerage firms in New York approached Suvrin Technologies with the objective of building a centralized real estate intelligence platform capable of aggregating, monitoring, analyzing, and operationalizing real estate market data across New York City. The client's primary challenge was the fragmented nature of real estate listing information spread across multiple online platforms, making it difficult for brokers, analysts, and relationship managers to derive actionable market insights or respond quickly to high-value leads.",
-    
+
     challengesList: [
       "Fragmented Property Data: Property listings were distributed across multiple websites, marketplaces, public records, and brokerage networks, creating data inconsistency and duplication.",
       "Lack of Real-Time Market Intelligence: The brokerage teams lacked centralized visibility into property price changes, open house updates, inventory movement, and micro-market performance trends.",
@@ -104,7 +104,7 @@ export const caseStudies: CaseStudy[] = [
       "Manual Reporting Processes: Generating investment and market intelligence reports for HNI (High Net Worth Individual) clients involved significant manual effort and data collection.",
       "No Centralized Analytics Engine: There was no unified system to monitor market behavior and predict pricing trends across NYC neighborhoods."
     ],
-    
+
     solutionsList: [
       {
         title: "Real Estate Data Aggregation Engine",
@@ -131,7 +131,7 @@ export const caseStudies: CaseStudy[] = [
         description: "Designed an automated generator for premium branded reports covering market performance, residential/commercial growth indicators, and investment opportunities for portfolio managers."
       }
     ],
-    
+
     techStack: [
       {
         category: "Backend",
@@ -154,7 +154,7 @@ export const caseStudies: CaseStudy[] = [
         items: ["API Integration", "AWS Cloud Environment", "Microservices Architecture"]
       }
     ],
-    
+
     keyFeatures: [
       "Centralized NYC property repository",
       "Real-time listing monitoring",
@@ -168,7 +168,7 @@ export const caseStudies: CaseStudy[] = [
       "Automated cron-based data pipelines",
       "Executive dashboards & reporting"
     ],
-    
+
     impact: [
       {
         category: "Operational Improvements",
@@ -195,7 +195,7 @@ export const caseStudies: CaseStudy[] = [
         ]
       }
     ],
-    
+
     conclusion: "Suvrin Technologies successfully delivered a large-scale Real Estate Intelligence & CRM Integration Platform that transformed how the client monitored, analyzed, and operationalized real estate market data in New York City. By combining data aggregation, automation, analytics, and CRM intelligence, the platform empowered the brokerage firm to make faster decisions, improve client engagement, and establish itself as a market intelligence leader in the highly competitive NYC real estate sector."
   },
   {

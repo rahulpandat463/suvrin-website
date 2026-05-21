@@ -1,5 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable react/no-unescaped-entities */
+import Link from "next/link";
+
 export default function MidCTA() {
   return (
     <section className="bg-white" id="final-cta">
@@ -17,9 +19,12 @@ export default function MidCTA() {
               innovation
             </h2>
 
-            <button className="bg-[#0546e0] hover:bg-[#0437b0] transition-colors text-white px-6 py-2.5 rounded-full font-medium text-[0.95rem]">
+            <Link 
+              href="/contact"
+              className="bg-[#0546e0] hover:bg-[#0437b0] transition-colors text-white px-6 py-2.5 rounded-full font-medium text-[0.95rem] inline-block"
+            >
               Connect with Our Team
-            </button>
+            </Link>
 
             <div className="flex items-center justify-center mt-1">
               {/* Avatar 1 */}

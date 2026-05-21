@@ -3,7 +3,6 @@ import CaseStudiesHero from "@/components/case-studies/CaseStudiesHero";
 import FrameworkLogos from "@/components/shared/FrameworkLogos";
 import DiscoverGrid from "@/components/case-studies/DiscoverGrid";
 import StudiesFinalCTA from "@/components/case-studies/StudiesFinalCTA";
-import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "AI Case Studies | Suvrin Technologies",
@@ -17,7 +16,7 @@ export default function CaseStudies() {
       <FrameworkLogos />
       <DiscoverGrid />
       <StudiesFinalCTA />
-      <Footer />
+
     </main>
   );
 }
