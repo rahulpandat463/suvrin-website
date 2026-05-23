@@ -30,7 +30,7 @@ export default function ServicesHero({
             <div>
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center px-8 py-4 text-[0.95rem] md:text-[1rem] font-medium text-white bg-accent rounded-full transition-all duration-250 hover:bg-accent-hover hover:-translate-y-0.5 shadow-[0_8px_30px_rgba(232,134,58,0.3)]"
+                className="inline-flex items-center justify-center px-8 py-4 text-[0.95rem] md:text-[1rem] font-medium text-white bg-blue-600 rounded-full transition-all duration-250 hover:bg-blue-600 hover:-translate-y-0.5 shadow-[0_8px_30px_rgba(232,134,58,0.3)]"
               >
                 {ctaText}
               </Link>

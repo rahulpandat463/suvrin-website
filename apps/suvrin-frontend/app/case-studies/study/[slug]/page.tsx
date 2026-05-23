@@ -23,6 +23,606 @@ export async function generateMetadata({ params }: StudyPageProps): Promise<Meta
 export default async function CaseStudyPage({ params }: StudyPageProps) {
   const { slug } = await params;
   
+  // Handle verbatim rendering for fine-tuning-enterprise (Odoo ERP Implementation)
+  if (slug === "fine-tuning-enterprise") {
+    return (
+      <main className="min-h-screen bg-slate-50/40 pt-36">
+        {/* Header Hero */}
+        <div className="max-w-[1240px] mx-auto px-6 mb-12">
+          <div className="flex flex-col gap-6 max-w-4xl">
+            <div className="flex items-center gap-3">
+              <Link 
+                href="/case-studies"
+                className="text-[0.9rem] font-medium text-gray-500 hover:text-[#0546e0] transition-colors"
+              >
+                Case Studies
+              </Link>
+              <span className="text-gray-300 text-xs">/</span>
+              <span className="px-3.5 py-1 bg-blue-50 text-[#0546e0] text-xs font-semibold uppercase tracking-wider rounded-full border border-blue-100">
+                Automation & Integration
+              </span>
+            </div>
+
+            <h1 className="text-[clamp(2.2rem,5vw,3.6rem)] font-serif font-medium tracking-tight text-[#111] leading-[1.15]">
+              Odoo ERP Implementation for Indo-Japanese Precision Tools Manufacturing Company
+            </h1>
+            <p className="text-[1.1rem] md:text-[1.2rem] font-sans text-gray-500 font-normal">
+              Developed by Suvrin Technologies
+            </p>
+          </div>
+        </div>
+
+        {/* Main Banner Image */}
+        <div className="max-w-[1240px] mx-auto px-6 mb-16">
+          <div className="w-full aspect-[16/9] md:aspect-[21/9] overflow-hidden rounded-[20px] md:rounded-[32px] shadow-lg border border-gray-100 bg-gray-100">
+            <img 
+              src="https://static.wixstatic.com/media/b0d27a_8f92d5aa653f4c3182be59d3ab55bb1a~mv2.png/v1/fill/w_740,h_416,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/b0d27a_8f92d5aa653f4c3182be59d3ab55bb1a~mv2.png" 
+              alt="Odoo ERP Implementation" 
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+
+        {/* Metadata Grid */}
+        <div className="max-w-[1240px] mx-auto px-6 mb-20">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-8 bg-white rounded-[20px] md:rounded-[24px] border border-gray-100 p-6 md:p-8 shadow-sm">
+            <div className="flex flex-col gap-1 border-b md:border-b-0 md:border-r border-gray-100 pb-4 md:pb-0 md:pr-4">
+              <span className="text-[0.8rem] font-bold text-gray-400 uppercase tracking-wider">Client</span>
+              <span className="text-[1.1rem] font-semibold text-gray-800">Precision Tools Manufacturer</span>
+            </div>
+            <div className="flex flex-col gap-1 border-b md:border-b-0 md:border-r border-gray-100 pb-4 md:pb-0 md:pr-4">
+              <span className="text-[0.8rem] font-bold text-gray-400 uppercase tracking-wider">Industry</span>
+              <span className="text-[1.1rem] font-semibold text-gray-800">Manufacturing</span>
+            </div>
+            <div className="flex flex-col gap-1 border-b md:border-b-0 md:border-r border-gray-100 pb-4 md:pb-0 md:pr-4">
+              <span className="text-[0.8rem] font-bold text-gray-400 uppercase tracking-wider">Location</span>
+              <span className="text-[1.1rem] font-semibold text-gray-800">India & Japan</span>
+            </div>
+            <div className="flex flex-col gap-1 pt-4 md:pt-0">
+              <span className="text-[0.8rem] font-bold text-gray-400 uppercase tracking-wider">Key Impact</span>
+              <span className="text-[1.1rem] font-semibold text-[#0546e0]">95% Excel Reduced</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Full Case Study Content */}
+        <div className="max-w-[1240px] mx-auto px-6 mb-24 flex flex-col gap-16">
+          
+          {/* Client Overview Section */}
+          <section className="bg-white rounded-[20px] md:rounded-[32px] p-6 md:p-12 border border-gray-100 shadow-sm">
+            <h2 className="text-[1.8rem] md:text-[2rem] font-serif font-medium text-[#111] mb-6 tracking-tight">
+              Client Overview
+            </h2>
+            <div className="text-[1.05rem] text-gray-600 leading-relaxed font-sans font-light flex flex-col gap-6">
+              <p>
+                Suvrin Technologies partnered with a leading Indo-Japanese precision tools manufacturing company specializing in industrial-grade precision tooling solutions catering to domestic and international markets.
+              </p>
+              <p>
+                The company had experienced significant business growth across multiple geographies along with a rapid increase in product SKUs, operational complexity, vendor networks, export activities, and compliance requirements.
+              </p>
+              <p>
+                As the organization scaled, its existing legacy operational ecosystem—primarily dependent on disconnected software applications, manual processes, and extensive use of Microsoft Excel—became increasingly inefficient and unsustainable.
+              </p>
+              <p>
+                The client required a modern, scalable, and fully integrated ERP platform capable of managing end-to-end manufacturing, operations, compliance, finance, inventory, procurement, sales, exports, and stakeholder collaboration.
+              </p>
+            </div>
+          </section>
+
+          {/* Business Challenges Section */}
+          <section className="bg-white rounded-[20px] md:rounded-[32px] p-6 md:p-12 border border-gray-100 shadow-sm relative overflow-hidden">
+            <div className="absolute top-0 left-0 w-full h-1.5 bg-[#0546e0]" />
+            <div className="flex items-center gap-4 mb-8">
+              <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center text-[#0546e0]">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z" />
+                </svg>
+              </div>
+              <h2 className="text-[1.8rem] md:text-[2rem] font-serif font-medium text-[#111] tracking-tight">
+                Business Challenges
+              </h2>
+            </div>
+            
+            <div className="flex flex-col gap-8">
+              <p className="text-gray-500 italic">The organization faced several operational and strategic challenges before ERP implementation:</p>
+              
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                {/* Challenge 1 */}
+                <div className="p-6 rounded-[20px] bg-slate-50 border border-slate-100">
+                  <h4 className="font-semibold text-gray-800 text-[1.1rem] mb-3 flex items-center gap-3">
+                    <span className="w-6 h-6 rounded-full bg-blue-100 text-blue-700 text-xs flex items-center justify-center font-bold">1</span>
+                    Fragmented Legacy Systems
+                  </h4>
+                  <div className="text-gray-500 text-[0.95rem] leading-relaxed pl-9 flex flex-col gap-2">
+                    <p>Critical business operations were distributed across legacy software applications, manual spreadsheets, offline approval workflows, and department-specific systems.</p>
+                    <p className="font-semibold text-gray-700 mt-1">This resulted in:</p>
+                    <ul className="list-disc pl-4 space-y-1">
+                      <li>Data inconsistency</li>
+                      <li>Duplication of work</li>
+                      <li>Reporting delays</li>
+                      <li>Lack of centralized visibility</li>
+                    </ul>
+                  </div>
+                </div>
+
+                {/* Challenge 2 */}
+                <div className="p-6 rounded-[20px] bg-slate-50 border border-slate-100">
+                  <h4 className="font-semibold text-gray-800 text-[1.1rem] mb-3 flex items-center gap-3">
+                    <span className="w-6 h-6 rounded-full bg-blue-100 text-blue-700 text-xs flex items-center justify-center font-bold">2</span>
+                    Rapid Growth in Product SKUs
+                  </h4>
+                  <div className="text-gray-500 text-[0.95rem] leading-relaxed pl-9 flex flex-col gap-2">
+                    <p>The company’s growing catalog of precision tools and manufacturing components significantly increased operational complexity.</p>
+                    <p className="font-semibold text-gray-700 mt-1">Challenges included:</p>
+                    <ul className="list-disc pl-4 space-y-1">
+                      <li>SKU-level inventory tracking</li>
+                      <li>Production planning</li>
+                      <li>Procurement synchronization</li>
+                      <li>Warehouse management</li>
+                      <li>BOM complexity</li>
+                    </ul>
+                  </div>
+                </div>
+
+                {/* Challenge 3 */}
+                <div className="p-6 rounded-[20px] bg-slate-50 border border-slate-100">
+                  <h4 className="font-semibold text-gray-800 text-[1.1rem] mb-3 flex items-center gap-3">
+                    <span className="w-6 h-6 rounded-full bg-blue-100 text-blue-700 text-xs flex items-center justify-center font-bold">3</span>
+                    Multi-Geography Operations
+                  </h4>
+                  <div className="text-gray-500 text-[0.95rem] leading-relaxed pl-9 flex flex-col gap-2">
+                    <p>As the business expanded across regions and export markets, operational coordination became increasingly difficult.</p>
+                    <p className="font-semibold text-gray-700 mt-1">The organization required:</p>
+                    <ul className="list-disc pl-4 space-y-1">
+                      <li>Multi-location management</li>
+                      <li>Multi-currency handling</li>
+                      <li>Export documentation</li>
+                      <li>Centralized reporting</li>
+                      <li>Inter-department synchronization</li>
+                    </ul>
+                  </div>
+                </div>
+
+                {/* Challenge 4 */}
+                <div className="p-6 rounded-[20px] bg-slate-50 border border-slate-100">
+                  <h4 className="font-semibold text-gray-800 text-[1.1rem] mb-3 flex items-center gap-3">
+                    <span className="w-6 h-6 rounded-full bg-blue-100 text-blue-700 text-xs flex items-center justify-center font-bold">4</span>
+                    Manufacturing & Supply Chain Complexity
+                  </h4>
+                  <div className="text-gray-500 text-[0.95rem] leading-relaxed pl-9 flex flex-col gap-2">
+                    <p>The manufacturing ecosystem involved raw material procurement, vendor coordination, production planning, quality inspections, inventory movement, and dispatch management.</p>
+                    <p className="text-gray-500">The lack of integration caused operational inefficiencies and delayed decision-making.</p>
+                  </div>
+                </div>
+
+                {/* Challenge 5 */}
+                <div className="p-6 rounded-[20px] bg-slate-50 border border-slate-100">
+                  <h4 className="font-semibold text-gray-800 text-[1.1rem] mb-3 flex items-center gap-3">
+                    <span className="w-6 h-6 rounded-full bg-blue-100 text-blue-700 text-xs flex items-center justify-center font-bold">5</span>
+                    Compliance & Regulatory Requirements
+                  </h4>
+                  <div className="text-gray-500 text-[0.95rem] leading-relaxed pl-9 flex flex-col gap-2">
+                    <p>The company needed stronger compliance controls related to:</p>
+                    <ul className="list-disc pl-4 space-y-1">
+                      <li>GST compliance</li>
+                      <li>Export regulations</li>
+                      <li>Foreign currency transactions</li>
+                      <li>Import-export documentation</li>
+                      <li>Government reporting requirements</li>
+                    </ul>
+                  </div>
+                </div>
+
+                {/* Challenge 6 */}
+                <div className="p-6 rounded-[20px] bg-slate-50 border border-slate-100">
+                  <h4 className="font-semibold text-gray-800 text-[1.1rem] mb-3 flex items-center gap-3">
+                    <span className="w-6 h-6 rounded-full bg-blue-100 text-blue-700 text-xs flex items-center justify-center font-bold">6</span>
+                    Stakeholder Visibility Gaps
+                  </h4>
+                  <p className="text-gray-500 text-[0.95rem] leading-relaxed pl-9">
+                    Different stakeholders including buyers, vendors, employees, management teams, and compliance agencies operated in silos without a unified data ecosystem.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Suvrin's Solution Section */}
+          <section className="bg-white rounded-[20px] md:rounded-[32px] p-6 md:p-12 border border-gray-100 shadow-sm relative overflow-hidden">
+            <div className="absolute top-0 left-0 w-full h-1.5 bg-emerald-500" />
+            <div className="flex items-center gap-4 mb-10">
+              <div className="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center text-emerald-500">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                </svg>
+              </div>
+              <h2 className="text-[1.8rem] md:text-[2rem] font-serif font-medium text-[#111] tracking-tight">
+                Suvrin's Solution
+              </h2>
+            </div>
+            
+            <div className="flex flex-col gap-8">
+              <div className="text-[1.05rem] text-gray-600 leading-relaxed font-sans font-light space-y-4 mb-4">
+                <p>
+                  Suvrin Technologies implemented a comprehensive enterprise-grade Odoo ERP ecosystem tailored specifically for manufacturing operations and international business workflows.
+                </p>
+                <p>
+                  The implementation covered virtually all major Odoo ERP modules along with custom workflows, third-party integrations, reporting systems, and compliance automation.
+                </p>
+              </div>
+
+              <h3 className="font-semibold text-gray-800 text-[1.2rem] border-b border-gray-100 pb-3">Scope of ERP Implementation / Core Odoo Modules</h3>
+              
+              <div className="flex flex-col gap-10 mt-4">
+                {/* Module 1 */}
+                <div className="relative pl-8 border-l-2 border-emerald-500">
+                  <h4 className="font-bold text-gray-800 text-[1.15rem] mb-3">1. Manufacturing (MRP)</h4>
+                  <div className="flex flex-wrap gap-2.5">
+                    {[
+                      "Production planning",
+                      "Bill of Materials (BOM)",
+                      "Work order management",
+                      "Production scheduling",
+                      "Shop floor workflows"
+                    ].map((item, i) => (
+                      <span key={i} className="px-3 py-1.5 bg-slate-50 border border-slate-100 rounded-lg text-xs font-medium text-gray-600 text-center">{item}</span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Module 2 */}
+                <div className="relative pl-8 border-l-2 border-emerald-500">
+                  <h4 className="font-bold text-gray-800 text-[1.15rem] mb-3">2. Inventory & Warehouse Management</h4>
+                  <div className="flex flex-wrap gap-2.5">
+                    {[
+                      "SKU management",
+                      "Batch tracking",
+                      "Multi-warehouse operations",
+                      "Inventory valuation",
+                      "Reorder rules",
+                      "Stock movement automation"
+                    ].map((item, i) => (
+                      <span key={i} className="px-3 py-1.5 bg-slate-50 border border-slate-100 rounded-lg text-xs font-medium text-gray-600 text-center">{item}</span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Module 3 */}
+                <div className="relative pl-8 border-l-2 border-emerald-500">
+                  <h4 className="font-bold text-gray-800 text-[1.15rem] mb-3">3. Procurement & Vendor Management</h4>
+                  <div className="flex flex-wrap gap-2.5">
+                    {[
+                      "Vendor onboarding",
+                      "RFQ workflows",
+                      "Purchase approvals",
+                      "Procurement analytics",
+                      "Vendor performance tracking"
+                    ].map((item, i) => (
+                      <span key={i} className="px-3 py-1.5 bg-slate-50 border border-slate-100 rounded-lg text-xs font-medium text-gray-600 text-center">{item}</span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Module 4 */}
+                <div className="relative pl-8 border-l-2 border-emerald-500">
+                  <h4 className="font-bold text-gray-800 text-[1.15rem] mb-3">4. Sales & CRM</h4>
+                  <div className="flex flex-wrap gap-2.5">
+                    {[
+                      "Lead management",
+                      "Quotation workflows",
+                      "Sales order processing",
+                      "Customer lifecycle tracking",
+                      "Distributor management"
+                    ].map((item, i) => (
+                      <span key={i} className="px-3 py-1.5 bg-slate-50 border border-slate-100 rounded-lg text-xs font-medium text-gray-600 text-center">{item}</span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Module 5 */}
+                <div className="relative pl-8 border-l-2 border-emerald-500">
+                  <h4 className="font-bold text-gray-800 text-[1.15rem] mb-3">5. Finance & Accounting</h4>
+                  <div className="flex flex-wrap gap-2.5">
+                    {[
+                      "Multi-currency accounting",
+                      "GST compliance",
+                      "Bank reconciliation",
+                      "Cost center tracking",
+                      "Export invoicing",
+                      "Financial reporting"
+                    ].map((item, i) => (
+                      <span key={i} className="px-3 py-1.5 bg-slate-50 border border-slate-100 rounded-lg text-xs font-medium text-gray-600 text-center">{item}</span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Module 6 */}
+                <div className="relative pl-8 border-l-2 border-emerald-500">
+                  <h4 className="font-bold text-gray-800 text-[1.15rem] mb-3">6. HRMS & Employee Management</h4>
+                  <div className="flex flex-wrap gap-2.5">
+                    {[
+                      "Attendance management",
+                      "Leave management",
+                      "Payroll workflows",
+                      "Employee self-service portal",
+                      "Performance tracking"
+                    ].map((item, i) => (
+                      <span key={i} className="px-3 py-1.5 bg-slate-50 border border-slate-100 rounded-lg text-xs font-medium text-gray-600 text-center">{item}</span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Module 7 */}
+                <div className="relative pl-8 border-l-2 border-emerald-500">
+                  <h4 className="font-bold text-gray-800 text-[1.15rem] mb-3">7. Quality Management</h4>
+                  <div className="flex flex-wrap gap-2.5">
+                    {[
+                      "Quality checkpoints",
+                      "Inspection workflows",
+                      "Manufacturing quality compliance",
+                      "Rejection management"
+                    ].map((item, i) => (
+                      <span key={i} className="px-3 py-1.5 bg-slate-50 border border-slate-100 rounded-lg text-xs font-medium text-gray-600 text-center">{item}</span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Module 8 */}
+                <div className="relative pl-8 border-l-2 border-emerald-500">
+                  <h4 className="font-bold text-gray-800 text-[1.15rem] mb-3">8. Export & Compliance Management</h4>
+                  <div className="flex flex-wrap gap-2.5">
+                    {[
+                      "Export documentation workflows",
+                      "Foreign currency transaction management",
+                      "Compliance reporting",
+                      "Regulatory documentation support"
+                    ].map((item, i) => (
+                      <span key={i} className="px-3 py-1.5 bg-slate-50 border border-slate-100 rounded-lg text-xs font-medium text-gray-600 text-center">{item}</span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Integrations Sub-Block */}
+              <div className="mt-12 pt-10 border-t border-gray-100">
+                <h3 className="font-bold text-gray-800 text-[1.2rem] mb-4">Third-Party System Integrations</h3>
+                <p className="text-gray-500 text-[1rem] leading-relaxed mb-6">
+                  One of the critical aspects of the implementation was seamless integration with existing third-party platforms and operational tools already being used by the organization.
+                </p>
+                <div className="flex flex-wrap gap-2.5 mb-6">
+                  {[
+                    "Banking systems",
+                    "Export documentation systems",
+                    "Compliance platforms",
+                    "Vendor communication workflows",
+                    "External reporting systems"
+                  ].map((item, idx) => (
+                    <span key={idx} className="px-3 py-1 bg-emerald-50 text-emerald-700 rounded-full text-xs font-semibold">{item}</span>
+                  ))}
+                </div>
+                <p className="text-gray-500 text-[0.95rem]">
+                  This enabled the client to retain critical operational continuity while modernizing its ERP ecosystem.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* Centralized Stakeholder Ecosystem */}
+          <section className="bg-white rounded-[20px] md:rounded-[32px] p-6 md:p-12 border border-gray-100 shadow-sm">
+            <h2 className="text-[1.8rem] md:text-[2rem] font-serif font-medium text-[#111] mb-2 tracking-tight">
+              Centralized Stakeholder Ecosystem
+            </h2>
+            <p className="text-gray-500 text-[1.05rem] mb-8">
+              The ERP platform was designed to unify all stakeholders within a single digital workflow environment.
+            </p>
+            
+            <h4 className="font-bold text-gray-400 text-[0.85rem] uppercase tracking-wider mb-6">Stakeholders Covered</h4>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-4 gap-x-8">
+              {[
+                "Buyers",
+                "Vendors",
+                "Employees",
+                "Management Teams",
+                "Compliance & Government Agencies",
+                "Finance & Accounts Teams",
+                "Production Teams",
+                "Warehouse Teams"
+              ].map((stakeholder, idx) => (
+                <div key={idx} className="flex items-center gap-3">
+                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center text-xs font-bold border border-emerald-100">
+                    ✔
+                  </span>
+                  <span className="text-gray-600 text-[0.98rem] font-sans font-light">{stakeholder}</span>
+                </div>
+              ))}
+            </div>
+            <p className="text-gray-500 text-[0.95rem] mt-8">
+              This resulted in significantly improved transparency and collaboration across departments.
+            </p>
+          </section>
+
+          {/* Advanced Reporting & Analytics */}
+          <section className="bg-white rounded-[20px] md:rounded-[32px] p-6 md:p-12 border border-gray-100 shadow-sm">
+            <h2 className="text-[1.8rem] md:text-[2rem] font-serif font-medium text-[#111] mb-6 tracking-tight">
+              Advanced Reporting & Analytics
+            </h2>
+            <p className="text-gray-500 text-[1.05rem] leading-relaxed font-sans font-light mb-8">
+              Suvrin implemented advanced real-time dashboards and reporting capabilities enabling leadership teams to make faster and more accurate decisions.
+            </p>
+
+            <h4 className="font-bold text-gray-400 text-[0.85rem] uppercase tracking-wider mb-6">Reports & Dashboards Included</h4>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                "Production efficiency reports",
+                "Inventory movement reports",
+                "Procurement analytics",
+                "Export performance dashboards",
+                "Financial MIS reports",
+                "Vendor performance analysis",
+                "SKU profitability analysis"
+              ].map((item, idx) => (
+                <div key={idx} className="p-5 bg-slate-50 rounded-[20px] border border-slate-100">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 mb-2.5 block" />
+                  <p className="text-gray-700 font-semibold text-[0.95rem]">{item}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Technical Stack Section */}
+          <section className="bg-white rounded-[20px] md:rounded-[32px] p-6 md:p-12 border border-gray-100 shadow-sm">
+            <h2 className="text-[1.8rem] md:text-[2rem] font-serif font-medium text-[#111] mb-2 tracking-tight">
+              Technology Stack
+            </h2>
+            <p className="text-gray-400 text-[0.95rem] mb-8 uppercase tracking-wider font-semibold">ERP Platform & Infrastructure</p>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                { title: "ERP Platform", items: ["Odoo v18"] },
+                { title: "Backend", items: ["Python", "PostgreSQL"] },
+                { title: "Integrations", items: ["REST APIs", "Middleware integrations"] },
+                { title: "Infrastructure", items: ["Cloud-hosted deployment", "Secure backup architecture", "Role-based access controls"] }
+              ].map((stack, i) => (
+                <div key={i} className="p-6 bg-slate-50 rounded-[24px] border border-slate-100">
+                  <h4 className="font-bold text-gray-800 text-[1.05rem] mb-3.5 border-b border-gray-200/50 pb-2">{stack.title}</h4>
+                  <ul className="flex flex-col gap-2">
+                    {stack.items.map((item, idx) => (
+                      <li key={idx} className="text-[0.9rem] text-gray-600 flex items-start gap-2">
+                        <span className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 flex-shrink-0" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Key Outcomes & Business Impact Section */}
+          <section className="bg-white rounded-[20px] md:rounded-[32px] p-6 md:p-12 border border-gray-100 shadow-sm">
+            <h2 className="text-[1.8rem] md:text-[2rem] font-serif font-medium text-[#111] mb-2 tracking-tight">
+              Key Outcomes & Business Impact
+            </h2>
+            <p className="text-gray-500 text-[1.05rem] mb-8 italic">The ERP transformation delivered measurable operational and strategic improvements across the organization.</p>
+            
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {/* Operational Efficiency */}
+              <div className="p-6 bg-slate-50 border border-slate-100 rounded-[20px]">
+                <h4 className="font-bold text-gray-800 text-[1.1rem] border-b border-gray-200 pb-3 mb-4 flex items-center gap-3.5">
+                  <span className="w-2.5 h-2.5 rounded-full bg-blue-500" />
+                  Operational Efficiency Improvement
+                </h4>
+                <ul className="flex flex-col gap-3 pl-4 list-disc text-gray-600 text-[0.95rem]">
+                  <li>Significant gains in process automation and inter-department coordination</li>
+                  <li>Improved reporting accuracy and workflow visibility</li>
+                  <li>Manual dependencies drastically reduced</li>
+                </ul>
+              </div>
+
+              {/* Excel Dependency */}
+              <div className="p-6 bg-slate-50 border border-slate-100 rounded-[20px]">
+                <h4 className="font-bold text-gray-800 text-[1.1rem] border-b border-gray-200 pb-3 mb-4 flex items-center gap-3.5">
+                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-500" />
+                  Reduction in Excel Dependency
+                </h4>
+                <ul className="flex flex-col gap-3 pl-4 list-disc text-gray-600 text-[0.95rem]">
+                  <li>Fragmented spreadsheet operations replaced with a centralized real-time system</li>
+                  <li>Improved data consistency and decision-making speed</li>
+                  <li>Enhanced operational reliability</li>
+                </ul>
+              </div>
+
+              {/* SKU & Inventory Management */}
+              <div className="p-6 bg-slate-50 border border-slate-100 rounded-[20px]">
+                <h4 className="font-bold text-gray-800 text-[1.1rem] border-b border-gray-200 pb-3 mb-4 flex items-center gap-3.5">
+                  <span className="w-2.5 h-2.5 rounded-full bg-blue-500" />
+                  Improved Inventory & SKU Management
+                </h4>
+                <ul className="flex flex-col gap-3 pl-4 list-disc text-gray-600 text-[0.95rem]">
+                  <li>Successfully managed growing SKU complexity</li>
+                  <li>Better stock visibility and automated replenishment</li>
+                  <li>Improved warehouse accuracy</li>
+                </ul>
+              </div>
+
+              {/* Decision Making & Compliance */}
+              <div className="p-6 bg-slate-50 border border-slate-100 rounded-[20px]">
+                <h4 className="font-bold text-gray-800 text-[1.1rem] border-b border-gray-200 pb-3 mb-4 flex items-center gap-3.5">
+                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-500" />
+                  Enhanced Compliance & Productivity
+                </h4>
+                <ul className="flex flex-col gap-3 pl-4 list-disc text-gray-600 text-[0.95rem]">
+                  <li>Streamlined GST workflows, export documentation, and multi-currency accounting</li>
+                  <li>Reduced compliance risks and improved audit readiness</li>
+                  <li>Reduction in manual effort, faster approvals, and improved employee productivity</li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Strategic Benefits Subgrid */}
+            <div className="mt-12 pt-10 border-t border-gray-100">
+              <h4 className="font-bold text-gray-800 text-[1.1rem] mb-6">Strategic Benefits Delivered</h4>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-4 gap-x-8">
+                {[
+                  "Centralized enterprise-wide operations",
+                  "Scalable ERP architecture for future growth",
+                  "Improved manufacturing visibility",
+                  "Better export & compliance control",
+                  "Stronger management reporting",
+                  "Enhanced operational transparency",
+                  "Reduced process dependency on manual systems"
+                ].map((benefit, idx) => (
+                  <div key={idx} className="flex items-center gap-3">
+                    <span className="flex-shrink-0 w-6 h-6 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center text-xs font-bold border border-emerald-100">
+                      ✔
+                    </span>
+                    <span className="text-gray-600 text-[0.98rem] font-sans font-light">{benefit}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* Conclusion Section */}
+          <section className="bg-[#0546e0] rounded-[20px] md:rounded-[32px] p-6 md:p-12 text-white shadow-md relative overflow-hidden">
+            <div className="absolute top-0 right-0 opacity-10 pointer-events-none transform translate-x-20 -translate-y-20">
+              <svg width="400" height="400" viewBox="0 0 100 100" fill="currentColor">
+                <circle cx="50" cy="50" r="40" />
+              </svg>
+            </div>
+            <h2 className="text-[1.8rem] md:text-[2.2rem] font-serif font-medium text-white mb-6 tracking-tight">
+              Conclusion
+            </h2>
+            <div className="text-[1.08rem] text-blue-50 leading-relaxed font-sans font-light flex flex-col gap-6">
+              <p>
+                Suvrin Technologies successfully transformed the client’s operational ecosystem by implementing a fully integrated Odoo ERP platform tailored for precision manufacturing and international business operations.
+              </p>
+              <p>
+                The solution enabled the organization to modernize legacy workflows, streamline manufacturing and supply chain processes, improve compliance management, and create a scalable digital foundation capable of supporting long-term global growth.
+              </p>
+              <p>
+                This implementation stands as a strong example of Suvrin’s expertise in enterprise ERP transformation, manufacturing digitization, workflow automation, and scalable business systems engineering.
+              </p>
+            </div>
+          </section>
+
+        </div>
+
+        {/* Back Button */}
+        <div className="mb-24 flex justify-center">
+          <Link
+            href="/case-studies"
+            className="inline-flex items-center gap-2 px-8 py-3.5 border border-gray-200 hover:border-gray-400 text-gray-700 hover:text-gray-900 font-semibold rounded-full transition-all duration-200 text-[0.95rem] bg-white shadow-sm hover:shadow"
+          >
+            ← Back to All Case Studies
+          </Link>
+        </div>
+
+        <StudiesFinalCTA />
+      </main>
+    );
+  }
+
   // Handle verbatim rendering for real-estate-platform to prevent any data cutting
   if (slug === "real-estate-platform") {
     return (
