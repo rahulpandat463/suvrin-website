@@ -58,8 +58,8 @@ export interface CaseStudy {
 
 export const caseStudies: CaseStudy[] = [
   {
-    id: "fine-tuning-enterprise",
-    slug: "fine-tuning-enterprise",
+    id: "odoo-erp-implementation",
+    slug: "odoo-erp-implementation",
     tag: "Automation & Integration",
     categories: ["Automation & Integration", "Strategy & Advisory"],
     industry: "Manufacturing",
