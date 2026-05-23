@@ -24,7 +24,7 @@ export default async function CaseStudyPage({ params }: StudyPageProps) {
   const { slug } = await params;
   
   // Handle verbatim rendering for fine-tuning-enterprise (Odoo ERP Implementation)
-  if (slug === "fine-tuning-enterprise") {
+  if (slug === "odoo-erp-implementation") {
     return (
       <main className="min-h-screen bg-slate-50/40 pt-36">
         {/* Header Hero */}

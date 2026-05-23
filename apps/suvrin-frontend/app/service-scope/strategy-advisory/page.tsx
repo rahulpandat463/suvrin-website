@@ -40,7 +40,9 @@ export default function StrategyAdvisoryPage() {
         <div className="max-w-[1200px] mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {points.map((point, i) => {
-              const [title, desc] = point.split(" — ");
+              const parts = point.split(" — ");
+              const title = parts[0] ?? "";
+              const desc = parts[1];
               return (
                 <div
                   key={i}
