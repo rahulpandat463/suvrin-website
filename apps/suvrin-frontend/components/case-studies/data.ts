@@ -49,10 +49,16 @@ export interface CaseStudy {
   // Custom detailed fields
   clientOverview?: string;
   challengesList?: string[];
+  challengeDetails?: { title: string; points: string[] }[];
   solutionsList?: { title: string; description: string }[];
+  modules?: { title: string; points: string[] }[];
+  integrations?: string[];
+  stakeholders?: string[];
+  reports?: string[];
   techStack?: { category: string; items: string[] }[];
   keyFeatures?: string[];
   impact?: { category: string; points: string[] }[];
+  strategicBenefits?: string[];
   conclusion?: string;
 }
 
@@ -75,6 +81,247 @@ export const caseStudies: CaseStudy[] = [
       { value: "100%", label: "GST & Export Compliance" },
     ],
     image: "https://static.wixstatic.com/media/b0d27a_8f92d5aa653f4c3182be59d3ab55bb1a~mv2.png/v1/fill/w_740,h_416,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/b0d27a_8f92d5aa653f4c3182be59d3ab55bb1a~mv2.png",
+
+    clientOverview: "Suvrin Technologies partnered with a leading Indo-Japanese precision tools manufacturing company specializing in industrial-grade precision tooling solutions catering to domestic and international markets. The company had experienced significant business growth across multiple geographies along with a rapid increase in product SKUs, operational complexity, vendor networks, export activities, and compliance requirements. As the organization scaled, its existing legacy operational ecosystem—primarily dependent on disconnected software applications, manual processes, and extensive use of Microsoft Excel—became increasingly inefficient and unsustainable. The client required a modern, scalable, and fully integrated ERP platform capable of managing end-to-end manufacturing, operations, compliance, finance, inventory, procurement, sales, exports, and stakeholder collaboration.",
+
+    challengeDetails: [
+      {
+        title: "Fragmented Legacy Systems",
+        points: [
+          "Legacy software applications, manual spreadsheets, offline approval workflows, and department-specific systems",
+          "Data inconsistency and duplication of work across departments",
+          "Reporting delays and lack of centralized visibility",
+        ],
+      },
+      {
+        title: "Rapid Growth in Product SKUs",
+        points: [
+          "Growing catalog of precision tools significantly increased operational complexity",
+          "SKU-level inventory tracking and production planning became unmanageable",
+          "Procurement synchronization, warehouse management, and BOM complexity were critical pain points",
+        ],
+      },
+      {
+        title: "Multi-Geography Operations",
+        points: [
+          "Expansion across regions and export markets made operational coordination increasingly difficult",
+          "Multi-location management, multi-currency handling, and export documentation were unsupported",
+          "No centralized reporting or inter-department synchronization across geographies",
+        ],
+      },
+      {
+        title: "Manufacturing & Supply Chain Complexity",
+        points: [
+          "Raw material procurement, vendor coordination, production planning, and quality inspections were siloed",
+          "Inventory movement and dispatch management lacked integration",
+          "Lack of unified visibility caused operational inefficiencies and delayed decision-making",
+        ],
+      },
+      {
+        title: "Compliance & Regulatory Requirements",
+        points: [
+          "Stronger controls needed for GST and export regulations",
+          "Foreign currency transactions, import-export documentation, and government reporting were manual",
+        ],
+      },
+      {
+        title: "Stakeholder Visibility Gaps",
+        points: [
+          "Buyers, vendors, employees, management teams, and compliance agencies operated in silos",
+          "No unified data ecosystem across all stakeholder groups",
+        ],
+      },
+    ],
+
+    modules: [
+      {
+        title: "Manufacturing (MRP)",
+        points: [
+          "Production planning",
+          "Bill of Materials (BOM)",
+          "Work order management",
+          "Production scheduling",
+          "Shop floor workflows",
+        ],
+      },
+      {
+        title: "Inventory & Warehouse Management",
+        points: [
+          "SKU management",
+          "Batch tracking",
+          "Multi-warehouse operations",
+          "Inventory valuation",
+          "Reorder rules",
+          "Stock movement automation",
+        ],
+      },
+      {
+        title: "Procurement & Vendor Management",
+        points: [
+          "Vendor onboarding",
+          "RFQ workflows",
+          "Purchase approvals",
+          "Procurement analytics",
+          "Vendor performance tracking",
+        ],
+      },
+      {
+        title: "Sales & CRM",
+        points: [
+          "Lead management",
+          "Quotation workflows",
+          "Sales order processing",
+          "Customer lifecycle tracking",
+          "Distributor management",
+        ],
+      },
+      {
+        title: "Finance & Accounting",
+        points: [
+          "Multi-currency accounting",
+          "GST compliance",
+          "Bank reconciliation",
+          "Cost center tracking",
+          "Export invoicing",
+          "Financial reporting",
+        ],
+      },
+      {
+        title: "HRMS & Employee Management",
+        points: [
+          "Attendance management",
+          "Leave management",
+          "Payroll workflows",
+          "Employee self-service portal",
+          "Performance tracking",
+        ],
+      },
+      {
+        title: "Quality Management",
+        points: [
+          "Quality checkpoints",
+          "Inspection workflows",
+          "Manufacturing quality compliance",
+          "Rejection management",
+        ],
+      },
+      {
+        title: "Export & Compliance Management",
+        points: [
+          "Export documentation workflows",
+          "Foreign currency transaction management",
+          "Compliance reporting",
+          "Regulatory documentation support",
+        ],
+      },
+    ],
+
+    integrations: [
+      "Banking systems",
+      "Export documentation systems",
+      "Compliance platforms",
+      "Vendor communication workflows",
+      "External reporting systems",
+    ],
+
+    stakeholders: [
+      "Buyers",
+      "Vendors",
+      "Employees",
+      "Management Teams",
+      "Compliance & Government Agencies",
+      "Finance & Accounts Teams",
+      "Production Teams",
+      "Warehouse Teams",
+    ],
+
+    reports: [
+      "Production efficiency reports",
+      "Inventory movement reports",
+      "Procurement analytics",
+      "Export performance dashboards",
+      "Financial MIS reports",
+      "Vendor performance analysis",
+      "SKU profitability analysis",
+    ],
+
+    techStack: [
+      {
+        category: "ERP Platform",
+        items: ["Odoo v18"],
+      },
+      {
+        category: "Backend",
+        items: ["Python", "PostgreSQL"],
+      },
+      {
+        category: "Integrations",
+        items: ["REST APIs", "Middleware integrations"],
+      },
+      {
+        category: "Infrastructure",
+        items: ["Cloud-hosted deployment", "Secure backup architecture", "Role-based access controls"],
+      },
+    ],
+
+    impact: [
+      {
+        category: "Operational Efficiency",
+        points: [
+          "Major gains in process automation and inter-department coordination",
+          "Significant reduction in manual dependencies",
+          "Improved reporting accuracy and workflow visibility",
+        ],
+      },
+      {
+        category: "Inventory & SKU Management",
+        points: [
+          "Successfully managed growing SKU complexity with better stock visibility",
+          "Automated replenishment and improved warehouse accuracy",
+        ],
+      },
+      {
+        category: "Decision-Making Speed",
+        points: [
+          "Real-time dashboards and centralized reporting significantly improved management visibility",
+          "Faster decisions across operations and finance",
+        ],
+      },
+      {
+        category: "Compliance Management",
+        points: [
+          "Streamlined GST workflows and export documentation",
+          "Multi-currency accounting and regulatory reporting improved",
+          "Reduced compliance risks and improved audit readiness",
+        ],
+      },
+      {
+        category: "Employee Productivity",
+        points: [
+          "Reduction in manual effort and faster approvals",
+          "Improved employee productivity and better operational coordination",
+        ],
+      },
+      {
+        category: "Excel Dependency Eliminated",
+        points: [
+          "Replaced fragmented spreadsheet-based operations with a centralized real-time system",
+          "Improved data consistency, decision-making speed, and operational reliability",
+        ],
+      },
+    ],
+
+    strategicBenefits: [
+      "Centralized enterprise-wide operations",
+      "Scalable ERP architecture for future growth",
+      "Improved manufacturing visibility",
+      "Better export & compliance control",
+      "Stronger management reporting",
+      "Enhanced operational transparency",
+      "Reduced process dependency on manual systems",
+    ],
+
+    conclusion: "Suvrin Technologies successfully transformed the client's operational ecosystem by implementing a fully integrated Odoo ERP platform tailored for precision manufacturing and international business operations. The solution enabled the organization to modernize legacy workflows, streamline manufacturing and supply chain processes, improve compliance management, and create a scalable digital foundation capable of supporting long-term global growth. This implementation stands as a strong example of Suvrin's expertise in enterprise ERP transformation, manufacturing digitization, workflow automation, and scalable business systems engineering.",
   },
   {
     id: "real-estate-platform",
