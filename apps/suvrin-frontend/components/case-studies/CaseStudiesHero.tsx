@@ -12,7 +12,7 @@ export default function CaseStudiesHero({
       <section className="mx-auto max-w-[1240px] w-full" id="case-studies-hero">
         <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-6">
           {/* Left Card */}
-          <div className="bg-white rounded-[24px] p-6 sm:p-10 md:p-14 lg:p-[4.5rem] flex flex-col justify-end min-h-[440px] sm:min-h-[500px] lg:min-h-[550px] shadow-[0_4px_20px_rgba(0,0,0,0.02)] border border-black/[0.03]">
+          <div className="bg-white rounded-[24px] p-6 sm:p-10 md:p-14 lg:p-[4.5rem] flex flex-col justify-start min-h-[440px] sm:min-h-[500px] lg:min-h-[550px] shadow-[0_4px_20px_rgba(0,0,0,0.02)] border border-black/[0.03]">
             <h1 className="text-[clamp(2.2rem,5vw,4.5rem)] tracking-tight text-[#111] leading-[1.1] mb-8 font-serif">
               {title}
             </h1>

@@ -41,7 +41,7 @@ export default function FrameworkLogos({ variant = "standard" }: FrameworkLogosP
                   src={logo.src}
                   alt={logo.alt}
                   style={{ transform: `scale(${logo.scale})` }}
-                  className={`h-9 w-auto object-contain shrink-0 cursor-pointer transition-all duration-300 opacity-60 mix-blend-multiply grayscale hover:grayscale-0 ${logo.alt === "FICCI" ? "contrast-200 brightness-125" : ""
+                  className={`h-9 w-auto object-contain shrink-0 cursor-pointer transition-all duration-300 ${logo.alt === "FICCI" ? "contrast-200 brightness-125" : ""
                     }`}
                 />
               </div>
