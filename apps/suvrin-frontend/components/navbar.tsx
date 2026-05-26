@@ -90,7 +90,7 @@ function NavLogo() {
         alt="Suvrin Technologies Logo"
         width={250}
         height={50}
-        className="h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+        className="h-26 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
         priority
       />
     </Link>
