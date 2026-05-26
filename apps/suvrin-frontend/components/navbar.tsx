@@ -12,7 +12,6 @@ interface SubItem {
   dropdown?: SubItem[];
 }
 
-
 interface NavItem {
   label: string;
   href: string;
@@ -36,8 +35,8 @@ const navItems: NavItem[] = [
       {
         label: "Mobile",
         href: "/tech-stack/mobile",
-      }
-    ]
+      },
+    ],
   },
   {
     label: "About",
@@ -97,12 +96,22 @@ function NavLogo() {
   );
 }
 
-function DropdownMenu({ items, depth = 0, align = "top" }: { items: SubItem[], depth?: number, align?: "top" | "bottom" }) {
+function DropdownMenu({
+  items,
+  depth = 0,
+  align = "top",
+}: {
+  items: SubItem[];
+  depth?: number;
+  align?: "top" | "bottom";
+}) {
   const isNested = depth > 0;
 
   if (isNested) {
     return (
-      <div className={`absolute ${align === "bottom" ? "bottom-0" : "top-0"} left-full pl-5 opacity-0 invisible pointer-events-none group-hover/nestedItem:opacity-100 group-hover/nestedItem:visible group-hover/nestedItem:pointer-events-auto transition-all duration-200 ease-out z-[100]`}>
+      <div
+        className={`absolute ${align === "bottom" ? "bottom-0" : "top-0"} left-full pl-5 opacity-0 invisible pointer-events-none group-hover/nestedItem:opacity-100 group-hover/nestedItem:visible group-hover/nestedItem:pointer-events-auto transition-all duration-200 ease-out z-[100]`}
+      >
         {/* Transparent bridge to ensure mouse never loses connection */}
         <div className="absolute top-0 -left-6 w-6 h-full" />
         <div className="min-w-[260px] w-max max-w-[320px] bg-[#1a1a1a]/95 backdrop-blur-3xl border border-white/10 rounded-[24px] py-4 px-2 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
@@ -120,7 +129,11 @@ function DropdownMenu({ items, depth = 0, align = "top" }: { items: SubItem[], d
                     </Link>
                     <div className="absolute top-0 left-full pl-5 opacity-0 invisible pointer-events-none group-hover/nestedItem:opacity-100 group-hover/nestedItem:visible group-hover/nestedItem:pointer-events-auto transition-all duration-200 ease-out">
                       <div className="absolute top-0 -left-6 w-6 h-full" />
-                      <DropdownMenu items={sub.dropdown} depth={depth + 1} align="top" />
+                      <DropdownMenu
+                        items={sub.dropdown}
+                        depth={depth + 1}
+                        align="top"
+                      />
                     </div>
                   </>
                 ) : (
@@ -149,10 +162,7 @@ function DropdownMenu({ items, depth = 0, align = "top" }: { items: SubItem[], d
             const alignMode = index >= 4 ? "bottom" : "top";
 
             return (
-              <div
-                key={sub.label}
-                className="relative group/nestedItem"
-              >
+              <div key={sub.label} className="relative group/nestedItem">
                 {sub.dropdown ? (
                   <>
                     <Link
@@ -162,7 +172,11 @@ function DropdownMenu({ items, depth = 0, align = "top" }: { items: SubItem[], d
                       <span>{sub.label}</span>
                       <span className="opacity-40 text-[1.1rem]">›</span>
                     </Link>
-                    <DropdownMenu items={sub.dropdown} depth={depth + 1} align={alignMode} />
+                    <DropdownMenu
+                      items={sub.dropdown}
+                      depth={depth + 1}
+                      align={alignMode}
+                    />
                   </>
                 ) : (
                   <Link
@@ -180,8 +194,6 @@ function DropdownMenu({ items, depth = 0, align = "top" }: { items: SubItem[], d
     </div>
   );
 }
-
-
 
 function DesktopNavItem({
   item,
@@ -201,12 +213,12 @@ function DesktopNavItem({
       <Link
         href={item.href}
         className={`flex items-center gap-2 px-3 py-2 text-[1.05rem] font-medium whitespace-nowrap transition-colors duration-200 ${isActive
-          ? isLight
-            ? "text-text-primary"
-            : "text-white"
-          : isLight
-            ? "text-text-secondary hover:text-text-primary"
-            : "text-white/70 hover:text-white"
+            ? isLight
+              ? "text-text-primary"
+              : "text-white"
+            : isLight
+              ? "text-text-secondary hover:text-text-primary"
+              : "text-white/70 hover:text-white"
           }`}
       >
         {item.label}
@@ -277,8 +289,8 @@ export function Navbar() {
         <Link
           href="/contact"
           className={`hidden lg:inline-flex items-center px-8 py-3.5 text-[0.95rem] font-bold rounded-full transition-all duration-200 ${isLight
-            ? "text-white bg-[#0052cc] hover:bg-[#0043a6] shadow-md"
-            : "text-white bg-[#0052cc] hover:bg-[#0043a6] shadow-[0_4px_14px_0_rgba(0,82,204,0.39)] border border-white/10"
+              ? "text-white bg-[#0052cc] hover:bg-[#0043a6] shadow-md"
+              : "text-white bg-[#0052cc] hover:bg-[#0043a6] shadow-[0_4px_14px_0_rgba(0,82,204,0.39)] border border-white/10"
             }`}
         >
           Connect with Us
@@ -330,22 +342,23 @@ export function Navbar() {
                   {openDropdown === item.label && (
                     <div className="pl-4 pb-4 flex flex-col gap-3">
                       {item.dropdown.map((sub) => (
-                        <div
-                          key={sub.label}
-                          className="flex flex-col gap-2"
-                        >
+                        <div key={sub.label} className="flex flex-col gap-2">
                           {sub.dropdown ? (
                             <div className="flex flex-col gap-2">
                               <button
                                 className="flex items-center justify-between w-full text-[0.95rem] font-medium text-white/70 py-2 transition-colors active:text-blue-400"
                                 onClick={() => {
                                   setOpenNested((prev) =>
-                                    prev.includes(sub.label) ? prev.filter(i => i !== sub.label) : [...prev, sub.label]
+                                    prev.includes(sub.label)
+                                      ? prev.filter((i) => i !== sub.label)
+                                      : [...prev, sub.label],
                                   );
                                 }}
                               >
                                 <span>{sub.label}</span>
-                                <span className={`text-[0.6rem] transition-transform duration-300 ${openNested.includes(sub.label) ? "rotate-180" : ""}`}>
+                                <span
+                                  className={`text-[0.6rem] transition-transform duration-300 ${openNested.includes(sub.label) ? "rotate-180" : ""}`}
+                                >
                                   ▼
                                 </span>
                               </button>

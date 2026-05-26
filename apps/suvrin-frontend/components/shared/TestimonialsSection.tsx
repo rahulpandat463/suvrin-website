@@ -52,6 +52,10 @@ export default function TestimonialsSection() {
     setActiveTestimonial((prev) => (prev + 1) % testimonials.length);
   };
 
+  const handlePrev = () => {
+    setActiveTestimonial((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1));
+  };
+
   const currentT = testimonials[activeTestimonial];
 
   return (
@@ -103,23 +107,42 @@ export default function TestimonialsSection() {
               {currentT?.text}
             </p>
 
-            <button
-              onClick={handleNext}
-              className="w-[3.25rem] h-[3.25rem] rounded-full border border-[#0546e0] flex items-center justify-center text-[#0546e0] hover:bg-[#f0f4ff] transition-colors shrink-0 hidden md:flex cursor-pointer shadow-sm hover:shadow active:scale-95"
-            >
-              <svg
-                width="22"
-                height="22"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
+            <div className="hidden md:flex gap-3">
+              <button
+                onClick={handlePrev}
+                className="w-[3.25rem] h-[3.25rem] rounded-full border border-[#0546e0] flex items-center justify-center text-[#0546e0] hover:bg-[#f0f4ff] transition-colors shrink-0 cursor-pointer shadow-sm hover:shadow active:scale-95"
               >
-                <path d="m9 18 6-6-6-6" />
-              </svg>
-            </button>
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="m15 18-6-6 6-6" />
+                </svg>
+              </button>
+              <button
+                onClick={handleNext}
+                className="w-[3.25rem] h-[3.25rem] rounded-full border border-[#0546e0] flex items-center justify-center text-[#0546e0] hover:bg-[#f0f4ff] transition-colors shrink-0 cursor-pointer shadow-sm hover:shadow active:scale-95"
+              >
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="m9 18 6-6-6-6" />
+                </svg>
+              </button>
+            </div>
           </div>
 
           {/* Metrics Footer */}
@@ -136,8 +159,25 @@ export default function TestimonialsSection() {
             ))}
           </div>
 
-          {/* Mobile Arrow */}
-          <div className="mt-8 flex justify-center md:hidden">
+          {/* Mobile Arrows */}
+          <div className="mt-8 flex justify-center gap-4 md:hidden">
+            <button
+              onClick={handlePrev}
+              className="w-12 h-12 rounded-full border border-[#0546e0] flex items-center justify-center text-[#0546e0] hover:bg-[#f0f4ff] transition-colors shrink-0 cursor-pointer shadow-sm active:scale-95"
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="m15 18-6-6 6-6" />
+              </svg>
+            </button>
             <button
               onClick={handleNext}
               className="w-12 h-12 rounded-full border border-[#0546e0] flex items-center justify-center text-[#0546e0] hover:bg-[#f0f4ff] transition-colors shrink-0 cursor-pointer shadow-sm active:scale-95"

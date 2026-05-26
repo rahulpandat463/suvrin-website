@@ -16,14 +16,14 @@ export default function ServicesHero({
   ctaText = "Speak with Our AI Innovation Team",
 }: ServicesHeroProps) {
   return (
-    <div className="bg-bg-secondary pt-36 sm:pt-40 md:pt-44 px-6 lg:px-10 pb-28 md:pb-32 min-h-[85vh] md:min-h-[90vh]">
+    <div className="bg-bg-secondary pt-28 sm:pt-32 md:pt-36 px-6 lg:px-10 pb-16 md:pb-20 min-h-[50vh] md:min-h-[60vh]">
       <section className="mx-auto max-w-[1240px] w-full" id={id}>
         <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-8">
           {/* Left Card */}
-          <div className="bg-bg-card rounded-[32px] p-8 sm:p-10 md:p-14 lg:p-[4.5rem] flex flex-col justify-end min-h-[460px] sm:min-h-[500px] lg:min-h-[580px] shadow-[0_4px_24px_rgba(0,0,0,0.02)] border border-black/[0.04]">
-            <h2 className="text-[clamp(2.2rem,5vw,4.6rem)] tracking-[0.01em] text-[#111] leading-[1.05] mb-6 font-serif">
+          <div className="bg-bg-card rounded-[32px] p-8 sm:p-10 md:p-14 lg:p-[4.5rem] flex flex-col justify-end min-h-[340px] sm:min-h-[400px] lg:min-h-[480px] shadow-[0_4px_24px_rgba(0,0,0,0.02)] border border-black/[0.04]">
+            <h6 className="text-[clamp(1.5rem,2.75vw,2.75rem)] tracking-[0.01em] text-[#111] leading-[1.1] mb-4 font-serif">
               {title}
-            </h2>
+            </h6>
             <p className="text-[1.05rem] md:text-[1.12rem] text-[#555] leading-relaxed mb-10 max-w-full sm:max-w-[500px]">
               {description}
             </p>
@@ -38,7 +38,7 @@ export default function ServicesHero({
           </div>
 
           {/* Right Card (Abstract Wave Graphics) */}
-          <div className="bg-bg-card rounded-[32px] overflow-hidden relative min-h-[400px] lg:min-h-[580px] flex items-center justify-center shadow-[0_4px_24px_rgba(0,0,0,0.02)] border border-black/[0.04]">
+          <div className="bg-bg-card rounded-[32px] overflow-hidden relative min-h-[340px] lg:min-h-[480px] flex items-center justify-center shadow-[0_4px_24px_rgba(0,0,0,0.02)] border border-black/[0.04]">
             <div className="absolute inset-0 w-full h-full flex items-center justify-center pointer-events-none opacity-[0.35]">
               <svg
                 viewBox="0 0 800 1200"

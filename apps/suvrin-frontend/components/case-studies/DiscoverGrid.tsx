@@ -45,9 +45,9 @@ function DiscoverGridContent({ initialFilter, disableScroll }: DiscoverGridProps
   );
 
   return (
-    <section className="py-24 bg-white" id="discover">
+    <section className="pt-10 pb-24 bg-white" id="discover">
       <div className="max-w-[1240px] mx-auto px-6">
-        <div className="mb-12">
+        <div className="mb-8">
           <h2 className="text-[clamp(1.8rem,4.5vw,4rem)] font-serif tracking-tight text-[#111] mb-4">
             Discover our case studies
           </h2>
@@ -57,7 +57,7 @@ function DiscoverGridContent({ initialFilter, disableScroll }: DiscoverGridProps
         </div>
 
         {/* Filters */}
-        <div className="mb-14">
+        <div className="mb-10">
           <p className="text-[0.9rem] font-medium text-[#888] mb-6">
             Service Scope:
           </p>
