@@ -1,5 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable react/no-unescaped-entities */
+import Link from 'next/link';
+
 export default function ImpactSection() {
   return (
     <section className="bg-white pt-16 pb-20" id="impact">
@@ -26,27 +28,33 @@ export default function ImpactSection() {
               Faster Time-to-Market vs. in-house AI teams
             </p>
           </div>
-          <div className="col-span-1 rounded-[24px] overflow-hidden aspect-square shadow-sm hover:shadow-xl transition-shadow duration-300 hidden sm:block">
-            <img
-              src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80"
-              alt="Architecture"
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <div className="col-span-1 rounded-[24px] overflow-hidden aspect-square shadow-sm hover:shadow-xl transition-shadow duration-300 hidden md:block">
-            <img
-              src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80"
-              alt="Tech Lab"
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <div className="col-span-1 rounded-[24px] overflow-hidden aspect-square shadow-sm hover:shadow-xl transition-shadow duration-300 hidden md:block">
-            <img
-              src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=600&q=80"
-              alt="Cyber"
-              className="w-full h-full object-cover"
-            />
-          </div>
+          <Link href="/services/support-services" className="col-span-1 rounded-[24px] overflow-hidden aspect-square shadow-sm hover:shadow-xl transition-all duration-300 hidden sm:block relative group cursor-pointer">
+            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80" alt="Architecture" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+            <div className="absolute inset-0 bg-[#0F52BA]/90 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out z-10" />
+            <div className="absolute inset-0 flex items-center justify-center p-4 z-20">
+              <span className="text-white font-serif text-2xl md:text-3xl font-medium tracking-tight text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 group-hover:delay-300 delay-0">
+                Support Service
+              </span>
+            </div>
+          </Link>
+          <Link href="/services/app-development" className="col-span-1 rounded-[24px] overflow-hidden aspect-square shadow-sm hover:shadow-xl transition-all duration-300 hidden md:block relative group cursor-pointer">
+            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80" alt="Tech Lab" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+            <div className="absolute inset-0 bg-green-600/90 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out z-10" />
+            <div className="absolute inset-0 flex items-center justify-center p-4 z-20">
+              <span className="text-white font-serif text-2xl md:text-3xl font-medium tracking-tight text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 group-hover:delay-300 delay-0">
+                App Development
+              </span>
+            </div>
+          </Link>
+          <Link href="/services/digital-transformation" className="col-span-1 rounded-[24px] overflow-hidden aspect-square shadow-sm hover:shadow-xl transition-all duration-300 hidden md:block relative group cursor-pointer">
+            <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=600&q=80" alt="Cyber" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+            <div className="absolute inset-0 bg-white/90 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out z-10" />
+            <div className="absolute inset-0 flex items-center justify-center p-4 z-20">
+              <span className="text-black font-serif text-2xl md:text-3xl font-medium tracking-tight text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 group-hover:delay-300 delay-0">
+                Digital Transformation
+              </span>
+            </div>
+          </Link>
 
           {/* ROW 2 — 2 stat cards + 3 images */}
           <div className="col-span-1 sm:col-span-1 md:col-span-2 bg-[#f8f8f8] rounded-[24px] p-6 sm:p-7 md:p-8 flex flex-col justify-between min-h-[140px] aspect-auto md:aspect-[2/1] hover:scale-[1.02] transition-transform duration-300">
@@ -65,45 +73,57 @@ export default function ImpactSection() {
               Years of Collective AI & Technology Expertise
             </p>
           </div>
-          <div className="col-span-1 rounded-[24px] overflow-hidden aspect-square shadow-sm hover:shadow-xl transition-shadow duration-300 hidden sm:block">
-            <img
-              src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=600&q=80"
-              alt="Blueprint"
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <div className="col-span-1 rounded-[24px] overflow-hidden aspect-square shadow-sm hover:shadow-xl transition-shadow duration-300 hidden md:block">
-            <img
-              src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80"
-              alt="Abstract"
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <div className="col-span-1 rounded-[24px] overflow-hidden aspect-square shadow-sm hover:shadow-xl transition-shadow duration-300 hidden md:block">
-            <img
-              src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=600&q=80"
-              alt="Screens"
-              className="w-full h-full object-cover"
-            />
-          </div>
+          <Link href="/services/enterprise-applications" className="col-span-1 rounded-[24px] overflow-hidden aspect-square shadow-sm hover:shadow-xl transition-all duration-300 hidden sm:block relative group cursor-pointer">
+            <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=600&q=80" alt="Blueprint" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+            <div className="absolute inset-0 bg-[#0F52BA]/90 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out z-10" />
+            <div className="absolute inset-0 flex items-center justify-center p-4 z-20">
+              <span className="text-white font-serif text-2xl md:text-3xl font-medium tracking-tight text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 group-hover:delay-300 delay-0">
+                Enterprise Applications
+              </span>
+            </div>
+          </Link>
+          <Link href="/services/software-engineering" className="col-span-1 rounded-[24px] overflow-hidden aspect-square shadow-sm hover:shadow-xl transition-all duration-300 hidden md:block relative group cursor-pointer">
+            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80" alt="Abstract" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+            <div className="absolute inset-0 bg-green-600/90 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out z-10" />
+            <div className="absolute inset-0 flex items-center justify-center p-4 z-20">
+              <span className="text-white font-serif text-2xl md:text-3xl font-medium tracking-tight text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 group-hover:delay-300 delay-0">
+                Software Engineering
+              </span>
+            </div>
+          </Link>
+          <Link href="/services/startup" className="col-span-1 rounded-[24px] overflow-hidden aspect-square shadow-sm hover:shadow-xl transition-all duration-300 hidden md:block relative group cursor-pointer">
+            <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=600&q=80" alt="Screens" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+            <div className="absolute inset-0 bg-white/90 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out z-10" />
+            <div className="absolute inset-0 flex items-center justify-center p-4 z-20">
+              <span className="text-black font-serif text-2xl md:text-3xl font-medium tracking-tight text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 group-hover:delay-300 delay-0">
+                Startup Services
+              </span>
+            </div>
+          </Link>
 
           {/* ROW 3 — 7 images filling the full width - hidden on mobile/tablet */}
           {[
-            "https://images.unsplash.com/photo-1531366936337-7785443115cf?auto=format&fit=crop&w=600&q=80",
-            "https://images.unsplash.com/photo-1557672172-298e090bd0f1?auto=format&fit=crop&w=600&q=80",
-            "https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=600&q=80",
-            "https://images.unsplash.com/photo-1574169208507-84376144848b?auto=format&fit=crop&w=600&q=80",
-            "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80",
-            "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80",
-            "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=600&q=80"
-          ].map((src, idx) => (
-            <div key={idx} className="col-span-1 rounded-[24px] overflow-hidden aspect-square shadow-sm hover:shadow-xl transition-shadow duration-300 hidden md:block">
+            { src: "https://images.unsplash.com/photo-1531366936337-7785443115cf?auto=format&fit=crop&w=600&q=80", link: "/tech-stack/front-end", title: "Front-End", color: "bg-[#0F52BA]/90", text: "text-white" },
+            { src: "https://images.unsplash.com/photo-1557672172-298e090bd0f1?auto=format&fit=crop&w=600&q=80", link: "/tech-stack/back-end", title: "Back-End", color: "bg-green-600/90", text: "text-white" },
+            { src: "https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=600&q=80", link: "/tech-stack/mobile", title: "Mobile", color: "bg-white/90", text: "text-black" },
+            { src: "https://images.unsplash.com/photo-1574169208507-84376144848b?auto=format&fit=crop&w=600&q=80", link: "/services/business", title: "Business", color: "bg-[#0F52BA]/90", text: "text-white" },
+            { src: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80", link: "/services/enterprise", title: "Enterprise", color: "bg-green-600/90", text: "text-white" },
+            { src: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80", link: "/tech-stack/front-end", title: "Web Apps", color: "bg-white/90", text: "text-black" },
+            { src: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=600&q=80", link: "/tech-stack/back-end", title: "API Services", color: "bg-[#0F52BA]/90", text: "text-white" }
+          ].map((item, idx) => (
+            <Link key={idx} href={item.link} className="col-span-1 rounded-[24px] overflow-hidden aspect-square shadow-sm hover:shadow-xl transition-all duration-300 hidden md:block relative group cursor-pointer">
               <img
-                src={src}
+                src={item.src}
                 alt={`Decorative tech aspect ${idx + 1}`}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
-            </div>
+              <div className={`absolute inset-0 ${item.color} translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out z-10`} />
+              <div className="absolute inset-0 flex items-center justify-center p-4 z-20">
+                <span className={`${item.text} font-serif text-xl md:text-2xl font-medium tracking-tight text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 group-hover:delay-300 delay-0`}>
+                  {item.title}
+                </span>
+              </div>
+            </Link>
           ))}
 
         </div>
