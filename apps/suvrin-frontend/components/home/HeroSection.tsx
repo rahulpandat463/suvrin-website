@@ -26,7 +26,7 @@ export default function HeroSection() {
         <h1 className="text-[clamp(2rem,5vw,4rem)] leading-[0.92] mb-10 text-white tracking-tight font-heading">
           AI Solutions
           <br />
-          <em className="not-italic font-serif">That Drive Real Business Growth </em>
+          <em className="not-italic">That Drive Real Business Growth </em>
         </h1>
         <p className="text-[1.1rem] md:text-[1.2rem] text-white/75 max-w-[460px] leading-relaxed mb-12">
           We support your business through the entire lifecycle of AI projects — from strategy and development to commercial launch. Trusted by enterprises across India, Dubai, and the USA.
