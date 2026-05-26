@@ -3,6 +3,7 @@ import { Poppins, Roboto } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/Footer";
+import FloatingSocialIcons from "@/components/shared/FloatingSocialIcons";
 
 const poppins = Poppins({
   weight: ["300", "400", "500", "600", "700"],
@@ -36,6 +37,7 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         <Navbar />
+        <FloatingSocialIcons />
         <main>{children}</main>
         <Footer />
       </body>
