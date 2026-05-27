@@ -1,17 +1,25 @@
-require('dotenv').config();
-const mysql = require('mysql2/promise');
+async function main() {
+  const email = `testuser_${Date.now()}@example.com`;
+  const password = 'password123';
+  const name = 'Test User';
+  
+  console.log('Testing signup API on port 3001...');
+  
+  try {
+    const res = await fetch('http://127.0.0.1:3001/api/signup', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email, password, name }),
+    });
+    
+    console.log('Status:', res.status);
+    const data = await res.json();
+    console.log('Data:', data);
+  } catch (error) {
+    console.error('Fetch error:', error);
+  }
+}
 
-mysql.createConnection({
-    host: 'localhost',
-    port: 3306,
-    database: 'hypeszia_Suvrin_Admin_Panel',
-    user: 'hypeszia_SuvrinAdminPanel',
-    password: 'SuvrinAdmin@2026'
-}).then(c => {
-    console.log('✅ SUCCESS: Database Connected!');
-    c.end();
-}).catch(e => {
-    console.error('❌ ERROR CODE:', e.code);
-    console.error('❌ ERROR NUMBER:', e.errno);
-    console.error('❌ FULL ERROR:', e);
-});
+main();
