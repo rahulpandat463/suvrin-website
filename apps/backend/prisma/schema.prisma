@@ -25,9 +25,26 @@ model Hero {
   id          Int      @id @default(autoincrement())
   heading     String
   subheading  String?
-  description String?
   button1     String?
   button2     String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model WorkedWith {
+  id        Int      @id @default(autoincrement())
+  filename  String
+  url       String
+  extension String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Impact {
+  id          Int      @id @default(autoincrement())
+  value       String
+  description String
+  order       Int      @default(0)
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 }
