@@ -25,9 +25,50 @@ model Hero {
   id          Int      @id @default(autoincrement())
   heading     String
   subheading  String?
-  description String?
   button1     String?
   button2     String?
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
+}
+
+model WorkedWith {
+  id        Int      @id @default(autoincrement())
+  filename  String
+  url       String
+  extension String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Impact {
+  id          Int      @id @default(autoincrement())
+  value       String
+  description String
+  order       Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Tool {
+  id        Int      @id @default(autoincrement())
+  name      String
+  type      String   // "svg", "emoji", "text"
+  content   String   // The svg string, emoji, or text
+  order     Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Testimonial {
+  id        Int      @id @default(autoincrement())
+  name      String
+  role      String
+  image     String?
+  initial   String?
+  company   String?
+  text      String
+  metrics   Json?
+  order     Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }

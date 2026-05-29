@@ -8,7 +8,7 @@ export async function GET() {
     const heros = await prisma.hero.findMany({
       orderBy: { createdAt: 'desc' },
     });
-    
+
     return NextResponse.json({ heros });
   } catch (error) {
     console.error('Fetch heros error:', error);
@@ -35,7 +35,6 @@ export async function POST(req: Request) {
       data: {
         heading,
         subheading,
-        description,
         button1,
         button2,
       },
@@ -57,7 +56,7 @@ export async function POST(req: Request) {
 export async function PUT(req: Request) {
   try {
     const body = await req.json();
-    const { id, heading, subheading, description, button1, button2 } = body;
+    const { id, heading, subheading, button1, button2 } = body;
 
     if (!id) {
       return NextResponse.json(
@@ -71,7 +70,6 @@ export async function PUT(req: Request) {
       data: {
         heading,
         subheading,
-        description,
         button1,
         button2,
       },
