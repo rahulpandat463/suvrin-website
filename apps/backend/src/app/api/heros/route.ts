@@ -22,18 +22,19 @@ export async function GET() {
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-    const { heading, subheading, description, button1, button2 } = body;
+    const { heading1, heading2, subheading, description, button1, button2 } = body;
 
-    if (!heading) {
+    if (!heading1) {
       return NextResponse.json(
-        { error: 'Heading is required' },
+        { error: 'Heading 1 is required' },
         { status: 400 }
       );
     }
 
     const hero = await prisma.hero.create({
       data: {
-        heading,
+        heading1,
+        heading2,
         subheading,
         button1,
         button2,
@@ -56,7 +57,7 @@ export async function POST(req: Request) {
 export async function PUT(req: Request) {
   try {
     const body = await req.json();
-    const { id, heading, subheading, button1, button2 } = body;
+    const { id, heading1, heading2, subheading, button1, button2 } = body;
 
     if (!id) {
       return NextResponse.json(
@@ -68,7 +69,8 @@ export async function PUT(req: Request) {
     const hero = await prisma.hero.update({
       where: { id },
       data: {
-        heading,
+        heading1,
+        heading2,
         subheading,
         button1,
         button2,

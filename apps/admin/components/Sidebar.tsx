@@ -18,10 +18,18 @@ const Sidebar = ({ isOpen }: { isOpen: boolean }) => {
     {
       title: "MAIN",
       items: [
-        { name: "Home", Icon: Home, path: "/" },
-        { name: "Work With", Icon: Briefcase, path: "/work-with", hasArrow: true },
-        { name: "Testimonial", Icon: MessageSquare, path: "/testimonials", hasArrow: true },
-        { name: "Tools & Technology", Icon: Cpu, path: "/tools", hasArrow: true },
+        {
+          name: "Home",
+          Icon: Home,
+          path: "/",
+          subItems: [
+            { name: "Heros", path: "/heros" },
+            { name: "Work With", path: "/work-with" },
+            { name: "Impact By Number", path: "/impact-by-number" },
+            { name: "Testimonial", path: "/testimonials" },
+            { name: "Tools & Technology", path: "/tools" },
+          ]
+        },
         { name: "Blogs", Icon: PenTool, path: "/blogs", hasArrow: true },
         { name: "Our Team", Icon: Users, path: "/team", hasArrow: true },
       ]
@@ -34,10 +42,10 @@ const Sidebar = ({ isOpen }: { isOpen: boolean }) => {
       <div className={`h-16 flex items-center transition-all duration-300 border-b border-border ${isOpen ? "px-8 h-28" : "justify-center"}`}>
         {isOpen ? (
           <Image
-            src="/top-logo.png"
+            src="/logoos.jpg"
             alt="Suvrin Logo"
-            width={150}
-            height={60}
+            width={110}
+            height={110}
             className="object-contain"
           />
         ) : (
@@ -45,7 +53,7 @@ const Sidebar = ({ isOpen }: { isOpen: boolean }) => {
         )}
       </div>
 
-      <nav className="flex-1 py-6 overflow-y-auto overflow-x-hidden">
+      <nav className="flex-1 py-6 overflow-y-auto [overflow-x:visible] custom-scrollbar">
         {sections.map((section, idx) => (
           <div key={section.title} className="mb-6">
             {/* Section Header or Divider */}
@@ -59,22 +67,60 @@ const Sidebar = ({ isOpen }: { isOpen: boolean }) => {
 
             <div className="space-y-1">
               {section.items.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.path}
-                  className={`flex items-center transition-all duration-200 hover:bg-sidebar-active hover:text-sidebar-active-text group whitespace-nowrap px-4 py-3 ${isOpen ? "mx-4 rounded-xl" : "justify-center"}`}
-                  title={!isOpen ? item.name : ""}
-                >
-                  <div className={`flex items-center gap-3 ${!isOpen && "justify-center"}`}>
-                    <item.Icon className="w-5 h-5 opacity-70 group-hover:opacity-100 transition-opacity" />
-                    {isOpen && (
-                      <span className="text-sm font-medium">{item.name}</span>
+                <div key={item.name} className="relative group/navitem">
+                  <Link
+                    href={item.path}
+                    className={`flex items-center transition-all duration-200 hover:bg-sidebar-active hover:text-sidebar-active-text group whitespace-nowrap px-4 py-3 ${isOpen ? "mx-4 rounded-xl" : "justify-center"}`}
+                    title={!isOpen && !item.subItems ? item.name : ""}
+                  >
+                    <div className={`flex items-center gap-3 ${!isOpen && "justify-center"}`}>
+                      <item.Icon className="w-5 h-5 opacity-70 group-hover:opacity-100 transition-opacity" />
+                      {isOpen && (
+                        <span className="text-sm font-medium">{item.name}</span>
+                      )}
+                    </div>
+                    {isOpen && (item.hasArrow || item.subItems) && (
+                      <ChevronRight className="ml-auto w-3 h-3 opacity-40 group-hover:opacity-100 transition-transform group-hover/navitem:rotate-90" />
                     )}
-                  </div>
-                  {isOpen && item.hasArrow && (
-                    <ChevronRight className="ml-auto w-3 h-3 opacity-40 group-hover:opacity-100" />
+                  </Link>
+
+                  {/* Sub-menu on Hover (Open Sidebar) */}
+                  {item.subItems && isOpen && (
+                    <div className="max-h-0 overflow-hidden group-hover/navitem:max-h-[500px] transition-all duration-500 ease-in-out opacity-0 group-hover/navitem:opacity-100">
+                      <div className="mt-1 ml-10 space-y-1 border-l border-border pl-2 mb-2 mr-4">
+                        {item.subItems.map((sub) => (
+                          <Link
+                            key={sub.name}
+                            href={sub.path}
+                            className="block px-4 py-2 text-sm text-sidebar-text opacity-70 hover:opacity-100 hover:text-sidebar-active-text hover:bg-sidebar-active/50 rounded-lg transition-all whitespace-nowrap"
+                          >
+                            {sub.name}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
                   )}
-                </Link>
+
+                  {/* Sub-menu on Hover (Closed Sidebar) */}
+                  {item.subItems && !isOpen && (
+                    <div className="fixed left-20 mt-[-45px] ml-2 w-48 bg-sidebar-bg border border-border rounded-xl shadow-lg opacity-0 invisible group-hover/navitem:opacity-100 group-hover/navitem:visible transition-all duration-200 z-50 overflow-hidden">
+                      <div className="py-2">
+                        <div className="px-4 py-2 text-xs font-bold text-sidebar-text opacity-50 uppercase tracking-wider border-b border-border mb-1">
+                          {item.name}
+                        </div>
+                        {item.subItems.map((sub) => (
+                          <Link
+                            key={sub.name}
+                            href={sub.path}
+                            className="block px-4 py-2 text-sm text-sidebar-text hover:bg-sidebar-active hover:text-sidebar-active-text transition-colors whitespace-nowrap"
+                          >
+                            {sub.name}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
               ))}
             </div>
           </div>

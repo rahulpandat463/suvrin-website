@@ -76,3 +76,27 @@ export async function PUT(req: Request) {
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }
+
+// DELETE — Remove an impact card by id
+export async function DELETE(req: Request) {
+  try {
+    const { searchParams } = new URL(req.url);
+    const id = searchParams.get('id');
+
+    if (!id) {
+      return NextResponse.json(
+        { error: 'id is required for deleting (e.g. ?id=1)' },
+        { status: 400 }
+      );
+    }
+
+    const impact = await prisma.impact.delete({
+      where: { id: parseInt(id) },
+    });
+
+    return NextResponse.json({ message: 'Impact card deleted successfully', impact });
+  } catch (error) {
+    console.error('Delete impact error:', error);
+    return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
+  }
+}

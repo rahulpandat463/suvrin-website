@@ -23,7 +23,8 @@ model User {
 
 model Hero {
   id          Int      @id @default(autoincrement())
-  heading     String
+  heading1    String
+  heading2    String?
   subheading  String?
   button1     String?
   button2     String?
