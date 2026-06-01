@@ -59,3 +59,27 @@ export async function GET() {
     );
   }
 }
+
+// DELETE — Remove a WorkedWith image record by id
+export async function DELETE(req: Request) {
+  try {
+    const { searchParams } = new URL(req.url);
+    const id = searchParams.get('id');
+
+    if (!id) {
+      return NextResponse.json(
+        { error: 'id is required for deleting (e.g. ?id=1)' },
+        { status: 400 }
+      );
+    }
+
+    const image = await prisma.workedWith.delete({
+      where: { id: parseInt(id) },
+    });
+
+    return NextResponse.json({ message: 'Image record deleted successfully', image });
+  } catch (error) {
+    console.error('Delete WorkedWith error:', error);
+    return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
+  }
+}

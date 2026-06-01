@@ -23,7 +23,8 @@ model User {
 
 model Hero {
   id          Int      @id @default(autoincrement())
-  heading     String
+  heading1    String
+  heading2    String?
   subheading  String?
   button1     String?
   button2     String?
@@ -71,4 +72,107 @@ model Testimonial {
   order     Int      @default(0)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+}
+
+// ─── Who We Are Page Sections ─────────────────────────────────────────────────
+
+// Section 1: Who We Are (two paragraphs)
+model WhoWeAreDescription {
+  id          Int      @id @default(autoincrement())
+  paragraph1  String
+  paragraph2  String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// Section 2: Empowering Businesses (Mission section)
+model EmpoweringBusiness {
+  id          Int      @id @default(autoincrement())
+  heading     String
+  description String
+  features    Json?    // Array of {title, desc} objects
+  imageUrl    String?
+  ctaText     String?
+  ctaLink     String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// Section 3: Our Values
+model OurValues {
+  id          Int      @id @default(autoincrement())
+  title       String
+  desc        String
+  order       Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// Section 4: Global Presence
+model GlobalPresence {
+  id          Int      @id @default(autoincrement())
+  city        String
+  address     String?
+  desc        String?
+  order       Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// Section 5: Origin Story
+model OriginStory {
+  id          Int      @id @default(autoincrement())
+  heading     String
+  paragraph1  String
+  paragraph2  String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// ─── Careers Page Sections ──────────────────────────────────────────────────
+
+// 1. Building New
+model CareerBuildingNew {
+  id          Int      @id @default(autoincrement())
+  heading     String
+  description String
+  features    Json?    // Array of {title, desc}
+  imageUrl    String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// 2. Suvrin Labs (Life at Suvrin labs)
+model CareerSuvrinLabs {
+  id          Int      @id @default(autoincrement())
+  title       String
+  desc        String
+  order       Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// 3. Work That Matters - Section Header
+model CareerWorkThatMattersDesc {
+  id          Int      @id @default(autoincrement())
+  heading     String
+  description String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// 4. Work That Matters (Jobs)
+model CareerJob {
+  id          Int      @id @default(autoincrement())
+  title       String
+  category    String   // e.g. "Design", "Software Development"
+  categoryDesc String? // Description for the category
+  location    String
+  type        String   // e.g. "Full-time"
+  desc        String
+  dotColor    String   @default("bg-[#0546e0]")
+  badgeBg     String   @default("bg-[#f0f4ff]")
+  order       Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
 }

@@ -14,6 +14,10 @@ const nextConfig = {
         source: "/service-scope/:slug",
         destination: "/case-studies/category/:slug",
       },
+      {
+        source: "/api/:path*",
+        destination: "http://localhost:3002/api/:path*",
+      },
     ];
   },
 };
