@@ -10,6 +10,7 @@ import {
   Cpu,
   PenTool,
   Users,
+  Info,
   ChevronRight
 } from "lucide-react";
 
@@ -32,6 +33,15 @@ const Sidebar = ({ isOpen }: { isOpen: boolean }) => {
         },
         { name: "Blogs", Icon: PenTool, path: "/blogs", hasArrow: true },
         { name: "Our Team", Icon: Users, path: "/team", hasArrow: true },
+        {
+          name: "About",
+          Icon: Info,
+          path: "/about",
+          subItems: [
+            { name: "Who We Are", path: "/about/who-we-are" },
+            { name: "Careers", path: "/about/careers" },
+          ]
+        },
       ]
     }
   ];
