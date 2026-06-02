@@ -11,7 +11,8 @@ import {
   PenTool,
   Users,
   Info,
-  ChevronRight
+  ChevronRight,
+  BookOpen
 } from "lucide-react";
 
 const Sidebar = ({ isOpen }: { isOpen: boolean }) => {
@@ -33,6 +34,7 @@ const Sidebar = ({ isOpen }: { isOpen: boolean }) => {
         },
         { name: "Blogs", Icon: PenTool, path: "/blogs", hasArrow: true },
         { name: "Our Team", Icon: Users, path: "/team", hasArrow: true },
+        { name: "Case Studies", Icon: BookOpen, path: "/case-studies", hasArrow: true },
         {
           name: "About",
           Icon: Info,

@@ -176,3 +176,62 @@ model CareerJob {
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 }
+
+// ─── Case Studies Page ────────────────────────────────────────────────────────
+
+// Section 1: Hero – title, subtitle, tag, image, stats (results)
+model CaseStudy {
+  id          Int      @id @default(autoincrement())
+  slug        String   @unique
+  title       String
+  subtitle    String?  // e.g. "Developed by Suvrin Technologies"
+  tag         String?  // e.g. "Automation & Integration"
+  imageUrl    String?
+  client      String?
+  industry    String?
+  location    String?
+  overview    String?  // short overview shown on the listing page
+
+  // Section 2 – Client Overview (paragraphs)
+  clientOverview  String?  // long text / can be multi-paragraph JSON array
+
+  // Section 3 – Business Challenges
+  // Array of { title: string, desc: string, points?: string[] }
+  challenges      Json?
+
+  // Section 4 – Suvrin's Solution
+  // { intro: string[], modules: { title: string, items?: string[], body?: string }[] }
+  solution        Json?
+
+  // Section 5 – Stakeholders / special fourth section (varies per slug)
+  // { heading: string, description?: string, list: string[] }
+  stakeholders    Json?
+
+  // Section 6 – Reporting & Analytics
+  // { intro: string, items: string[] }
+  reporting       Json?
+
+  // Section 7 – Technology Stack
+  // Array of { title: string, items: string[] }
+  techStack       Json?
+
+  // Section 8 – Key Outcomes & Business Impact
+  // { categories: { title: string, color?: string, points: string[] }[], strategicBenefits: string[] }
+  keyOutcomes     Json?
+
+  // Section 9 – Key Features Delivered
+  // Array of strings
+  keyFeatures     Json?
+
+  // Section 10 – Results Achieved
+  // Array of { value: string, label: string }  (stats shown on hero) AND/OR
+  // Array of strings for results list section
+  results         Json?  // stats for hero: [{ value, label }]
+  resultsAchieved Json?  // list for the Results Achieved section: string[]
+
+  // Section 11 – Conclusion
+  conclusion      String?
+
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
