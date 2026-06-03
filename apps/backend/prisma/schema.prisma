@@ -235,3 +235,19 @@ model CaseStudy {
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 }
+
+// ─── Blog Page ────────────────────────────────────────────────────────
+
+model Blog {
+  id          Int      @id @default(autoincrement())
+  slug        String   @unique
+  tag         String?
+  date        String?
+  title       String
+  description String?
+  intro       String?
+  image       String?
+  content     String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
