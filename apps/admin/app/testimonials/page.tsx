@@ -16,7 +16,8 @@ interface Testimonial {
   order: number;
 }
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "/api";
+const _rawApiUrl = process.env.NEXT_PUBLIC_API_URL || "/api";
+const API_URL = _rawApiUrl.endsWith("/") ? _rawApiUrl.slice(0, -1) + "/api" : (_rawApiUrl.endsWith("/api") ? _rawApiUrl : _rawApiUrl + "/api");
 
 export default function TestimonialsPage() {
   const [testimonials, setTestimonials] = useState<Testimonial[]>([]);

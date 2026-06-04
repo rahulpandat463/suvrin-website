@@ -4,7 +4,8 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { Layout, Briefcase, BarChart, MessageSquare, Cpu, ChevronRight, RefreshCw } from "lucide-react";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "/api";
+const _rawApiUrl = process.env.NEXT_PUBLIC_API_URL || "/api";
+const API_URL = _rawApiUrl.endsWith("/") ? _rawApiUrl.slice(0, -1) + "/api" : (_rawApiUrl.endsWith("/api") ? _rawApiUrl : _rawApiUrl + "/api");
 
 interface SectionCount {
   heros: number | null;
