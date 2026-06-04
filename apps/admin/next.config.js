@@ -4,7 +4,7 @@ const nextConfig = {
     return [
       {
         source: '/api/:path*',
-        destination: 'http://localhost:3002/api/:path*',
+        destination: 'https://suvrin-website-backend.vercel.app/api/:path*',
       },
     ];
   },
