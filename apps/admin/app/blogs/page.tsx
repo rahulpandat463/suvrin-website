@@ -52,7 +52,7 @@ export default function BlogsPage() {
   const fetchBlogs = async () => {
     setLoading(true);
     try {
-      const res = await fetch(`${API}/blogs`);
+      const res = await fetch(`${API}/blogs`, { cache: "no-store" });
       const data = await res.json();
       setBlogs(data.blogs || []);
     } catch (err) {
@@ -67,32 +67,42 @@ export default function BlogsPage() {
   // ── Save / Delete ───────────────────────────
   const saveBlog = async () => {
     const method = editingId ? "PUT" : "POST";
-    
-    // For PUT, we need the ID in the URL for our specific backend structure
     const url = editingId ? `${API}/blogs/${editingId}` : `${API}/blogs`;
     
     try {
-      await fetch(url, {
+      const res = await fetch(url, {
         method,
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(editForm)
       });
+
+      if (!res.ok) {
+        const errData = await res.json().catch(() => ({}));
+        alert(`Error: ${errData.error || res.statusText}`);
+        return;
+      }
+
       setEditingId(null);
       setIsCreating(false);
       setEditForm({});
-      fetchBlogs();
+      await fetchBlogs();
     } catch (err) {
-      alert("Error saving blog");
+      console.error("Save error:", err);
+      alert("Network error — could not save blog.");
     }
   };
 
   const deleteBlog = async (id: number) => {
     if (!confirm("Are you sure you want to delete this blog?")) return;
     try {
-      await fetch(`${API}/blogs/${id}`, { method: "DELETE" });
-      fetchBlogs();
+      const res = await fetch(`${API}/blogs/${id}`, { method: "DELETE" });
+      if (!res.ok) {
+        alert("Error deleting blog");
+        return;
+      }
+      await fetchBlogs();
     } catch (err) {
-      alert("Error deleting blog");
+      alert("Network error — could not delete blog.");
     }
   };
 
