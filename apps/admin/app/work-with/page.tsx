@@ -13,6 +13,8 @@ interface WorkedWithImage {
 }
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || "/api";
+// Backend base URL (without /api) used for serving static files
+const BACKEND_BASE_URL = API_URL.replace(/\/api\/?$/, "");
 
 export default function WorkWithPage() {
   const [images, setImages] = useState<WorkedWithImage[]>([]);
@@ -89,8 +91,9 @@ export default function WorkWithPage() {
     if (url.startsWith("data:image")) {
       return url;
     }
-    // Otherwise fallback to backend API URL (for old locally saved images)
-    return `http://localhost:3002${url}`;
+    // For old file-path style URLs, use the backend's Vercel URL
+    // BACKEND_BASE_URL will be empty string on local (uses relative URL) or the Vercel backend URL in prod
+    return `${BACKEND_BASE_URL}${url}`;
   };
 
   return (
