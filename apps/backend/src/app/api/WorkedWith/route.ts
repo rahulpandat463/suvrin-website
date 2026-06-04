@@ -60,7 +60,7 @@ export async function GET() {
   }
 }
 
-// DELETE — Remove a WorkedWith image record by id and delete file from public dir
+// DELETE — Remove a WorkedWith image record by id
 export async function DELETE(req: Request) {
   try {
     const { searchParams } = new URL(req.url);
@@ -77,7 +77,8 @@ export async function DELETE(req: Request) {
       where: { id: parseInt(id) },
     });
 
-    if (image) {
+    // Optional: if it was a local file previously, try to delete it just in case
+    if (image && !image.url.startsWith('data:')) {
       const filePath = path.join(process.cwd(), 'public', image.filename);
       if (fs.existsSync(filePath)) {
         fs.unlinkSync(filePath);
@@ -91,7 +92,7 @@ export async function DELETE(req: Request) {
   }
 }
 
-// POST — Upload a new WorkedWith image
+// POST — Upload a new WorkedWith image (Stores as Base64 in Database)
 export async function POST(req: Request) {
   try {
     const formData = await req.formData();
@@ -106,23 +107,19 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: 'Invalid file type. Allowed: .jpeg, .jpg, .png, .webp' }, { status: 400 });
     }
 
+    // Convert file to Base64
     const buffer = Buffer.from(await file.arrayBuffer());
-    const publicDir = path.join(process.cwd(), 'public');
-    
-    if (!fs.existsSync(publicDir)) {
-      fs.mkdirSync(publicDir, { recursive: true });
-    }
+    const mimeType = file.type || `image/${ext.replace('.', '')}`;
+    const base64String = `data:${mimeType};base64,${buffer.toString('base64')}`;
 
     const timestamp = Date.now();
     const filename = `${timestamp}-${file.name.replace(/[^a-zA-Z0-9.-]/g, '_')}`;
-    const filePath = path.join(publicDir, filename);
 
-    fs.writeFileSync(filePath, buffer);
-
+    // Save Base64 string directly in Prisma Database
     const newImage = await prisma.workedWith.create({
       data: {
         filename,
-        url: `/${filename}`,
+        url: base64String, // Storing base64 instead of file path
         extension: ext.replace('.', ''),
       },
     });
