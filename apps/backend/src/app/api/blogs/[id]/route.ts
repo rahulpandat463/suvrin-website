@@ -5,20 +5,20 @@ const prisma = new PrismaClient();
 
 export async function GET(
   req: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    // We can also fetch by slug if the parameter isn't a number
-    const isId = !isNaN(Number(params.id));
+    const { id: rawId } = await params;
+    const isId = !isNaN(Number(rawId));
     
     let blog;
     if (isId) {
       blog = await prisma.blog.findUnique({
-        where: { id: parseInt(params.id) },
+        where: { id: parseInt(rawId) },
       });
     } else {
       blog = await prisma.blog.findUnique({
-        where: { slug: params.id },
+        where: { slug: rawId },
       });
     }
 
@@ -41,10 +41,11 @@ export async function GET(
 
 export async function PUT(
   req: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const id = parseInt(params.id);
+    const { id: rawId } = await params;
+    const id = parseInt(rawId);
 
     if (isNaN(id)) {
       return NextResponse.json(
@@ -82,10 +83,11 @@ export async function PUT(
 
 export async function DELETE(
   req: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const id = parseInt(params.id);
+    const { id: rawId } = await params;
+    const id = parseInt(rawId);
 
     if (isNaN(id)) {
       return NextResponse.json(
