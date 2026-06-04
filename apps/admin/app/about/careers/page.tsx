@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { ArrowLeft, Plus, Edit2, Trash2, Save, X, RefreshCw, Briefcase, Layers, Zap } from "lucide-react";
 
-const API = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3002/api";
+const API = process.env.NEXT_PUBLIC_API_URL || "https://suvrin-website-backend.vercel.app/api";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 interface BuildingNew { id: number; heading: string; description: string; features: any; imageUrl?: string; }

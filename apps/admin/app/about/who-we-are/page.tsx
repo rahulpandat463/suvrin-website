@@ -7,7 +7,7 @@ import {
   Edit2, Save, X, Plus, Trash2, RefreshCw
 } from "lucide-react";
 
-const API = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3002/api";
+const API = process.env.NEXT_PUBLIC_API_URL || "https://suvrin-website-backend.vercel.app/api";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 interface Description { id: number; paragraph1: string; paragraph2: string; }
