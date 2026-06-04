@@ -60,7 +60,7 @@ export async function GET() {
   }
 }
 
-// DELETE — Remove a WorkedWith image record by id
+// DELETE — Remove a WorkedWith image record by id and delete file from public dir
 export async function DELETE(req: Request) {
   try {
     const { searchParams } = new URL(req.url);
@@ -77,9 +77,59 @@ export async function DELETE(req: Request) {
       where: { id: parseInt(id) },
     });
 
+    if (image) {
+      const filePath = path.join(process.cwd(), 'public', image.filename);
+      if (fs.existsSync(filePath)) {
+        fs.unlinkSync(filePath);
+      }
+    }
+
     return NextResponse.json({ message: 'Image record deleted successfully', image });
   } catch (error) {
     console.error('Delete WorkedWith error:', error);
+    return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
+  }
+}
+
+// POST — Upload a new WorkedWith image
+export async function POST(req: Request) {
+  try {
+    const formData = await req.formData();
+    const file = formData.get('file') as File | null;
+
+    if (!file) {
+      return NextResponse.json({ error: 'No file provided' }, { status: 400 });
+    }
+
+    const ext = path.extname(file.name).toLowerCase();
+    if (!ALLOWED_EXTENSIONS.includes(ext)) {
+      return NextResponse.json({ error: 'Invalid file type. Allowed: .jpeg, .jpg, .png, .webp' }, { status: 400 });
+    }
+
+    const buffer = Buffer.from(await file.arrayBuffer());
+    const publicDir = path.join(process.cwd(), 'public');
+    
+    if (!fs.existsSync(publicDir)) {
+      fs.mkdirSync(publicDir, { recursive: true });
+    }
+
+    const timestamp = Date.now();
+    const filename = `${timestamp}-${file.name.replace(/[^a-zA-Z0-9.-]/g, '_')}`;
+    const filePath = path.join(publicDir, filename);
+
+    fs.writeFileSync(filePath, buffer);
+
+    const newImage = await prisma.workedWith.create({
+      data: {
+        filename,
+        url: `/${filename}`,
+        extension: ext.replace('.', ''),
+      },
+    });
+
+    return NextResponse.json({ success: true, image: newImage }, { status: 201 });
+  } catch (error) {
+    console.error('Upload WorkedWith error:', error);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }

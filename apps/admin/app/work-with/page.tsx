@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { RefreshCw, Briefcase, Trash2, Image as ImageIcon, AlertCircle, ArrowLeft } from "lucide-react";
+import { RefreshCw, Briefcase, Trash2, Image as ImageIcon, AlertCircle, ArrowLeft, Upload, Plus } from "lucide-react";
 
 interface WorkedWithImage {
   id: number;
@@ -19,6 +19,7 @@ export default function WorkWithPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [deletingId, setDeletingId] = useState<number | null>(null);
+  const [uploading, setUploading] = useState(false);
 
   const fetchImages = async () => {
     setLoading(true);
@@ -38,7 +39,7 @@ export default function WorkWithPage() {
   useEffect(() => { fetchImages(); }, []);
 
   const handleDelete = async (id: number) => {
-    if (!confirm("Remove this image record from the database? (The file in /public won't be deleted.)")) return;
+    if (!confirm("Remove this image record and delete the file from the server?")) return;
     setDeletingId(id);
     try {
       const res = await fetch(`${API_URL}/WorkedWith?id=${id}`, { method: "DELETE" });
@@ -48,6 +49,38 @@ export default function WorkWithPage() {
       alert(err.message || "An error occurred while deleting");
     } finally {
       setDeletingId(null);
+    }
+  };
+
+  const handleUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    setUploading(true);
+    setError(null);
+    
+    const formData = new FormData();
+    formData.append("file", file);
+
+    try {
+      const res = await fetch(`${API_URL}/WorkedWith`, {
+        method: "POST",
+        body: formData,
+      });
+      
+      if (!res.ok) {
+        const errorData = await res.json();
+        throw new Error(errorData.error || "Failed to upload image");
+      }
+      
+      // Refresh list to show the newly uploaded image
+      fetchImages();
+    } catch (err: any) {
+      setError(err.message || "An error occurred while uploading");
+    } finally {
+      setUploading(false);
+      // Reset the file input
+      e.target.value = '';
     }
   };
 
@@ -82,12 +115,25 @@ export default function WorkWithPage() {
             Manage partner & client logos. Add images to the <code className="text-xs bg-bg-secondary px-1.5 py-0.5 rounded font-mono">/public</code> folder in the backend, then refresh to sync.
           </p>
         </div>
-        <button
-          onClick={fetchImages}
-          className="flex items-center gap-2 px-4 py-2 bg-white border border-border rounded-xl text-xs font-bold text-text-primary shadow-sm hover:bg-bg-secondary transition-all"
-        >
-          <RefreshCw className={`w-4 h-4 ${loading ? "animate-spin" : ""}`} /> Refresh & Sync
-        </button>
+        <div className="flex items-center gap-3">
+          <label className={`flex items-center gap-2 px-4 py-2 bg-purple-600 text-white rounded-xl text-xs font-bold shadow-sm hover:bg-purple-700 transition-all cursor-pointer ${uploading ? 'opacity-70 pointer-events-none' : ''}`}>
+            {uploading ? <RefreshCw className="w-4 h-4 animate-spin" /> : <Upload className="w-4 h-4" />}
+            {uploading ? 'Uploading...' : 'Add Photo'}
+            <input 
+              type="file" 
+              accept=".jpg,.jpeg,.png,.webp" 
+              className="hidden" 
+              onChange={handleUpload}
+              disabled={uploading}
+            />
+          </label>
+          <button
+            onClick={fetchImages}
+            className="flex items-center gap-2 px-4 py-2 bg-white border border-border rounded-xl text-xs font-bold text-text-primary shadow-sm hover:bg-bg-secondary transition-all"
+          >
+            <RefreshCw className={`w-4 h-4 ${loading ? "animate-spin" : ""}`} /> Refresh
+          </button>
+        </div>
       </div>
 
       {/* Info banner */}
@@ -95,7 +141,7 @@ export default function WorkWithPage() {
         <AlertCircle className="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" />
         <div className="text-sm text-purple-700 space-y-1">
           <p className="font-semibold">How it works</p>
-          <p>Place <strong>.jpeg / .jpg / .png / .webp</strong> files in the backend&apos;s <code className="bg-purple-100 px-1 rounded font-mono text-xs">apps/backend/public/</code> folder, then click <strong>Refresh &amp; Sync</strong> — the API auto-detects and seeds them to the database.</p>
+          <p>Click <strong>Add Photo</strong> to upload a new partner/client logo directly. Allowed formats: <strong>.jpeg, .jpg, .png, .webp</strong>. Deleting an image removes it from both the database and the server.</p>
         </div>
       </div>
 
@@ -111,7 +157,7 @@ export default function WorkWithPage() {
       ) : images.length === 0 ? (
         <div className="min-h-[400px] border-2 border-dashed border-border rounded-3xl flex flex-col items-center justify-center text-text-muted gap-4">
           <Briefcase className="w-12 h-12 text-border" />
-          <p className="text-sm font-medium italic">No images found. Add images to the backend /public folder and click Refresh.</p>
+          <p className="text-sm font-medium italic">No images found. Click "Add Photo" to upload logos.</p>
         </div>
       ) : (
         <>
