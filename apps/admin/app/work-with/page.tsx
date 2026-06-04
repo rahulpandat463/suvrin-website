@@ -86,7 +86,11 @@ export default function WorkWithPage() {
   };
 
   const getBackendImageUrl = (url: string) => {
-    // Images are served from the backend's public folder at port 3002
+    // If it's a Base64 string from the database, return it directly
+    if (url.startsWith("data:image")) {
+      return url;
+    }
+    // Otherwise fallback to backend API URL (for old locally saved images)
     return `http://localhost:3002${url}`;
   };
 
